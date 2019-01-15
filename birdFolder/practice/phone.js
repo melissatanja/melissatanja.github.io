@@ -47,8 +47,12 @@ function draw()
 //sends from the button press
 function getOrientation() {
 
-  // var xVal = rotationY;
-  // var yVal = rotationX;
+  var yNum = round(rotationY);
+  var xNum = round(rotationX) + 45;
+
+  var xPos = constrain(xNum, -45, 45);
+  var yPos = constrain(yNum, -45, 45);
+
 
 console.log(round(rotationY));
 console.log(round(rotationX));
@@ -59,8 +63,8 @@ console.log(round(rotationX));
       channel: channelName,
       message: 
       {
-        xVal: round(rotationY),
-        yVal: round(rotationX)      
+        xVal: xPos,
+        yVal: yPos      
       }
     });
 
