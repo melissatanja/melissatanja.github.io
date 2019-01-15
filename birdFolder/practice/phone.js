@@ -39,7 +39,7 @@ function draw()
   // rotateZ(z);
   // box(200, 200, 200);
 
-  text("Waiting... update1", width/2, height/2);
+  text("Waiting... update2", width/2, height/2);
 
 }
 
@@ -47,11 +47,11 @@ function draw()
 //sends from the button press
 function getOrientation() {
 
-  var yNum = round(rotationY) + 45;
-  var xNum = round(rotationX);
+  var yNum = round(rotationY)/10 + 4.5;
+  var xNum = round(rotationX)/10;
 
-  var xPos = constrain(xNum, -45, 45);
-  var yPos = constrain(yNum, -45, 45);
+  var xPos = constrain(xNum, -4.5, 4.5);
+  var yPos = constrain(yNum, -4.5, 4.5);
 
 
 // console.log(round(rotationY));
