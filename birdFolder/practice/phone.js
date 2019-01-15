@@ -58,8 +58,8 @@ function getOrientation() {
       channel: channelName,
       message: 
       {
-        xVal: rotationY,
-        yVal: rotationX      
+        xVal: round(rotationY),
+        yVal: round(rotationX)      
       }
     });
 
