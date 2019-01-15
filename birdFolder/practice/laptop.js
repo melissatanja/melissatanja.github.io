@@ -31,7 +31,7 @@ function setup()
     noStroke();
     fill(0);  
     textSize(30)
-    text("Waiting", width/2, height/2);
+    text("Waiting... update1", width/2, height/2);
 
 }
 
