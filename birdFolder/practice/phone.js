@@ -54,8 +54,8 @@ function getOrientation() {
   var yPos = constrain(yNum, -45, 45);
 
 
-console.log(round(rotationY));
-console.log(round(rotationX));
+// console.log(round(rotationY));
+// console.log(round(rotationX));
 
   //publish the number to everyone.
   dataServer.publish(
@@ -64,7 +64,9 @@ console.log(round(rotationX));
       message: 
       {
         xVal: xPos,
-        yVal: yPos      
+        yVal: yPos, 
+        y: yNum,
+        x: xNum      
       }
     });
 
