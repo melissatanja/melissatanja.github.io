@@ -50,7 +50,8 @@ function getOrientation() {
   // var xVal = rotationY;
   // var yVal = rotationX;
 
-//console.log(slideNumber);
+console.log(round(rotationY));
+console.log(round(rotationX));
 
   //publish the number to everyone.
   dataServer.publish(
@@ -58,8 +59,8 @@ function getOrientation() {
       channel: channelName,
       message: 
       {
-        xVal: floor(rotationY),
-        yVal: floor(rotationX)      
+        xVal: round(rotationY),
+        yVal: round(rotationX)      
       }
     });
 
