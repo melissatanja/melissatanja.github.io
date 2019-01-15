@@ -59,8 +59,8 @@ console.log(round(rotationX));
       channel: channelName,
       message: 
       {
-        xVal: round(rotationY),
-        yVal: round(rotationX)      
+        xVal: round(rotationY)/12,
+        yVal: round(rotationX)/12      
       }
     });
 
