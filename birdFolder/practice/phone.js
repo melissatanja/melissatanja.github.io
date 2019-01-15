@@ -39,7 +39,7 @@ function draw()
   // rotateZ(z);
   // box(200, 200, 200);
 
-  text("Waiting", width/2, height/2);
+  text("Waiting... update1", width/2, height/2);
 
 }
 
