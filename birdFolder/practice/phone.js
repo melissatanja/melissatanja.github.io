@@ -30,14 +30,16 @@ function setup()
 function draw() 
 {
 
-  x+=accelerationX*0.05;
-  y+=accelerationY*0.05;
-  z+=accelerationZ*0.05;
-  normalMaterial();
-  rotateX(x);
-  rotateY(y);
-  rotateZ(z);
-  box(200, 200, 200);
+  // x+=accelerationX*0.05;
+  // y+=accelerationY*0.05;
+  // z+=accelerationZ*0.05;
+  // normalMaterial();
+  // rotateX(x);
+  // rotateY(y);
+  // rotateZ(z);
+  // box(200, 200, 200);
+
+  text("Waiting", width/2, height/2);
 
 }
 
