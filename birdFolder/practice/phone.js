@@ -48,7 +48,7 @@ function draw()
 function getOrientation() {
 
   var yNum = round(rotationY);
-  var xNum = round(rotationX) + 45;
+  var xNum = round(rotationX);
 
   var xPos = constrain(xNum, -45, 45);
   var yPos = constrain(yNum, -45, 45);
