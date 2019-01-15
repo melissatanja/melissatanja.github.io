@@ -38,7 +38,7 @@ function setup()
 function draw() 
 {
 
-text("no angle info");
+// text("no angle info");
 
 }
 
