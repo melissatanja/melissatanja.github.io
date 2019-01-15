@@ -48,8 +48,5 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
   text('x pos: ' + inMessage.message.xVal, width/2, height/4);
   text('y pos: ' + inMessage.message.yVal, width/2, height/2);
 
-  console.log(inMessage.message.x);
-  console.log(inMessage.message.y);
-
 }
 
