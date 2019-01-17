@@ -17,7 +17,7 @@ var cs = window.innerHeight;
 // var w = window.innerWidth;
 // var h = window
 
-var r = 30;
+var r = 45;
 var moveX = 0;
 var moveY = 0;
 
@@ -70,6 +70,8 @@ function setup()
 function draw() 
 {
 
+  var X = constrain(moveX, 0, cs/2);
+  var Y = constrain(moveY, 0, cs/2);
   // if(inMessage.message.user = "red"){
 
   //   // ellipseMode(RADIUS);
@@ -122,7 +124,7 @@ function draw()
   fill('#0099FF');
   rect(cs/2,cs/2,cs/2,cs/2);
 
-  image(img_red, moveX, moveY, r, r);
+  image(img_red, X, Y, r, r);
 
 }
 
