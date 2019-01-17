@@ -28,6 +28,8 @@ function preload(){
   img_green = loadImage('user_icons/user_icon_green.png');
   img_yellow = loadImage('user_icons/user_icon_yellow.png');
 
+  bg = loadImage('other/bg.png');
+
 }
 
 function setup() 
@@ -70,8 +72,8 @@ function setup()
 function draw() 
 {
 
-  var X = constrain(moveX, 0, width/2);
-  var Y = constrain(moveY, 0, height/2);
+  var X = constrain(moveX, 45, cs/2 - 45);
+  var Y = constrain(moveY, 45, cs/2 - 45);
   // if(inMessage.message.user = "red"){
 
   //   // ellipseMode(RADIUS);
@@ -108,21 +110,30 @@ function draw()
 
   noStroke();
   rectMode(CORNER);
+  imageMode(CENTER);
   //red section
   fill('#FF3333');
   rect(0,0,cs/2,cs/2);
+
+  image(bg, cs/4, cs/4, cs/2 - 50, cs/2 - 50);
 
   //green
   fill('#99FF00');
   rect(cs/2, 0,cs/2,cs/2);
 
+  image(bg, cs/4 * 3, cs/4, cs/2 - 50, cs/2 - 50);
+
   //yellow
   fill('#FFFF00');
   rect(0,cs/2,cs/2,cs/2);
 
+  image(bg, cs/4, cs/4 * 3, cs/2 - 50, cs/2 - 50);
+
   //blue
   fill('#0099FF');
   rect(cs/2,cs/2,cs/2,cs/2);
+
+  image(bg, cs/4 * 3, cs/4 * 3, cs/2 - 50, cs/2 - 50);
 
   image(img_red, X, Y, r, r);
 
