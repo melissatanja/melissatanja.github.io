@@ -60,7 +60,7 @@ function setup()
 
   setInterval(sendData, 500);
 
-  console.log("interval 500");
+  // console.log("interval 500");
 
 }
 
@@ -90,11 +90,11 @@ function tradeY(){
 
 function sendData() {
  
-  var yNum = round(rotationY) + 45;
-  var xNum = round(rotationX);
+  var yNum = round(rotationY * 4) + 180;
+  var xNum = round(rotationX * 4);
 
-  var xPos = constrain(xNum, -45, 45);
-  var yPos = constrain(yNum, -45, 45);
+  var xPos = constrain(xNum, -180, 180);
+  var yPos = constrain(yNum, -180, 180);
 
   // Send Data to the server to draw it in all other canvases
   dataServer.publish({
