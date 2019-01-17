@@ -48,15 +48,15 @@ function setup()
 
   blueButton = createButton('TRADE BLUE');
   blueButton.position((w/4), h/2);
-  blueButton.mouseClicked(tradeB, default);
+  blueButton.mouseClicked(trade);
 
   greenButton = createButton('TRADE GREEN');
   greenButton.position((w/2), h/2);
-  greenButton.mouseClicked(tradeG, default);
+  greenButton.mouseClicked(tradeG);
 
   yellowButton = createButton('TRADE YELLOW');
   yellowButton.position((w/4) * 3, h/2);
-  yellowButton.mouseClicked(tradeY, default);
+  yellowButton.mouseClicked(tradeY);
 
   setInterval(sendData, 100);
 
@@ -84,6 +84,8 @@ function tradeB(){
   trade_blue = true;
   tradeReq = true;
 
+  default();
+
 }
 
 function tradeG(){
@@ -91,12 +93,16 @@ function tradeG(){
   trade_green = true;
   tradeReq = true;
 
+  default();
+
 }
 
 function tradeY(){
 
   trade_yellow = true;
   tradeReq = true;
+
+  default();
 
 }
 
