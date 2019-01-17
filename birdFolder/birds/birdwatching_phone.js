@@ -93,19 +93,19 @@ function sendData() {
   var yPos = constrain(yNum, -10, 10);
 
   // Send Data to the server to draw it in all other canvases
-// dataServer.publish({
-//     channel: channelName,
-//     message: 
-  // {
-  //   user: "red",
-  //   x_angle: xPos, 
-  //   y_angle: yPos,
-  //   red_bird: , 
-  //   blue_bird: , 
-  //   green_bird: , 
-  //   yellow_bird: 
+dataServer.publish({
+    channel: channelName,
+    message: 
+  {
+    user: "red",
+    x_angle: xPos, 
+    y_angle: yPos
+    // red_bird: , 
+    // blue_bird: , 
+    // green_bird: , 
+    // yellow_bird: 
   }
-// });
+});
 
 function readIncoming(inMessage) //when new data comes in it triggers this function, 
 {                               // this works because we subscribed to the channel in setup()
