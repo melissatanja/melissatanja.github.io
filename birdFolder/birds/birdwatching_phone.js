@@ -70,7 +70,7 @@ function draw()
 
 }
 
-function default(){
+function def(){
 
   trade_blue = false;
   trade_green = false;
@@ -84,7 +84,7 @@ function tradeB(){
   trade_blue = true;
   tradeReq = true;
 
-  default();
+  def();
 
 }
 
@@ -93,7 +93,7 @@ function tradeG(){
   trade_green = true;
   tradeReq = true;
 
-  default();
+  def();
 
 }
 
@@ -102,7 +102,7 @@ function tradeY(){
   trade_yellow = true;
   tradeReq = true;
 
-  default();
+  def();
 
 }
 
