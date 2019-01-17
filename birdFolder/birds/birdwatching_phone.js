@@ -89,3 +89,15 @@ function sendData() {
   //   yellow_bird: 
   }
 // });
+
+function readIncoming(inMessage) //when new data comes in it triggers this function, 
+{                               // this works because we subscribed to the channel in setup()
+  
+  // simple error check to match the incoming to the channelName
+  if(inMessage.channel == channelName)
+  {
+
+    // this is where we get info about bird count
+
+  }
+}
