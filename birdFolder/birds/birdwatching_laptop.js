@@ -17,7 +17,7 @@ var cs = window.innerHeight;
 // var w = window.innerWidth;
 // var h = window
 
-    var r = 15;
+var r = 30;
 
 function preload(){
 
@@ -102,6 +102,26 @@ function draw()
 
   // }
 
+  noStroke();
+  rectMode(CORNER);
+  //red section
+  fill('#FF3333');
+  rect(0,0,cs/2,cs/2);
+
+  //green
+  fill('#99FF00');
+  rect(cs/2, 0,cs/2,cs/2);
+
+  //yellow
+  fill('#FFFF00');
+  rect(0,cs/2,cs/2,cs/2);
+
+  //blue
+  fill('#0099FF');
+  rect(cs/2,cs/2,cs/2,cs/2);
+
+  image(img_red, moveX, moveY, r, r);
+
 }
 
 function tradeRequest(){
@@ -184,8 +204,6 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       
       var moveX = map(inMessage.message.x_angle, -10, 10,  0, width/2);
       var moveY = map(inMessage.message.y_angle, -10, 10, 0, height/2);
-
-      image(img_red, moveX, moveY, r, r);
 
       console.log("red: " + moveX + ", " + moveY);
 
