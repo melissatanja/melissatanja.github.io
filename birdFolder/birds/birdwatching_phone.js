@@ -56,7 +56,7 @@ function setup()
 
   yellowButton = createButton('TRADE YELLOW');
   yellowButton.position((w/4) * 3, h/2);
-  yellowButton.mouseClicked(tradeY);
+  yellowButton.mouseClicked(tradeY, default);
 
   setInterval(sendData, 100);
 
@@ -67,6 +67,15 @@ function setup()
 function draw() 
 {
 
+
+}
+
+function default(){
+
+  trade_blue = false;
+  trade_green = false;
+  trade_yellow = false;
+  tradeReq = false;
 
 }
 
