@@ -12,8 +12,7 @@ var blue;
 var green;
 var yellow;
 
-var w = windowWidth;
-war h = windowHeight;
+var cs = window.innerHeight;
 
 function preload(){
 
