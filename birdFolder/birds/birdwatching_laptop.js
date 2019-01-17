@@ -136,7 +136,7 @@ function draw()
 
   // image(bg, cs/4 * 3, cs/4 * 3, cs/2 - 50, cs/2 - 50);
 
-  image(bg, cs/2, cs/2, cs - 100, cs - 100);
+  image(bg, cs/2, cs/2, cs - 50, cs - 50);
 
   image(img_red, X, Y, r, r);
 
