@@ -16,8 +16,8 @@ var trade_green = false;
 var trade_yellow = false;
 
 //size of the active area
-var cSizeX = 900;
-var cSizeY = 600;
+var w = window.innerWidth;
+var h = window.innerHeight;
 
 //consider making a channel for each user?
 var channelName = "messageChannel";
@@ -25,7 +25,7 @@ var channelName = "messageChannel";
 function setup() 
 {
   // getAudioContext().resume();
-  createCanvas(cSizeX, cSizeY);
+  createCanvas(w, h);
   background(255);
   
   
@@ -42,20 +42,20 @@ function setup()
   dataServer.addListener({ message: readIncoming});
   dataServer.subscribe({channels: [channelName]});
 
-  redButton = createButton('TRADE RED');
-  redButton.position(width/5, height/2);
-  redButton.mouseClicked(trade_red = true);
+  // redButton = createButton('TRADE RED');
+  // redButton.position(w/5, h/2);
+  // redButton.mouseClicked(trade_red = true);
 
   blueButton = createButton('TRADE BLUE');
-  blueButton.position((width/5) * 2, height/2);
+  blueButton.position((w/4), h/2);
   blueButton.mouseClicked(trade_blue = true);
 
   greenButton = createButton('TRADE GREEN');
-  greenButton.position((width/5) * 3, height/2);
+  greenButton.position((w/2), h/2);
   greenButton.mouseClicked(trade_green = true);
 
   yellowButton = createButton('TRADE YELLOW');
-  yellowButton.position((width/5) * 4, height/2);
+  yellowButton.position((w/4) * 3, h/2);
   yellowButton.mouseClicked(trade_yellow = true);
 
 }
