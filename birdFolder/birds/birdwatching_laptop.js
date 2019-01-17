@@ -273,7 +273,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       // if(inMessage.message.trade){
 
-        // console.log(tradeReq);
+        console.log(tradeReq);
 
       // }
 
