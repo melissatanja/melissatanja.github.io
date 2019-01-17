@@ -19,6 +19,8 @@ var trade_yellow = false;
 var w = window.innerWidth;
 var h = window.innerHeight;
 
+var tradeReq;
+
 //consider making a channel for each user?
 var channelName = "movement";
 
