@@ -17,6 +17,8 @@ var cs = window.innerHeight;
 // var w = window.innerWidth;
 // var h = window
 
+    var r = 15;
+
 function preload(){
 
   img_red = loadImage('user_icons/user_icon_red.png');
@@ -73,7 +75,6 @@ noStroke();
   //   imageMode(CENTER);
 
   //   // var speed = 1.5;
-  //   var r = 15;
 
   //   //characters
   //     // fill('#006600');
