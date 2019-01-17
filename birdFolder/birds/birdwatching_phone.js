@@ -84,27 +84,27 @@ function def(){
 function tradeB(){
 
   trade_blue = true;
-  tradeReq = true;
+  // tradeReq = true;
 
-  def();
+  // def();
 
 }
 
 function tradeG(){
 
   trade_green = true;
-  tradeReq = true;
+  // tradeReq = true;
 
-  def();
+  // def();
 
 }
 
 function tradeY(){
 
   trade_yellow = true;
-  tradeReq = true;
+  // tradeReq = true;
 
-  def();
+  // def();
 
 }
 
@@ -123,12 +123,14 @@ function sendData() {
     {
       user: "red",
       x_angle: xPos, 
-      y_angle: yPos,
+      y_angle: yPos
       // red_bird: , 
       // blue_bird: , 
       // green_bird: , 
-      // yellow_bird: ,
-      trade: tradeReq 
+      // yellow_bird: , 
+      tradeY: trade_yellow,
+      tradeG: trade_green,
+      tradeB: trade_blue
     }
   });
 }

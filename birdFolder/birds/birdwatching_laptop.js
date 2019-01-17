@@ -78,7 +78,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-  console.log("update6");
+  console.log("update7");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -271,11 +271,13 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       moveX = map(inMessage.message.x_angle, -10, 10,  0, cs/2);
       moveY = map(inMessage.message.y_angle, -10, 10, cs/2, 0);
 
-      tradeReq = inMessage.message.trade;
+      trade_blue = inMessage.message.tradeB;
+      trade_green = inMessage.message.tradeG;
+      trade_yellow = inMessage.message.tradeY;
 
-      if(tradeReq === true){
+      if(trade_blue === true){
 
-        console.log("trade");
+        console.log("trade blue");
 
       }
 
