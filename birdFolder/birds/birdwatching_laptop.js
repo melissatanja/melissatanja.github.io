@@ -18,6 +18,8 @@ var cs = window.innerHeight;
 // var h = window
 
 var r = 30;
+var moveX = 0;
+var moveY = 0;
 
 function preload(){
 
@@ -62,9 +64,6 @@ function setup()
   //attach callbacks to the pubnub object to handle messages and connections
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
-
-  var moveX = 0;
-  var moveY = 0;
 
 }
 
