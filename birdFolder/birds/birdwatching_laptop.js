@@ -34,19 +34,6 @@ function setup()
   createCanvas(cs, cs);
   // background(255);
   
-
-
-   // initialize pubnub
-  dataServer = new PubNub(
-  {
-    subscribe_key : subKey,  
-    ssl: true  //enables a secure connection. This option has to be used if using the OCAD webspace
-  });
-  
-  //attach callbacks to the pubnub object to handle messages and connections
-  dataServer.addListener({ message: readIncoming });
-  dataServer.subscribe({channels: [channelName]});
-
   noStroke();
   rectMode(CORNER);
   //red section
@@ -64,6 +51,17 @@ function setup()
   //blue
   fill('#0099FF');
   rect(cs/2,cs/2,cs/2,cs/2);
+
+   // initialize pubnub
+  dataServer = new PubNub(
+  {
+    subscribe_key : subKey,  
+    ssl: true  //enables a secure connection. This option has to be used if using the OCAD webspace
+  });
+  
+  //attach callbacks to the pubnub object to handle messages and connections
+  dataServer.addListener({ message: readIncoming });
+  dataServer.subscribe({channels: [channelName]});
 
 }
 
