@@ -67,40 +67,40 @@ function draw()
   fill('#0099FF');
   rect(cs/2,cs/2,cs/2,cs/2);
 
-  if(inMessage.message.user = "red"){
+  // if(inMessage.message.user = "red"){
 
-    // ellipseMode(RADIUS);
-    imageMode(CENTER);
+  //   // ellipseMode(RADIUS);
+  //   imageMode(CENTER);
 
-    // var speed = 1.5;
-    var r = 15;
+  //   // var speed = 1.5;
+  //   var r = 15;
 
-    //characters
-      // fill('#006600');
+  //   //characters
+  //     // fill('#006600');
 
-    image(red, moveX, moveY, r, r);
+    // image(red, moveX, moveY, r, r);
 
-    // x = constrain(x);
-    // console.log(constrain(x,100,cs-100));
+  //   // x = constrain(x);
+  //   // console.log(constrain(x,100,cs-100));
 
-      // if (keyIsDown(LEFT_ARROW)) {
-      //   x -= speed;
-      // }
-      // if (keyIsDown(RIGHT_ARROW)) {
-      //   x += speed;
-      // }
-      // if (keyIsDown(UP_ARROW)) {
-      //   y -= speed;
-      // }
-      // if (keyIsDown(DOWN_ARROW)) {
-      //   y += speed;
-      // }
+  //     // if (keyIsDown(LEFT_ARROW)) {
+  //     //   x -= speed;
+  //     // }
+  //     // if (keyIsDown(RIGHT_ARROW)) {
+  //     //   x += speed;
+  //     // }
+  //     // if (keyIsDown(UP_ARROW)) {
+  //     //   y -= speed;
+  //     // }
+  //     // if (keyIsDown(DOWN_ARROW)) {
+  //     //   y += speed;
+  //     // }
 
 
-    // x = constrain(x,100+r,width-100-r);
-    // y = constrain(y,100+r,width-100-r);
+  //   // x = constrain(x,100+r,width-100-r);
+  //   // y = constrain(y,100+r,width-100-r);
 
-  }
+  // }
 
 }
 
@@ -180,8 +180,14 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
   if(inMessage.channel == channelName)
   {
 
-    var moveX = map(xPos, 0, width/2);
-    var moveY = map(yPos, 0, height/2);
+    if(inMessage.message.user = "red"){
+
+      var moveX = map(xPos, 0, width/2);
+      var moveY = map(yPos, 0, height/2);
+
+      image(red, moveX, moveY, r, r);
+
+    }
 
   }
 }
