@@ -58,7 +58,7 @@ function setup()
   yellowButton.position((w/4) * 3, h/2);
   yellowButton.mouseClicked(tradeY);
 
-  setInterval(sendData, 500);
+  setInterval(sendData, 100);
 
   // console.log("interval 500");
 

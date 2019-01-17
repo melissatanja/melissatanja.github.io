@@ -68,7 +68,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-  console.log("updated2");
+  console.log("updated3");
 }
 
 function draw() 
