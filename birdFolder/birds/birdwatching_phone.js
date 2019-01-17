@@ -73,18 +73,21 @@ function draw()
 function tradeB(){
 
   trade_blue = true;
+  tradeReq = true;
 
 }
 
 function tradeG(){
 
   trade_green = true;
+  tradeReq = true;
 
 }
 
 function tradeY(){
 
   trade_yellow = true;
+  tradeReq = true;
 
 }
 
@@ -107,7 +110,8 @@ function sendData() {
       // red_bird: , 
       // blue_bird: , 
       // green_bird: , 
-      // yellow_bird: 
+      // yellow_bird: ,
+      trade: tradeReq 
     }
   });
 }

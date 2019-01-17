@@ -7,6 +7,16 @@ var subKey = 'sub-c-f43fe396-14f2-11e9-b552-46d61eed2fbc';
 //name used to sort your messages. used like a radio station. can be called anything
 var channelName = "movement";
 
+var birdcolour = ["blue","red","green","yellow"];
+
+var birdN = 4;
+var birdS = 3;
+
+var birdsBlue = [];
+var birdsRed = [];
+var birdsYellow = [];
+var birdsGreen = [];
+
 var img_red;
 var img_blue;
 var img_green;
@@ -68,47 +78,24 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-  console.log("updated3");
+  console.log("updated4");
+
+  //setup birds
+  for (let i = 0; i < 4; i++) {
+    birdsBlue[i] = new BirdieB(random(cs),random(cs));
+    birdsRed[i] = new BirdieR(random(cs),random(cs));
+    birdsYellow[i] = new BirdieY(random(cs),random(cs));
+    birdsGreen[i] = new BirdieG(random(cs),random(cs));
+
+  }
+
 }
 
 function draw() 
 {
 
   var X = constrain(moveX, 45, cs/2 - 45);
-  var Y = constrain(moveY, 45, cs/2 - 45);
-  // if(inMessage.message.user = "red"){
-
-  //   // ellipseMode(RADIUS);
-  //   imageMode(CENTER);
-
-  //   // var speed = 1.5;
-
-  //   //characters
-  //     // fill('#006600');
-
-    // image(red, moveX, moveY, r, r);
-
-  //   // x = constrain(x);
-  //   // console.log(constrain(x,100,cs-100));
-
-  //     // if (keyIsDown(LEFT_ARROW)) {
-  //     //   x -= speed;
-  //     // }
-  //     // if (keyIsDown(RIGHT_ARROW)) {
-  //     //   x += speed;
-  //     // }
-  //     // if (keyIsDown(UP_ARROW)) {
-  //     //   y -= speed;
-  //     // }
-  //     // if (keyIsDown(DOWN_ARROW)) {
-  //     //   y += speed;
-  //     // }
-
-
-  //   // x = constrain(x,100+r,width-100-r);
-  //   // y = constrain(y,100+r,width-100-r);
-
-  // }
+  var Y = constrain(moveY, 45, cs/2 - 25);
 
   noStroke();
   rectMode(CORNER);
@@ -141,6 +128,66 @@ function draw()
 
   image(img_red, X, Y, r, r);
 
+  for(let i=0;i<birdsBlue.length;i++){
+    fill("blue");
+    birdsBlue[i].move();
+    birdsBlue[i].show();
+  }
+
+  for(let i=0;i<birdsRed.length;i++){
+       fill("red");
+      birdsRed[i].move();
+      birdsRed[i].show();
+  }
+
+  for(let i=0;i<birdsGreen.length;i++){
+      fill("green");
+      birdsGreen[i].move();
+      birdsGreen[i].show();
+  }
+  for(let i=0;i<birdsYellow.length;i++){
+      fill("yellow");
+      birdsYellow[i].move();
+      birdsYellow[i].show();
+  }
+
+  birdCatchB();
+  birdCatchR();
+  birdCatchY();
+  birdCatchG();
+
+}
+
+function birdCatchB(){
+  for(let i=0;i<birdsBlue.length;i++){
+    if(dist(birdsBlue[i].x,birdsBlue[i].y,x,y) <= bsize+15){
+      birdsBlue.splice(i,1);
+
+    }
+  }
+}
+
+function birdCatchR(){
+  for(let i=0;i<birdsRed.length;i++){
+    if(dist(birdsRed[i].x,birdsRed[i].y,x,y) <= bsize+15){
+      birdsRed.splice(i,1);
+    }
+  }
+
+}
+function birdCatchY(){
+  for(let i=0;i<birdsYellow.length;i++){
+    if(dist(birdsYellow[i].x,birdsYellow[i].y,x,y) <= bsize+15){
+      birdsYellow.splice(i,1);
+    }
+  }
+}
+function birdCatchG(){
+  for(let i=0;i<birdsGreen.length;i++){
+    if(dist(birdsGreen[i].x,birdsGreen[i].y,x,y) <= bsize+15){
+      birdsGreen.splice(i,1);
+    }
+  }
 }
 
 function tradeRequest(){
@@ -224,7 +271,13 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       moveX = map(inMessage.message.x_angle, -10, 10,  0, cs/2);
       moveY = map(inMessage.message.y_angle, -10, 10, cs/2, 0);
 
-      console.log("red: " + moveX + ", " + moveY);
+      if(inMessage.message.trade){
+
+        console.log(tradeReq);
+
+      }
+
+      // console.log("red: " + moveX + ", " + moveY);
 
       // console.log(inMessage);
 

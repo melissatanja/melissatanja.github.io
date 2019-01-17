@@ -1,3 +1,5 @@
+var birdcolour = ["blue","red","green","yellow"];
+
 var birdN = 4;
 var birdS = 3;
 
@@ -5,10 +7,6 @@ var birdsBlue = [];
 var birdsRed = [];
 var birdsYellow = [];
 var birdsGreen = [];
-
-
-
-
 
 var dataServer;
 var pubKey = 'pub-c-a705a585-4407-4f88-8b83-ac846c45e13a';
@@ -24,6 +22,9 @@ var cell = (cs-200)/8;
 var x = cs-100-cell/2;
 var y = cs-100-cell/2;
 
+///////////-1 or 1 generator
+var num = Math.floor(Math.random()) + 1; // this will get a number between 1 and 99;
+num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
 
 function setup() {
 
@@ -36,10 +37,10 @@ function setup() {
 
 //setup birds
   for (let i = 0; i < 4; i++) {
-    // birdsBlue[i] = new BirdieB(0,cs);
+    birdsBlue[i] = new BirdieB(random(cs),random(cs));
     birdsRed[i] = new BirdieR(random(cs),random(cs));
-    // birdsYellow[i] = new BirdieY(0,cs);
-    // birdsGreen[i] = new BirdieG(0,cs);
+    birdsYellow[i] = new BirdieY(random(cs),random(cs));
+    birdsGreen[i] = new BirdieG(random(cs),random(cs));
 
   }
 
@@ -50,10 +51,6 @@ function setup() {
 
   function draw() {
 
-///////////-1 or 1 generator
-// var num = Math.floor(Math.random()) + 1; // this will get a number between 1 and 99;
-// num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
-// console.log("number: "+num);
 
   rectMode(CORNER);
   //red section
@@ -91,6 +88,9 @@ function setup() {
 
   strokeWeight(0);
 
+
+background(0,0,0,50)
+
 ellipseMode(RADIUS);
 
 
@@ -98,12 +98,9 @@ var speed = 1.5;
 var r = 15;
 
 //characters
-  fill('#006600');
-
+  // fill('#006600');
+fill("blue");
 ellipse(x,y,r);
-
-// x = constrain(x);
-console.log(constrain(x,100,cs-100));
 
   if (keyIsDown(LEFT_ARROW)) {
     x -= speed;
@@ -125,21 +122,47 @@ y = constrain(y,100+r,width-100-r);
 
 
 
-for(let i=0;i<4;i++){
-    // stroke(map(BirdieB[i].x,0,width,0,255),0,0);
+for(let i=0;i<birdsBlue.length;i++){
+    fill("blue");
+    birdsBlue[i].move();
+    birdsBlue[i].show();
+}
 
-    // fill("blue");
-    // birdsBlue[i].move();
-    // birdsBlue[i].show();
+for(let i=0;i<birdsRed.length;i++){
+     fill("red");
+    birdsRed[i].move();
+    birdsRed[i].show();
+}
+
+for(let i=0;i<birdsGreen.length;i++){
+    fill("green");
+    birdsGreen[i].move();
+    birdsGreen[i].show();
+}
+for(let i=0;i<birdsYellow.length;i++){
+    fill("yellow");
+    birdsYellow[i].move();
+    birdsYellow[i].show();
+}
+
+/*
     fill("red");
     birdsRed[i].move();
     birdsRed[i].show();
-    // fill("green");
-    // birdsGreen[i].move();
-    // birdsGreen[i].show();
-    // fill("yellow");
-    // birdsYellow[i].move();
-    // birdsYellow[i].show();
+    fill("green");
+    birdsGreen[i].move();
+    birdsGreen[i].show();
+    fill("yellow");
+    birdsYellow[i].move();
+    birdsYellow[i].show();
+}
+*/
+
+birdCatchB();
+birdCatchR();
+birdCatchY();
+birdCatchG();
+
 
 
 }
@@ -150,107 +173,266 @@ for(let i=0;i<4;i++){
 
 
 
+
+
+
+
+
+
+
+function birdCatchB(){
+  for(let i=0;i<birdsBlue.length;i++){
+    if(dist(birdsBlue[i].x,birdsBlue[i].y,x,y) <= bsize+15){
+      birdsBlue.splice(i,1);
+
+    }
+  }
 }
 
 
 
-// class BirdieB{
-//   constructor(x,y) {
-//     this.x = x;
-//     this.y = y;
-//     this.xs = 3;
-//     this.ys = 3;
-//   }
-//   move(){
-//     this.x += this.xs;
-//     this.y += this.ys;
-//     // if(this.x)
-//   }
-//   show(){
-//     ellipse(this.x,this.y, 10,10);
-//   }
-// }
+
+
+function birdCatchR(){
+  for(let i=0;i<birdsRed.length;i++){
+    if(dist(birdsRed[i].x,birdsRed[i].y,x,y) <= bsize+15){
+      birdsRed.splice(i,1);
+    }
+  }
+
+}
+function birdCatchY(){
+  for(let i=0;i<birdsYellow.length;i++){
+    if(dist(birdsYellow[i].x,birdsYellow[i].y,x,y) <= bsize+15){
+      birdsYellow.splice(i,1);
+    }
+  }
+}
+function birdCatchG(){
+  for(let i=0;i<birdsGreen.length;i++){
+    if(dist(birdsGreen[i].x,birdsGreen[i].y,x,y) <= bsize+15){
+      birdsGreen.splice(i,1);
+    }
+  }
+}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-------Bird Creation
+
+var bsize = 10;
+var bspeed = 3;
+
+class BirdieB{
+  constructor(x,y) {
+    num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+
+    this.x = x;
+    this.y = y;
+    this.xs = bspeed*num;
+    num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+
+    this.ys = bspeed*num;
+  }
+  move(){
+    this.x += this.xs;
+    this.y += this.ys;
+
+    if(this.x >= cs-bsize){
+      this.x = cs-bsize;
+      this.xs*= -1;
+    }
+    if(this.y >= cs-bsize){
+      this.y = cs-bsize;
+      this.ys*= -1;
+    }
+
+    if(this.x<=0+bsize){
+      this.x = 0+bsize;
+      this.xs *= -1; 
+    }
+    if(this.y<=0){
+      this.y = 0+bsize;
+      this.ys *= -1;
+    }
+
+  }
+  show(){
+    ellipse(this.x,this.y, bsize);
+  }
+}
 
 class BirdieR{
 
   constructor(x,y) {
+    num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+
     this.x = x;
     this.y = y;
-    this.xs = 3;
-    this.ys = 3;
+    this.xs = bspeed*num;
+        num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+
+    this.ys = bspeed*num;
   }
 
   move(){
     this.x += this.xs;
     this.y += this.ys;
-    if(this.x >= cs){
-      this.x = cs;
+
+    if(this.x >= cs-bsize){
+      this.x = cs-bsize;
       this.xs*= -1;
     }
-    if(this.y >= cs){
-      this.y = cs;
+    if(this.y >= cs-bsize){
+      this.y = cs-bsize;
       this.ys*= -1;
     }
+
+    if(this.x<=0+bsize){
+      this.x = 0+bsize;
+      this.xs *= -1; 
+    }
+    if(this.y<=0){
+      this.y = 0+bsize;
+      this.ys *= -1;
+    }
+
 
   }
 
   show(){
-    ellipse(this.x,this.y, 10,10);
+    ellipse(this.x,this.y, bsize);
   }
 }
 
 
+class BirdieG{
+
+  constructor(x,y) {
+    num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+
+    this.x = x;
+    this.y = y;
+    this.xs = bspeed*num;
+        num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+
+    this.ys = bspeed*num;
+  }
+
+  move(){
+    this.x += this.xs;
+    this.y += this.ys;
+
+    if(this.x >= cs-bsize){
+      this.x = cs-bsize;
+      this.xs*= -1;
+    }
+    if(this.y >= cs-bsize){
+      this.y = cs-bsize;
+      this.ys*= -1;
+    }
+
+    if(this.x<=0+bsize){
+      this.x = 0+bsize;
+      this.xs *= -1; 
+    }
+    if(this.y<=0){
+      this.y = 0+bsize;
+      this.ys *= -1;
+    }
 
 
+  }
+  show(){
+    ellipse(this.x,this.y, bsize);
+  }
+}
 
 
+class BirdieY{
 
+  constructor(x,y) {
+    num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
 
-// class BirdieG{
+    this.x = x;
+    this.y = y;
+    this.xs = bspeed*num;
+        num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
 
-//   constructor(x,y) {
-//     this.x = x;
-//     this.y = y;
-//     this.xs = 3;
-//     this.ys = 3;
-//   }
+    this.ys = bspeed*num;
 
-//   move(){
-//     this.x += this.xs;
-//     this.y += this.ys;
+  }
 
-//     // if(this.x)
-//   }
-//   show(){
-//     ellipse(this.x,this.y, 10,10);
-//   }
-// }
+  move(){
+    this.x += this.xs;
+    this.y += this.ys;
 
+    if(this.x >= cs-bsize){
+      this.x = cs-bsize;
+      this.xs*= -1;
+    }
+    if(this.y >= cs-bsize){
+      this.y = cs-bsize;
+      this.ys*= -1;
+    }
 
+    if(this.x<=0+bsize){
+      this.x = 0+bsize;
+      this.xs *= -1; 
+    }
+    if(this.y<=0){
+      this.y = 0+bsize;
+      this.ys *= -1;
+    }
 
-
-
-
-// class BirdieY{
-
-//   constructor(x,y) {
-//     this.x = x;
-//     this.y = y;
-//     this.xs = 3;
-//     this.ys = 3;
-
-//   }
-
-//   move(){
-//     this.x += this.xs;
-//     this.y += this.ys;
-
-//     // if(this.x)
-//   }
-//   show(){
-//     ellipse(this.x,this.y, 10,10);
-//   }
-// }
+  }
+  show(){
+    ellipse(this.x,this.y, bsize);
+  }
+}
