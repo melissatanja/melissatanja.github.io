@@ -7,10 +7,10 @@ var subKey = 'sub-c-f43fe396-14f2-11e9-b552-46d61eed2fbc';
 //name used to sort your messages. used like a radio station. can be called anything
 var channelName = "movement";
 
-var red;
-var blue;
-var green;
-var yellow;
+var img_red;
+var img_blue;
+var img_green;
+var img_yellow;
 
 var cs = window.innerHeight;
 
@@ -19,10 +19,10 @@ var cs = window.innerHeight;
 
 function preload(){
 
-  red = loadImage('user_icons/user_icon_red.png');
-  blue = loadImage('user_icons/user_icon_blue.png');
-  green = loadImage('user_icons/user_icon_green.png');
-  yellow = loadImage('user_icons/user_icon_yellow.png');
+  img_red = loadImage('user_icons/user_icon_red.png');
+  img_blue = loadImage('user_icons/user_icon_blue.png');
+  img_green = loadImage('user_icons/user_icon_green.png');
+  img_yellow = loadImage('user_icons/user_icon_yellow.png');
 
 }
 
