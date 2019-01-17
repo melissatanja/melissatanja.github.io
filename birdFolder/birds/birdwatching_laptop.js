@@ -70,8 +70,8 @@ function setup()
 function draw() 
 {
 
-  var X = constrain(moveX, 0, cs/2);
-  var Y = constrain(moveY, 0, cs/2);
+  var X = constrain(moveX, 0, width/2);
+  var Y = constrain(moveY, 0, height/2);
   // if(inMessage.message.user = "red"){
 
   //   // ellipseMode(RADIUS);
