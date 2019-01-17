@@ -48,15 +48,15 @@ function setup()
 
   blueButton = createButton('TRADE BLUE');
   blueButton.position((w/4), h/2);
-  blueButton.mouseClicked(trade_blue = true);
+  blueButton.mouseClicked(tradeB);
 
   greenButton = createButton('TRADE GREEN');
   greenButton.position((w/2), h/2);
-  greenButton.mouseClicked(trade_green = true);
+  greenButton.mouseClicked(tradeG);
 
   yellowButton = createButton('TRADE YELLOW');
   yellowButton.position((w/4) * 3, h/2);
-  yellowButton.mouseClicked(trade_yellow = true);
+  yellowButton.mouseClicked(tradeY);
 
 }
 
@@ -66,6 +66,23 @@ function draw()
 
 }
 
+function tradeB(){
+
+  trade_blue = true;
+
+}
+
+function tradeG(){
+
+  trade_green = true;
+
+}
+
+function tradeY(){
+
+  trade_yellow = true;
+
+}
 
 function sendData() {
  
