@@ -18,7 +18,7 @@ var cs = window.innerHeight;
 // var w = window.innerWidth;
 // var h = window
 
-var r = 45;
+var r = 60;
 var moveX = 0;
 var moveY = 0;
 
