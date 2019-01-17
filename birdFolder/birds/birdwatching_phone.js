@@ -48,11 +48,11 @@ function setup()
 
   blueButton = createButton('TRADE BLUE');
   blueButton.position((w/4), h/2);
-  blueButton.mouseClicked(tradeB);
+  blueButton.mouseClicked(tradeB, default);
 
   greenButton = createButton('TRADE GREEN');
   greenButton.position((w/2), h/2);
-  greenButton.mouseClicked(tradeG);
+  greenButton.mouseClicked(tradeG, default);
 
   yellowButton = createButton('TRADE YELLOW');
   yellowButton.position((w/4) * 3, h/2);
