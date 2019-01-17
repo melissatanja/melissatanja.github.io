@@ -79,13 +79,13 @@ function sendData() {
 dataServer.publish({
     channel: channelName,
     message: 
-  {
-    user: "red",
-    x_angle: xPos, 
-    y_angle: yPos,
-    red_bird: , 
-    blue_bird: , 
-    green_bird: , 
-    yellow_bird: 
-  }
+  // {
+  //   user: "red",
+  //   x_angle: xPos, 
+  //   y_angle: yPos,
+  //   red_bird: , 
+  //   blue_bird: , 
+  //   green_bird: , 
+  //   yellow_bird: 
+  // }
 });
