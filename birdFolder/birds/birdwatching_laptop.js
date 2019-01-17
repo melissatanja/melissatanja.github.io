@@ -12,6 +12,9 @@ var blue;
 var green;
 var yellow;
 
+var w = windowWidth;
+war h = windowHeight;
+
 function preload(){
 
   red = loadImage('user_icons/user_icon_red.png');
@@ -24,7 +27,7 @@ function preload(){
 function setup() 
 {
   // getAudioContext().resume();
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(w, h);
   background(255);
   
 
