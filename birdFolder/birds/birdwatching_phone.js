@@ -20,7 +20,7 @@ var w = window.innerWidth;
 var h = window.innerHeight;
 
 //consider making a channel for each user?
-var channelName = "messageChannel";
+var channelName = "movement";
 
 function setup() 
 {
