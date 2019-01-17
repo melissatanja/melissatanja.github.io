@@ -32,7 +32,7 @@ function setup()
 {
   // getAudioContext().resume();
   createCanvas(cs, cs);
-  background(255);
+  // background(255);
   
 
 
@@ -47,11 +47,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-}
-
-function draw() 
-{
-noStroke();
+  noStroke();
   rectMode(CORNER);
   //red section
   fill('#FF3333');
@@ -68,6 +64,11 @@ noStroke();
   //blue
   fill('#0099FF');
   rect(cs/2,cs/2,cs/2,cs/2);
+
+}
+
+function draw() 
+{
 
   // if(inMessage.message.user = "red"){
 
