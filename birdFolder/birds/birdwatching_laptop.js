@@ -68,7 +68,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-  console.log("updated");
+  console.log("updated2");
 }
 
 function draw() 
@@ -221,8 +221,8 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
     if(inMessage.message.user = "red"){
       
-      moveX = map(inMessage.message.x_angle, -45, 45,  0, cs/2);
-      moveY = map(inMessage.message.y_angle, -45, 45, cs/2, 0);
+      moveX = map(inMessage.message.x_angle, -10, 10,  0, cs/2);
+      moveY = map(inMessage.message.y_angle, -10, 10, cs/2, 0);
 
       console.log("red: " + moveX + ", " + moveY);
 
