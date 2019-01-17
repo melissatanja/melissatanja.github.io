@@ -28,7 +28,7 @@ function preload(){
   img_green = loadImage('user_icons/user_icon_green.png');
   img_yellow = loadImage('user_icons/user_icon_yellow.png');
 
-  bg = loadImage('other/bg.png');
+  bg = loadImage('other/bg2.png');
 
 }
 
@@ -115,25 +115,27 @@ function draw()
   fill('#FF3333');
   rect(0,0,cs/2,cs/2);
 
-  image(bg, cs/4, cs/4, cs/2 - 50, cs/2 - 50);
+  // image(bg, cs/4, cs/4, cs/2 - 50, cs/2 - 50);
 
   //green
   fill('#99FF00');
   rect(cs/2, 0,cs/2,cs/2);
 
-  image(bg, cs/4 * 3, cs/4, cs/2 - 50, cs/2 - 50);
+  // image(bg, cs/4 * 3, cs/4, cs/2 - 50, cs/2 - 50);
 
   //yellow
   fill('#FFFF00');
   rect(0,cs/2,cs/2,cs/2);
 
-  image(bg, cs/4, cs/4 * 3, cs/2 - 50, cs/2 - 50);
+  // image(bg, cs/4, cs/4 * 3, cs/2 - 50, cs/2 - 50);
 
   //blue
   fill('#0099FF');
   rect(cs/2,cs/2,cs/2,cs/2);
 
-  image(bg, cs/4 * 3, cs/4 * 3, cs/2 - 50, cs/2 - 50);
+  // image(bg, cs/4 * 3, cs/4 * 3, cs/2 - 50, cs/2 - 50);
+
+  image(bg2, cs/2, cs/2, cs - 100, cs - 100);
 
   image(img_red, X, Y, r, r);
 
