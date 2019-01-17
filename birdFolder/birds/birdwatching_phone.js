@@ -58,6 +58,8 @@ function setup()
   yellowButton.position((w/4) * 3, h/2);
   yellowButton.mouseClicked(tradeY);
 
+  setInterval(sendData, 300);
+
 }
 
 function draw() 
