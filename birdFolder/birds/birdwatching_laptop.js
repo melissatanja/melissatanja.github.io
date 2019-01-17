@@ -271,11 +271,11 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       moveX = map(inMessage.message.x_angle, -10, 10,  0, cs/2);
       moveY = map(inMessage.message.y_angle, -10, 10, cs/2, 0);
 
-      if(inMessage.message.trade){
+      // if(inMessage.message.trade){
 
-        console.log(tradeReq);
+        // console.log(tradeReq);
 
-      }
+      // }
 
       // console.log("red: " + moveX + ", " + moveY);
 
