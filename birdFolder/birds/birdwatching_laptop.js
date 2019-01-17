@@ -204,8 +204,8 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
     if(inMessage.message.user = "red"){
       
-      moveX = map(inMessage.message.x_angle, -10, 10,  0, width/2);
-      moveY = map(inMessage.message.y_angle, -10, 10, 0, height/2);
+      moveX = map(inMessage.message.x_angle, -45, 45,  0, cs/2);
+      moveY = map(inMessage.message.y_angle, -45, 45, cs/2, 0);
 
       console.log("red: " + moveX + ", " + moveY);
 
