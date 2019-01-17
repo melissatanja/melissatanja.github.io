@@ -186,7 +186,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       var moveX = map(inMessage.message.x_angle, -10, 10, 0, width/2);
       var moveY = map(inMessage.message.y_angle, -10, 10, 0, height/2);
 
-      image(red, moveX, moveY, r, r);
+      image(red, inMessage.message.x_angle, inMessage.message.y_angle);
 
       console.log("red: " + moveX + ", " + moveY);
 
