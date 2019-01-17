@@ -91,8 +91,8 @@ function sendData() {
   var yNum = round(rotationY/4.5) + 10;
   var xNum = round(rotationX/4.5);
 
-  var xPos = constrain(xNum, -10, 10);
-  var yPos = constrain(yNum, -10, 10);
+  var xPos = 100;//constrain(xNum, -10, 10);
+  var yPos = 200;//constrain(yNum, -10, 10);
 
   // Send Data to the server to draw it in all other canvases
   dataServer.publish({
