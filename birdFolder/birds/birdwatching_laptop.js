@@ -1,11 +1,25 @@
 // server variables
 
 var dataServer;
-var pubKey = '';
-var subKey = 'sub-c-920db3fa-1363-11e9-a843-26c2824ead74';
+var pubKey = 'pub-c-ec3ff967-067c-4cd4-9793-79b8f7f11c56';
+var subKey = 'sub-c-f43fe396-14f2-11e9-b552-46d61eed2fbc';
 
 //name used to sort your messages. used like a radio station. can be called anything
 var channelName = "movement";
+
+var red;
+var blue;
+var green;
+var yellow;
+
+function preload(){
+
+  red = loadImage('user_icons/user_icon_red.png');
+  blue = loadImage('user_icons/user_icon_blue.png');
+  green = loadImage('user_icons/user_icon_green.png');
+  yellow = loadImage('user_icons/user_icon_yellow.png');
+
+}
 
 function setup() 
 {
@@ -31,7 +45,57 @@ function setup()
 function draw() 
 {
 
+  rectMode(CORNER);
+  //red section
+  fill('#FF3333');
+  rect(0,0,cs/2,cs/2);
 
+  //green
+  fill('#99FF00');
+  rect(cs/2, 0,cs/2,cs/2);
+
+  //yellow
+  fill('#FFFF00');
+  rect(0,cs/2,cs/2,cs/2);
+
+  //blue
+  fill('#0099FF');
+  rect(cs/2,cs/2,cs/2,cs/2);
+
+  if(inMessage.message.user = "red"){
+
+    // ellipseMode(RADIUS);
+    imageMode(CENTER);
+
+    // var speed = 1.5;
+    var r = 15;
+
+    //characters
+      // fill('#006600');
+
+    image(red, moveX, moveY, r, r);
+
+    // x = constrain(x);
+    // console.log(constrain(x,100,cs-100));
+
+      // if (keyIsDown(LEFT_ARROW)) {
+      //   x -= speed;
+      // }
+      // if (keyIsDown(RIGHT_ARROW)) {
+      //   x += speed;
+      // }
+      // if (keyIsDown(UP_ARROW)) {
+      //   y -= speed;
+      // }
+      // if (keyIsDown(DOWN_ARROW)) {
+      //   y += speed;
+      // }
+
+
+    // x = constrain(x,100+r,width-100-r);
+    // y = constrain(y,100+r,width-100-r);
+
+  }
 
 }
 
