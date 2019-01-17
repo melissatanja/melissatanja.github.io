@@ -3,6 +3,9 @@
 var bsize = 10;
 var bspeed = 3;
 
+var num = Math.floor(Math.random()) + 1; // this will get a number between 1 and 99;
+num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+
 class BirdieB{
   constructor(x,y) {
     num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
