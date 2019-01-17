@@ -60,6 +60,8 @@ function setup()
 
   setInterval(sendData, 500);
 
+  console.log("interval 500");
+
 }
 
 function draw() 
