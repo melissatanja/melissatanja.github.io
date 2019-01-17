@@ -106,7 +106,7 @@ function sendData() {
     {
       user: "red",
       x_angle: xPos, 
-      y_angle: yPos
+      y_angle: yPos,
       // red_bird: , 
       // blue_bird: , 
       // green_bird: , 
