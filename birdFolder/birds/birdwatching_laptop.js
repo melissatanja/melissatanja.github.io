@@ -29,7 +29,7 @@ function preload(){
   img_green = loadImage('user_icons/user_icon_green.png');
   img_yellow = loadImage('user_icons/user_icon_yellow.png');
 
-  bg = loadImage('other/bg2.png');
+  bg = loadImage('other/bg3.png');
 
 }
 
