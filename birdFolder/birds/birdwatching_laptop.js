@@ -11,6 +11,7 @@ var img_red;
 var img_blue;
 var img_green;
 var img_yellow;
+var bg;
 
 var cs = window.innerHeight;
 
@@ -135,7 +136,7 @@ function draw()
 
   // image(bg, cs/4 * 3, cs/4 * 3, cs/2 - 50, cs/2 - 50);
 
-  image(bg2, cs/2, cs/2, cs - 100, cs - 100);
+  image(bg, cs/2, cs/2, cs - 100, cs - 100);
 
   image(img_red, X, Y, r, r);
 
