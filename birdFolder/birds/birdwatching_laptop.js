@@ -49,7 +49,7 @@ function setup()
 
 function draw() 
 {
-
+noStroke();
   rectMode(CORNER);
   //red section
   fill('#FF3333');
@@ -182,10 +182,12 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
     if(inMessage.message.user = "red"){
 
-      var moveX = map(xPos, 0, width/2);
-      var moveY = map(yPos, 0, height/2);
+      var moveX = map(inMessage.message.x_angle, 0, width/2);
+      var moveY = map(inMessage.message.y_angle, 0, height/2);
 
       image(red, moveX, moveY, r, r);
+
+      console.log("red: " + moveX + ", " + moveY);
 
     }
 
