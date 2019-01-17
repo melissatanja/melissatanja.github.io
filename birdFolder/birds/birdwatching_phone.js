@@ -76,9 +76,9 @@ function sendData() {
   var yPos = constrain(yNum, -10, 10);
 
   // Send Data to the server to draw it in all other canvases
-dataServer.publish({
-    channel: channelName,
-    message: 
+// dataServer.publish({
+//     channel: channelName,
+//     message: 
   // {
   //   user: "red",
   //   x_angle: xPos, 
@@ -87,5 +87,5 @@ dataServer.publish({
   //   blue_bird: , 
   //   green_bird: , 
   //   yellow_bird: 
-  // }
-});
+  }
+// });
