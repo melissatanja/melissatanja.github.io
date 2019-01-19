@@ -1,6 +1,6 @@
 //-------Bird Creation
 
-var bsize = 10;
+var bsize = 30;
 var bspeed = 3;
 
 var num = Math.floor(Math.random()) + 1; // this will get a number between 1 and 99;
@@ -41,7 +41,7 @@ class BirdieB{
 
   }
   show(){
-    ellipse(this.x,this.y, bsize);
+    image(Bbird, this.x,this.y, bsize, bsize);
   }
 }
 
@@ -84,7 +84,7 @@ class BirdieR{
   }
 
   show(){
-    ellipse(this.x,this.y, bsize);
+    image(Rbird, this.x,this.y, bsize, bsize);
   }
 }
 
@@ -127,7 +127,7 @@ class BirdieG{
 
   }
   show(){
-    ellipse(this.x,this.y, bsize);
+    image(Gbird, this.x,this.y, bsize, bsize);
   }
 }
 
@@ -170,6 +170,6 @@ class BirdieY{
 
   }
   show(){
-    ellipse(this.x,this.y, bsize);
+    image(Ybird, this.x,this.y, bsize, bsize);
   }
 }

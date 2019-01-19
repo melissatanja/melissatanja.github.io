@@ -39,6 +39,11 @@ function preload(){
   img_green = loadImage('user_icons/user_icon_green.png');
   img_yellow = loadImage('user_icons/user_icon_yellow.png');
 
+  Rbird = loadImage('bird_icons/scarlet_tanager.png');
+  Bbird = loadImage('bird_icons/bluejay.png');
+  Gbird = loadImage('bird_icons/tree_swallow.png');
+  Ybird = loadImage('bird_icons/meadowlark.png');
+
   bg = loadImage('other/bg3.png');
 
 }
