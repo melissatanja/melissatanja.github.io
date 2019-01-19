@@ -193,7 +193,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
     greenCount = inMessage.message.green_bird;
     yellowCount = inMessage.message.yellow_bird;
 
-    console.log(redCount);
+    text("redCount", width/2, height/2);
 
     // this is where we get info about bird count
 
