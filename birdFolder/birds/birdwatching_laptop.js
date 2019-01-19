@@ -23,6 +23,11 @@ var img_green;
 var img_yellow;
 var bg;
 
+var blue_bird;
+var red_bird;
+var green_bird;
+var yellow_bird;
+
 var cs = window.innerHeight;
 
 // var w = window.innerWidth;
@@ -168,6 +173,11 @@ function birdCatchB(){
     if(dist(birdsBlue[i].x,birdsBlue[i].y, moveX, moveY) <= bsize+15){
       birdsBlue.splice(i,1);
 
+      if(inMessage.message.user = "red"){
+
+        blue_bird += 1;
+
+      }
     }
   }
 }
@@ -176,6 +186,9 @@ function birdCatchR(){
   for(let i=0;i<birdsRed.length;i++){
     if(dist(birdsRed[i].x,birdsRed[i].y, moveX, moveY) <= bsize+15){
       birdsRed.splice(i,1);
+      if(inMessage.message.user = "red"){
+        red_bird += 1;
+      }
     }
   }
 
@@ -262,6 +275,21 @@ function tradeRequest(){
 
   }
 
+}
+
+function sendData() {
+
+  // Send Data to the server to draw it in all other canvases
+  dataServer.publish({
+      channel: channelName,
+      message: 
+    {
+      red_bird: red_bird, 
+      blue_bird: blue_bird, 
+      green_bird: green_bird, 
+      yellow_bird: yellow_bird, 
+    }
+  });
 }
 
 function readIncoming(inMessage) //when new data comes in it triggers this function, 
