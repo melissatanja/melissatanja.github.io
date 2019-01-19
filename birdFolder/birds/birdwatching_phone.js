@@ -165,10 +165,10 @@ function sendData() {
       user: "red",
       x_angle: xPos, 
       y_angle: yPos,
-      red_bird: red_bird, 
-      blue_bird: blue_bird, 
-      green_bird: green_bird, 
-      yellow_bird: yellow_bird, 
+      // red_bird: red_bird, 
+      // blue_bird: blue_bird, 
+      // green_bird: green_bird, 
+      // yellow_bird: yellow_bird, 
       tradeY: trade_yellow,
       tradeG: trade_green,
       tradeB: trade_blue
@@ -183,10 +183,17 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
   if(inMessage.channel == channelName)
   {
 
-    inMessage.message.red_bird = red_bird;
-    inMessage.message.blue_bird = blue_bird;
-    inMessage.message.green_bird = green_bird;
-    inMessage.message.yellow_bird = yellow_bird;
+    // inMessage.message.redCount = red_bird;
+    // inMessage.message.blueCount = blue_bird;
+    // inMessage.message.greenCount = green_bird;
+    // inMessage.message.yellowCount = yellow_bird;
+
+    redCount = inMessage.message.red_bird;
+    blueCount = inMessage.message.blue_bird;
+    greenCount = inMessage.message.green_bird;
+    yellowCount = inMessage.message.yellow_bird;
+
+    console.log(redCount);
 
     // this is where we get info about bird count
 

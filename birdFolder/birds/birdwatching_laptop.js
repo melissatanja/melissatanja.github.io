@@ -186,8 +186,11 @@ function birdCatchR(){
   for(let i=0;i<birdsRed.length;i++){
     if(dist(birdsRed[i].x,birdsRed[i].y, moveX, moveY) <= bsize+15){
       birdsRed.splice(i,1);
+
       if(inMessage.message.user = "red"){
+
         red_bird += 1;
+
       }
     }
   }
@@ -197,6 +200,12 @@ function birdCatchY(){
   for(let i=0;i<birdsYellow.length;i++){
     if(dist(birdsYellow[i].x,birdsYellow[i].y, moveX, moveY) <= bsize+15){
       birdsYellow.splice(i,1);
+
+      if(inMessage.message.user = "red"){
+
+        yellow_bird += 1;
+        
+      }
     }
   }
 }
@@ -204,6 +213,12 @@ function birdCatchG(){
   for(let i=0;i<birdsGreen.length;i++){
     if(dist(birdsGreen[i].x,birdsGreen[i].y, moveX, moveY) <= bsize+15){
       birdsGreen.splice(i,1);
+
+        if(inMessage.message.user = "red"){
+
+        green_bird += 1;
+        
+      }
     }
   }
 }
