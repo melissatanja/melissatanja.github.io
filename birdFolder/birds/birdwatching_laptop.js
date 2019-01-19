@@ -161,10 +161,10 @@ function draw()
       birdsYellow[i].show();
   }
 
-  birdCatchB();
-  birdCatchR();
-  birdCatchY();
-  birdCatchG();
+  // birdCatchB();
+  // birdCatchR();
+  // birdCatchY();
+  // birdCatchG();
 
 }
 
@@ -341,6 +341,11 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
 
     }
+
+  birdCatchB();
+  birdCatchR();
+  birdCatchY();
+  birdCatchG();
 
   }
 }
