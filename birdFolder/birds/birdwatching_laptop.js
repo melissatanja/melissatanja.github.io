@@ -224,7 +224,7 @@ function draw()
   birdCatchG();
 
 
-  //console.log("red: " + Red[0] + " blue: " + Red[1] + " green: " + Red[2] + " yellow: " + Red[3]);
+  console.log("red: " + Red[0] + " blue: " + Red[1] + " green: " + Red[2] + " yellow: " + Red[3]);
 
 }
 
@@ -233,7 +233,7 @@ function birdCatchB(){
     if(dist(birdsBlue[i].x,birdsBlue[i].y, rX, rY) <= bsize+15){
       birdsBlue.splice(i,1);
 
-      console.log("i caught a blue");
+      //console.log("i caught a blue");
 
       Red[1] += 1;
     }
@@ -303,13 +303,10 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
     if(inMessage.publisher === "red"){
 
-      console.log(inMessage);
+      //console.log(inMessage);
 
       //get red user's current bird count
-      Red[0] = inMessage.message.red_bird;
-      Red[1] = inMessage.message.blue_bird;
-      Red[2] = inMessage.message.green_bird;
-      Red[3] = inMessage.message.yellow_bird;
+
 
       //get red user's phone angles
       r_xpos = inMessage.message.x_angle;
