@@ -26,7 +26,7 @@ let bg;
 
 //bird counts
 //red user
-var Red = [];
+var Red = [0, 0, 0, 0];
 
 // var bbird_r = 0;
 // var rbird_r = 0;
@@ -34,7 +34,7 @@ var Red = [];
 // var ybird_r = 0;
 
 //blue user
-var Blue = [];
+var Blue = [0, 0, 0, 0];
 
 // var bbird_b = 0;
 // var rbird_b = 0;
@@ -42,7 +42,7 @@ var Blue = [];
 // var ybird_b = 0;
 
 //green user
-var Green = [];
+var Green = [0, 0, 0, 0];
 
 // var bbird_g = 0;
 // var rbird_g = 0;
@@ -50,7 +50,7 @@ var Green = [];
 // var ybird_g = 0;
 
 //yellow user 
-var Yellow = [];
+var Yellow = [0, 0, 0, 0];
 
 // var bbird_y = 0;
 // var rbird_y = 0;
@@ -244,10 +244,7 @@ function draw()
   birdCatchG();
 
 
-  console.log("red: " + Red[0]);
-  console.log("blue: " + Red[1]);
-  console.log("green: " + Red[2]);
-  console.log("yellow: " + Red[3]);
+  console.log("red: " + Red[0] + "blue: " + Red[1] + "green: " + Red[2] + "yellow: " + Red[3]);
 
 }
 
