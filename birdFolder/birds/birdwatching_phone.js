@@ -89,65 +89,65 @@ function draw() {
     for(var r=0;r<=3;r++){
       fill("red");
       ellipse(map(width/4*r,0,w*3/4,300,w-300),height/5-100,100,100);
-      if(r+1 == red_bird){
+      if(r+1 == redCount){
         break;}}
 
     for(var b=0;b<=3;b++){
       fill("blue");
       ellipse(map(width/4*b,0,w*3/4,300,w-300),2*height/5-100,100,100);
-      if(b+1 == blue_bird){
+      if(b+1 == blueCount){
         break;}}        
 
     for(var g=0;g<=3;g++){
       fill("green");
       ellipse(map(width/4*g,0,w*3/4,300,w-300),3*height/5-100,100,100);
-      if(g+1 ==green_bird){
+      if(g+1 == greenCount){
         break;}}  
 
     for(var y=0;y<=3;y++){
       fill("yellow");
       ellipse(map(width/4*y,0,w*3/4,300,w-300),4*height/5-100,100,100);
-      if(y+1 == yellow_bird){
+      if(y+1 == yellowCount){
         break;}}  
 }
 
 
 
-function def(){
+// function def(){
 
-  trade_blue = false;
-  trade_green = false;
-  trade_yellow = false;
-  tradeReq = false;
+//   trade_blue = false;
+//   trade_green = false;
+//   trade_yellow = false;
+//   tradeReq = false;
 
-}
+// }
 
-function tradeB(){
+// function tradeB(){
 
-  trade_blue = true;
-  // tradeReq = true;
+//   trade_blue = true;
+//   // tradeReq = true;
 
-  // def();
+//   // def();
 
-}
+// }
 
-function tradeG(){
+// function tradeG(){
 
-  trade_green = true;
-  // tradeReq = true;
+//   trade_green = true;
+//   // tradeReq = true;
 
-  // def();
+//   // def();
 
-}
+// }
 
-function tradeY(){
+// function tradeY(){
 
-  trade_yellow = true;
-  // tradeReq = true;
+//   trade_yellow = true;
+//   // tradeReq = true;
 
-  // def();
+//   // def();
 
-}
+// }
 
 function sendData() {
  
