@@ -87,10 +87,10 @@ function draw() {
 // green_bird = 1;
 
 
-text("red: " + redCount, width/5, height/2);
-text("blue: " + blueCount, (width/5) * 2, height/2);
-text("green: " + greenCount, (width/5) * 3, height/2);
-text("yellow: " + yellowCount, (width/5) * 4, height/2);
+// text("red: " + redCount, width/5, height/2);
+// text("blue: " + blueCount, (width/5) * 2, height/2);
+// text("green: " + greenCount, (width/5) * 3, height/2);
+// text("yellow: " + yellowCount, (width/5) * 4, height/2);
 
 
 
@@ -117,6 +117,7 @@ text("yellow: " + yellowCount, (width/5) * 4, height/2);
       ellipse(map(width/4*y,0,w*3/4,300,w-300),4*height/5-100,100,100);
       if(y+1 == yellowCount){
         break;}}  
+
 }
 
 
@@ -200,6 +201,11 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
     blueCount = inMessage.message.blue_bird;
     greenCount = inMessage.message.green_bird;
     yellowCount = inMessage.message.yellow_bird;
+
+    text("red: " + redCount, width/5, height/2);
+    text("blue: " + blueCount, (width/5) * 2, height/2);
+    text("green: " + greenCount, (width/5) * 3, height/2);
+    text("yellow: " + yellowCount, (width/5) * 4, height/2);
 
     // text("red: ", redCount, width/5, height/2);
     // text("blue: ", blueCount, (width/5) * 2, height/2);
