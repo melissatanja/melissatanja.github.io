@@ -46,6 +46,8 @@ var moveX = 0;
 var moveY = 0;
 var X;
 var Y;
+var prevX;
+var prevY;
 
 function preload(){
 
