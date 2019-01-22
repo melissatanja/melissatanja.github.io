@@ -25,6 +25,9 @@ var blue_bird;
 var green_bird;
 var yellow_bird;
 
+
+// var redUser = [];
+
 //size of the active area
 var w = window.innerWidth;
 var h = window.innerHeight;
@@ -58,28 +61,29 @@ function setup()
   {
     publish_key   : pubKey,  //get these from the pubnub account online
     subscribe_key : subKey,  
-    ssl: true  //enables a secure connection. This option has to be used if using the OCAD webspace
+    ssl: true,  //enables a secure connection. This option has to be used if using the OCAD webspace
+    uuid: "red"
   });
   
   //attach callbacks to the pubnub object to handle messages and connections
   dataServer.addListener({ message: readIncoming});
   dataServer.subscribe({channels: [channelName]});
 
-  redButton = createButton('TRADE RED');
-  redButton.position(w/5, h/2);
-  redButton.mouseClicked(trade_red = true);
+  // redButton = createButton('TRADE RED');
+  // redButton.position(w/5, h/2);
+  // redButton.mouseClicked(trade_red = true);
 
   blueButton = createButton('TRADE BLUE');
   blueButton.position((w/4), h/4*3);
-  blueButton.mouseClicked(tradeB);
+  blueButton.mouseClicked(sendTrade("b"));
 
   greenButton = createButton('TRADE GREEN');
   greenButton.position((w/2), h/4*3);
-  greenButton.mouseClicked(tradeG);
+  greenButton.mouseClicked(sendTrade("g"));
 
   yellowButton = createButton('TRADE YELLOW');
   yellowButton.position((w/4) * 3, h/4*3);
-  yellowButton.mouseClicked(tradeY);
+  yellowButton.mouseClicked(sendTrade("y"));
 
   setInterval(sendData, 100);
 
@@ -177,32 +181,33 @@ if(yellowCount != undefined){
 
 }
 
-function tradeB(){
+// function tradeB(){
 
-  trade_blue = 1;
-  // tradeReq = true;
+//   tradeReq = "b";
+//   sendTrade();
+//   // tradeReq = true;
 
-  // def();
+//   // def();
 
-}
+// }
 
-function tradeG(){
+// function tradeG(){
 
-  trade_green = 1;
-  // tradeReq = true;
+//   tradeReq = "g";
+//   // tradeReq = true;
 
-  // def();
+//   // def();
 
-}
+// }
 
-function tradeY(){
+// function tradeY(){
 
-  trade_yellow = 1;
-  // tradeReq = true;
+//   tradeReq = "y";
+//   // tradeReq = true;
 
-  // def();
+//   // def();
 
-}
+// }
 
 function sendData() {
  
@@ -217,22 +222,37 @@ function sendData() {
       channel: channelName,
       message: 
     {
-      user: "red",
       x_angle: xPos, 
       y_angle: yPos,
       red_bird: redCount, 
       blue_bird: blueCount, 
       green_bird: greenCount, 
       yellow_bird: yellowCount, 
-      tradeY: trade_yellow,
-      tradeG: trade_green,
-      tradeB: trade_blue
+      tradeReq: tradeReq
+
+      // tradeY: trade_yellow,
+      // tradeG: trade_green,
+      // tradeB: trade_blue
     }
   });
 
-  trade_yellow = 0;
-  trade_green = 0;
-  trade_blue = 0;
+  // trade_yellow = 0;
+  // trade_green = 0;
+  // trade_blue = 0;
+}
+
+
+
+function sendTrade(tradeWithWho)
+{
+  dataServer.publish({
+      channel: tradeChannel,
+      message: 
+    {
+      tradeReq: tradeWithWho
+    }
+  });
+
 }
 
 function readIncoming(inMessage) //when new data comes in it triggers this function, 
@@ -242,17 +262,25 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
   if(inMessage.channel == channelName)
   {
 
-    if(inMessage.message.user_r){
+    // if (inMessage.publisher = "red"){
+
+    // redUser[0]=inMessage.message.user_r.red_bird;
+    // redUser[1]=inMessage.message.user_r.blue_bird;
+    // redUser[2]=inMessage.message.user_r.yellow_bird;
+    // redUser[3]=inMessage.message.user_r.green_bird;
+
+    // if(inMessage.message.user_r){
     // inMessage.message.redCount = red_bird;
     // inMessage.message.blueCount = blue_bird;
     // inMessage.message.greenCount = green_bird;
     // inMessage.message.yellowCount = yellow_bird;
 
-      redCount = inMessage.message.red_bird;
-      blueCount = inMessage.message.blue_bird;
-      greenCount = inMessage.message.green_bird;
-      yellowCount = inMessage.message.yellow_bird;
-    }
+      redCount = inMessage.message.user_r_red_bird;
+      blueCount = inMessage.message.user_r_blue_bird;
+      greenCount = inMessage.message.user_r_green_bird;
+      yellowCount = inMessage.message.user_r_yellow_bird;
+
+    // }
 
     // text("red: ", redCount, width/5, height/2);
     // text("blue: ", blueCount, (width/5) * 2, height/2);
@@ -260,6 +288,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
     // text("yellow: ", yellowCount, (width/5) * 4, height/2);
 
     // this is where we get info about bird count
+    // }
 
 
   }

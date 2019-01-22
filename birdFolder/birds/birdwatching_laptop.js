@@ -6,6 +6,7 @@ var subKey = 'sub-c-ce34fffc-1de8-11e9-a469-92940241a6b5';
 
 //name used to sort your messages. used like a radio station. can be called anything
 var channelName = "movement";
+var tradeChannel = "trade";
 
 var birdcolour = ["blue","red","green","yellow"];
 
@@ -25,34 +26,46 @@ let bg;
 
 //bird counts
 //red user
-var bbird_r = 0;
-var rbird_r = 0;
-var gbird_r = 0;
-var ybird_r = 0;
+var Red = [];
+
+// var bbird_r = 0;
+// var rbird_r = 0;
+// var gbird_r = 0;
+// var ybird_r = 0;
+
 //blue user
-var bbird_b = 0;
-var rbird_b = 0;
-var gbird_b = 0;
-var ybird_b = 0;
+var Blue = [];
+
+// var bbird_b = 0;
+// var rbird_b = 0;
+// var gbird_b = 0;
+// var ybird_b = 0;
+
 //green user
-var bbird_g = 0;
-var rbird_g = 0;
-var gbird_g = 0;
-var ybird_g = 0;
+var Green = [];
+
+// var bbird_g = 0;
+// var rbird_g = 0;
+// var gbird_g = 0;
+// var ybird_g = 0;
+
 //yellow user 
-var bbird_y = 0;
-var rbird_y = 0;
-var gbird_y = 0;
-var ybird_y = 0;
+var Yellow = [];
 
-var user;
+// var bbird_y = 0;
+// var rbird_y = 0;
+// var gbird_y = 0;
+// var ybird_y = 0;
 
-var Ytrade;
-var Gtrade;
-var Btrade;
+// var user;
+
+// var Ytrade;
+// var Gtrade;
+// var Btrade;
 
 var xposition;
 var yposition;
+var tradeReq;
 
 // var speedX = 1;
 // var speedY = 1;
@@ -120,7 +133,7 @@ function setup()
   
   //attach callbacks to the pubnub object to handle messages and connections
   dataServer.addListener({ message: readIncoming });
-  dataServer.subscribe({channels: [channelName]});
+  dataServer.subscribe({channels: [channelName, tradeChannel]});
 
   console.log("update20");
 
@@ -193,6 +206,11 @@ function draw()
 
   image(img_red, rX, rY, r, r);
 
+
+
+
+  //birds moving
+
   for(let i=0;i<birdsBlue.length;i++){
     fill("blue");
     birdsBlue[i].move();
@@ -216,6 +234,10 @@ function draw()
       birdsYellow[i].show();
   }
 
+
+
+  //bird catching 
+
   birdCatchB();
   birdCatchR();
   birdCatchY();
@@ -228,11 +250,8 @@ function birdCatchB(){
     if(dist(birdsBlue[i].x,birdsBlue[i].y, rX, rY) <= bsize+15){
       birdsBlue.splice(i,1);
 
-      // if(user === 0){
+        Red[1] += 1;
 
-        bbird_r += 1;
-
-      // }
     }
   }
 }
@@ -242,11 +261,8 @@ function birdCatchR(){
     if(dist(birdsRed[i].x,birdsRed[i].y, rX, rY) <= bsize+15){
       birdsRed.splice(i,1);
 
-      // if(user === 0){
+        Red[0] += 1;
 
-        rbird_r += 1;
-
-      // }
     }
   }
 
@@ -256,11 +272,8 @@ function birdCatchY(){
     if(dist(birdsYellow[i].x,birdsYellow[i].y, rX, rY) <= bsize+15){
       birdsYellow.splice(i,1);
 
-      // if(user === 0){
-
-        ybird_r += 1;
+        Red[3] += 1;
         
-      // }
     }
   }
 }
@@ -269,11 +282,8 @@ function birdCatchG(){
     if(dist(birdsGreen[i].x,birdsGreen[i].y, rX, rY) <= bsize+15){
       birdsGreen.splice(i,1);
 
-        // if(user === 0){
-
-        gbird_r += 1;
+        Red[2] += 1;
         
-      // }
     }
   }
 }
@@ -290,18 +300,15 @@ function sendBirds() {
       channel: channelName,
       message: 
     {
-      user_r: {
-        red_bird: rbird_r, 
-        blue_bird: bbird_r, 
-        green_bird: gbird_r, 
-        yellow_bird: ybird_r
-      },
-      user_b: {
-        red_bird: rbird_b, 
-        blue_bird: bbird_b, 
-        green_bird: gbird_b, 
-        yellow_bird: ybird_b
-      }
+      user_r_red_bird: Red[0], 
+      user_r_blue_bird: Red[1], 
+      user_r_green_bird: Red[2], 
+      user_r_yellow_bird: Red[3],
+    
+      user_b_red_bird: rbird_b, 
+      user_b_blue_bird: bbird_b, 
+      user_b_green_bird: gbird_b, 
+      user_b_yellow_bird: ybird_b
     }
   });
 }
@@ -313,38 +320,56 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
   if(inMessage.channel == channelName)
   {
 
-    if(inMessage.message.user = "red"){
-
-      user = "red";
+    if(inMessage.publisher === "red"){
 
       //get red user's current bird count
-      bbird_r = inMessage.message.blue_bird;
-      gbird_r = inMessage.message.green_bird;
-      ybird_r = inMessage.message.green_bird;
-      rbird_r = inMessage.message.red_bird;
+      Red[0] = inMessage.message.red_bird;
+      Red[1] = inMessage.message.blue_bird;
+      Red[2] = inMessage.message.green_bird;
+      Red[3] = inMessage.message.yellow_bird;
 
       //get red user's phone angles
       r_xposition = inMessage.message.x_angle;
       r_yposition = inMessage.message.y_angle;
 
       //get red user's button-pressing actions
-      if(inMessage.message.tradeY === 1){
 
-        Ytrade = 1;
+      // if(inMessage.publisher === "red"){
 
-      }
+      //   user = "red"
 
-      if(inMessage.message.tradeG === 1){
+      // }
 
-        Gtrade = 1;
+      // if(inMessage.message.tradeY === 1){
 
-      }
+      //   Ytrade = 1;
 
-      if(inMessage.message.tradeB === 1){
+      // }
 
-        Btrade = 1;
+      // if(inMessage.message.tradeG === 1){
 
-      }
+      //   Gtrade = 1;
+
+      // }
+
+      // if(inMessage.message.tradeB === 1){
+
+      //   Btrade = 1;
+
+      // }
     }
+  }
+
+  if(inMessage.channel == tradeChannel){
+
+    trade(inMessage.publisher, inMessage.message.tradeReq);
+
+    // if(inMessage.publisher === "red"){
+
+    //   trader: "red",
+    //   tradeReq: tradeReq // who are we trading with
+
+    // }
+
   }
 }
