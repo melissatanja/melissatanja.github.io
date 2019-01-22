@@ -82,7 +82,8 @@ function setup()
    // initialize pubnub
   dataServer = new PubNub(
   {
-    subscribe_key : subKey,  
+    subscribe_key : subKey, 
+    publish_key: pubKey, 
     ssl: true  //enables a secure connection. This option has to be used if using the OCAD webspace
   });
   
