@@ -177,9 +177,9 @@ function draw()
     // console.log("x: " + X);
     // console.log("y: " + Y);
 
-    image(img_red, X, Y, r, r);
-
   }
+
+  image(img_red, X, Y, r, r);
 
   for(let i=0;i<birdsBlue.length;i++){
     fill("blue");
