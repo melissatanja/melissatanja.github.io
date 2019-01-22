@@ -278,7 +278,7 @@ function birdCatchG(){
   }
 }
 
-trade(){
+function trade(){
 
       if(red_bird > 0){
 
