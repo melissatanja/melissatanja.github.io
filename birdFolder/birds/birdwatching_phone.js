@@ -25,7 +25,6 @@ var blue_bird;
 var green_bird;
 var yellow_bird;
 
-
 // var redUser = [];
 
 //size of the active area
@@ -48,8 +47,7 @@ function preload(){
 }
 
 
-function setup() 
-{
+function setup() {
   // getAudioContext().resume();
   createCanvas(w, h);
   noStroke();
