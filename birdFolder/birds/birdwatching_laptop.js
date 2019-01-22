@@ -321,6 +321,9 @@ function sendBirds() {
 
 function readIncoming(inMessage) //when new data comes in it triggers this function, 
 {                               // this works because we subscribed to the channel in setup()
+
+  var xposition;
+  var yposition;
   
   // simple error check to match the incoming to the channelName
   if(inMessage.channel == channelName)
@@ -330,8 +333,8 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       user = 0;
 
-      var xposition = inMessage.message.x_angle;
-      var yposition = inMessage.message.y_angle;
+      xposition = inMessage.message.x_angle;
+      yposition = inMessage.message.y_angle;
       
       moveX = map(xposition, -10, 10,  0, cs/2);
       moveY = map(yposition, -10, 10, cs/2, 0);
