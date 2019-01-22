@@ -421,13 +421,13 @@ function sendBirds() {
       channel: channelName,
       message: 
     {
-      user: 0: {
+      user_r: {
         red_bird: rbird_r, 
         blue_bird: bbird_r, 
         green_bird: gbird_r, 
         yellow_bird: ybird_r
       }
-      user: 1: {
+      user_b: {
         red_bird: rbird_b, 
         blue_bird: bbird_b, 
         green_bird: gbird_b, 
