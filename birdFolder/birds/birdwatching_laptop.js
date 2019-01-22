@@ -218,7 +218,7 @@ function draw()
 
 function birdCatchB(){
   for(let i=0;i<birdsBlue.length;i++){
-    if(dist(birdsBlue[i].x,birdsBlue[i].y, moveX, moveY) <= bsize+15){
+    if(dist(birdsBlue[i].x,birdsBlue[i].y, X, Y) <= bsize+15){
       birdsBlue.splice(i,1);
 
       if(user === 0){
@@ -232,7 +232,7 @@ function birdCatchB(){
 
 function birdCatchR(){
   for(let i=0;i<birdsRed.length;i++){
-    if(dist(birdsRed[i].x,birdsRed[i].y, moveX, moveY) <= bsize+15){
+    if(dist(birdsRed[i].x,birdsRed[i].y, X, Y) <= bsize+15){
       birdsRed.splice(i,1);
 
       if(user === 0){
@@ -246,7 +246,7 @@ function birdCatchR(){
 }
 function birdCatchY(){
   for(let i=0;i<birdsYellow.length;i++){
-    if(dist(birdsYellow[i].x,birdsYellow[i].y, moveX, moveY) <= bsize+15){
+    if(dist(birdsYellow[i].x,birdsYellow[i].y, X, Y) <= bsize+15){
       birdsYellow.splice(i,1);
 
       if(user === 0){
@@ -259,7 +259,7 @@ function birdCatchY(){
 }
 function birdCatchG(){
   for(let i=0;i<birdsGreen.length;i++){
-    if(dist(birdsGreen[i].x,birdsGreen[i].y, moveX, moveY) <= bsize+15){
+    if(dist(birdsGreen[i].x,birdsGreen[i].y, X, Y) <= bsize+15){
       birdsGreen.splice(i,1);
 
         if(user === 0){
