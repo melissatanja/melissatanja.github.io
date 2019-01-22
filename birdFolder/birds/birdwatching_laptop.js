@@ -28,34 +28,14 @@ let bg;
 //red user
 var Red = [0, 0, 0, 0];
 
-// var bbird_r = 0;
-// var rbird_r = 0;
-// var gbird_r = 0;
-// var ybird_r = 0;
-
 //blue user
 var Blue = [0, 0, 0, 0];
-
-// var bbird_b = 0;
-// var rbird_b = 0;
-// var gbird_b = 0;
-// var ybird_b = 0;
 
 //green user
 var Green = [0, 0, 0, 0];
 
-// var bbird_g = 0;
-// var rbird_g = 0;
-// var gbird_g = 0;
-// var ybird_g = 0;
-
 //yellow user 
 var Yellow = [0, 0, 0, 0];
-
-// var bbird_y = 0;
-// var rbird_y = 0;
-// var gbird_y = 0;
-// var ybird_y = 0;
 
 // var user;
 
@@ -254,7 +234,6 @@ function birdCatchB(){
       birdsBlue.splice(i,1);
 
         Red[1] += 1;
-
     }
   }
 }
@@ -265,10 +244,8 @@ function birdCatchR(){
       birdsRed.splice(i,1);
 
         Red[0] += 1;
-
     }
   }
-
 }
 function birdCatchY(){
   for(let i=0;i<birdsYellow.length;i++){
@@ -286,7 +263,6 @@ function birdCatchG(){
       birdsGreen.splice(i,1);
 
         Red[2] += 1;
-        
     }
   }
 }
