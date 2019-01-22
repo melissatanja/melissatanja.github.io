@@ -87,11 +87,14 @@ function draw() {
 
 if(redCount != undefined){
 
-  text("red: " + redCount, width/5, height/2);
+  // text("red: " + redCount, width/5, height/2);
 
   for(var r=0;r<=3;r++){
     fill("red");
-    ellipse(map(width/4*r,0,w*3/4,300,w-300),height/5-100,100,100);
+    // ellipse(map(width/4*r, 0, w*3/4,300, w-300),height/5-100,100,100);
+    if(redCount > 0){
+      ellipse(width/5 * redCount, height/8, 50, 50);
+    }
     if(r+1 == redCount){
       break;}
   }
@@ -99,11 +102,14 @@ if(redCount != undefined){
 
 if(blueCount != undefined){
 
-  text("blue: " + blueCount, (width/5) * 2, height/2);
+  // text("blue: " + blueCount, (width/5) * 2, height/2);
 
   for(var b=0;b<=3;b++){
     fill("blue");
-    ellipse(map(width/4*b,0,w*3/4,300,w-300),2*height/5-100,100,100);
+    // ellipse(map(width/4*b,0,w*3/4,300,w-300),2*height/5-100,100,100);
+    if(blueCount > 0){
+      ellipse(width/5 * redCount, height/8 * 2, 50, 50);
+    }
     if(b+1 == blueCount){
       break;}
   }
@@ -111,11 +117,14 @@ if(blueCount != undefined){
 
 if(greenCount != undefined){
 
-  text("green: " + greenCount, (width/5) * 3, height/2);
+  // text("green: " + greenCount, (width/5) * 3, height/2);
 
   for(var g=0;g<=3;g++){
     fill("green");
-    ellipse(map(width/4*g,0,w*3/4,300,w-300),3*height/5-100,100,100);
+    // ellipse(map(width/4*g,0,w*3/4,300,w-300),3*height/5-100,100,100);
+    if(greenCount > 0){
+      ellipse(width/5 * redCount, height/8 * 3, 50, 50);
+    }
     if(g+1 == greenCount){
       break;}
   } 
@@ -123,11 +132,14 @@ if(greenCount != undefined){
 
 if(yellowCount != undefined){
 
-  text("yellow: " + yellowCount, (width/5) * 4, height/2);         
+  // text("yellow: " + yellowCount, (width/5) * 4, height/2);         
 
   for(var y=0;y<=3;y++){
     fill("yellow");
-    ellipse(map(width/4*y,0,w*3/4,300,w-300),4*height/5-100,100,100);
+    // ellipse(map(width/4*y,0,w*3/4,300,w-300),4*height/5-100,100,100);
+    if(yellowCount > 0){
+      ellipse(width/5 * r, height/8 * 4, 50, 50);
+    }
     if(y+1 == yellowCount){
       break;}
   }  
