@@ -63,8 +63,8 @@ var Yellow = [];
 // var Gtrade;
 // var Btrade;
 
-var xposition;
-var yposition;
+var r_xpos;
+var r_ypos;
 var tradeReq;
 
 // var speedX = 1;
@@ -78,10 +78,10 @@ var cs = window.innerHeight;
 var r = 60;
 var moveX = 0;
 var moveY = 0;
-let X = 0;
-let Y = 0;
-var prevX = 0;
-var prevY = 0;
+let rX = 0;
+let rY = 0;
+var r_prevX = 0;
+var r_prevY = 0;
 
 function preload(){
 
@@ -183,24 +183,24 @@ function draw()
   //background image
   image(bg, cs/2, cs/2, cs - 50, cs - 50);
 
-  if(xposition != undefined && yposition != undefined){
+  if(r_xpos != undefined && r_ypos != undefined){
 
-    rX = map(r_xposition, -10, 10,  45, cs/2 - 45);
-    rY = map(r_yposition, -10, 10, cs/2 - 45, 45);
+    rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
+    rY = map(r_ypos, -10, 10, cs/2 - 45, 45);
 
     // X = constrain(moveX, 45, cs/2 - 45);
     // Y = constrain(moveY, 45, cs/2 - 25);
 
-    prevX = rX;
-    prevY = rY;
+    r_prevX = rX;
+    r_prevY = rY;
 
     // console.log("x: " + X);
     // console.log("y: " + Y);
 
   }else{
 
-    rX = map(prevX, -10, 10,  45, cs/2 - 45);
-    rY = map(prevY, -10, 10, cs/2 - 45, 45);
+    rX = map(r_prevX, -10, 10,  45, cs/2 - 45);
+    rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
 
   }
 
@@ -329,8 +329,8 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       Red[3] = inMessage.message.yellow_bird;
 
       //get red user's phone angles
-      r_xposition = inMessage.message.x_angle;
-      r_yposition = inMessage.message.y_angle;
+      r_xpos = inMessage.message.x_angle;
+      r_ypos = inMessage.message.y_angle;
 
       //get red user's button-pressing actions
 
