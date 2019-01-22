@@ -132,8 +132,8 @@ if(xposition != undefined && yposition != undefined){
   // prevX = moveX;
   // prevY = moveY;
 
-  console.log(X);
-  console.log(Y);
+  console.log("x: " + X);
+  console.log("y: " + Y);
 
 }
 // else{
