@@ -101,6 +101,8 @@ function setup()
 
   }
 
+  setInterval(sendData, 100);
+
 }
 
 function draw() 
