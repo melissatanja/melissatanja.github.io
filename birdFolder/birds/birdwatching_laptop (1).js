@@ -23,33 +23,12 @@ let img_green;
 let img_yellow;
 let bg;
 
-//bird counts
-//red user
-var bbird_r = 0;
-var rbird_r = 0;
-var gbird_r = 0;
-var ybird_r = 0;
-//blue user
-var bbird_b = 0;
-var rbird_b = 0;
-var gbird_b = 0;
-var ybird_b = 0;
-//green user
-var bbird_g = 0;
-var rbird_g = 0;
-var gbird_g = 0;
-var ybird_g = 0;
-//yellow user 
-var bbird_y = 0;
-var rbird_y = 0;
-var gbird_y = 0;
-var ybird_y = 0;
+var blue_bird = 0;
+var red_bird = 0;
+var green_bird = 0;
+var yellow_bird = 0;
 
 var user;
-
-var Ytrade;
-var Gtrade;
-var Btrade;
 
 var xposition;
 var yposition;
@@ -140,6 +119,20 @@ function setup()
 function draw() 
 {
 
+  // speedX += moveX
+
+// else{
+
+//   X = constrain(prevX, 45, cs/2 - 45);
+//   Y = constrain(prevY, 45, cs/2 - 25);
+
+// }
+
+ // moveX = speedX * xposition;
+ // moveY = speedY * yposition;
+
+ // console.log(xposition);
+
   noStroke();
   rectMode(CORNER);
   imageMode(CENTER);
@@ -172,26 +165,26 @@ function draw()
 
   if(xposition != undefined && yposition != undefined){
 
-    rX = map(r_xposition, -10, 10,  45, cs/2 - 45);
-    rY = map(r_yposition, -10, 10, cs/2 - 45, 45);
+    X = map(xposition, -10, 10,  45, cs/2 - 45);
+    Y = map(yposition, -10, 10, cs/2 - 45, 45);
 
     // X = constrain(moveX, 45, cs/2 - 45);
     // Y = constrain(moveY, 45, cs/2 - 25);
 
-    prevX = rX;
-    prevY = rY;
+    prevX = X;
+    prevY = Y;
 
     // console.log("x: " + X);
     // console.log("y: " + Y);
 
   }else{
 
-    rX = map(prevX, -10, 10,  45, cs/2 - 45);
-    rY = map(prevY, -10, 10, cs/2 - 45, 45);
+    X = map(prevX, -10, 10,  45, cs/2 - 45);
+    Y = map(prevY, -10, 10, cs/2 - 45, 45);
 
   }
 
-  image(img_red, rX, rY, r, r);
+  image(img_red, X, Y, r, r);
 
   for(let i=0;i<birdsBlue.length;i++){
     fill("blue");
@@ -225,171 +218,109 @@ function draw()
 
 function birdCatchB(){
   for(let i=0;i<birdsBlue.length;i++){
-    if(dist(birdsBlue[i].x,birdsBlue[i].y, rX, rY) <= bsize+15){
+    if(dist(birdsBlue[i].x,birdsBlue[i].y, moveX, moveY) <= bsize+15){
       birdsBlue.splice(i,1);
 
-      // if(user === 0){
+      if(user === 0){
 
-        bbird_r += 1;
+        blue_bird += 1;
 
-      // }
+      }
     }
   }
 }
 
 function birdCatchR(){
   for(let i=0;i<birdsRed.length;i++){
-    if(dist(birdsRed[i].x,birdsRed[i].y, rX, rY) <= bsize+15){
+    if(dist(birdsRed[i].x,birdsRed[i].y, moveX, moveY) <= bsize+15){
       birdsRed.splice(i,1);
 
-      // if(user === 0){
+      if(user === 0){
 
-        rbird_r += 1;
+        red_bird += 1;
 
-      // }
+      }
     }
   }
 
 }
 function birdCatchY(){
   for(let i=0;i<birdsYellow.length;i++){
-    if(dist(birdsYellow[i].x,birdsYellow[i].y, rX, rY) <= bsize+15){
+    if(dist(birdsYellow[i].x,birdsYellow[i].y, moveX, moveY) <= bsize+15){
       birdsYellow.splice(i,1);
 
-      // if(user === 0){
+      if(user === 0){
 
-        ybird_r += 1;
+        yellow_bird += 1;
         
-      // }
+      }
     }
   }
 }
 function birdCatchG(){
   for(let i=0;i<birdsGreen.length;i++){
-    if(dist(birdsGreen[i].x,birdsGreen[i].y, rX, rY) <= bsize+15){
+    if(dist(birdsGreen[i].x,birdsGreen[i].y, moveX, moveY) <= bsize+15){
       birdsGreen.splice(i,1);
 
-        // if(user === 0){
+        if(user === 0){
 
-        gbird_r += 1;
+        green_bird += 1;
         
-      // }
+      }
     }
   }
 }
 
-trade(){
+// function tradeRequest(){
 
-      if(red_bird > 0){
+//   if(inMessage.message.user = "red"){
 
-        //trading red bird
-        red_bird -= 1;
+//     //trading with blue user
+//     if(trade_blue === true){
 
-        if(user = t){
+//       if(inMessage.message.blue_bird > 0){
 
-          //receiving blue bird
-          blue_bird += 1;
+//         //trading blue bird
+//         inMessage.message.blue_bird -= 1;
 
-        }else if(blue_bird > 0){
+//         if(inMessage.message.user = "blue"){
 
-        //trading blue bird
-        blue_bird -= 1;
+//           //receiving blue bird
+//           inMessage.message.blue_bird += 1;
 
-        //blue user
-        if(user = 1){
+//         }
 
-          //receiving blue bird
-          blue_bird += 1;
+//       }else if(inMessage.message.green_bird > 0){
 
-          tradeRed();
+//         //trading green bird
+//         inMessage.message.green_bird -= 1;
 
-        }
+//         if(inMessage.message.user = "blue"){
 
-      }else if(green_bird > 0){
+//           //receiving green bird
+//           inMessage.message.green_bird += 1;
 
-        //trading green bird
-        green_bird -= 1;
+//         }
 
-        if(user = 1){
+//       }else if(inMessage.message.yellow_bird > 0){
 
-          //receiving green bird
-          green_bird += 1;
+//         //trading yellow bird
+//         inMessage.message.yellow_bird -= 1;
 
-        }
+//         if(inMessage.message.user = "blue"){
 
-      }else if(yellow_bird > 0){
+//           //receiving yellow bird
+//           inMessage.message.yellow_bird += 1;
 
-        //trading yellow bird
-        yellow_bird -= 1;
+//         }
 
-        if(user = 1){
+//       }else{
 
-          //receiving yellow bird
-          yellow_bird += 1;
+//         window.alert("No birds available");
 
-        }
+//       }
 
-      }else{
-
-        window.alert("No birds available");
-
-      }
-
-}
-
-function tradeRequest(){
-
-  if(user = 0){
-
-    //trading with blue user
-    if(trade_blue === 1){
-
-      if(blue_bird > 0){
-
-        //trading blue bird
-        blue_bird -= 1;
-
-        //blue user
-        if(user = 1){
-
-          //receiving blue bird
-          blue_bird += 1;
-
-          tradeRed();
-
-        }
-
-      }else if(green_bird > 0){
-
-        //trading green bird
-        green_bird -= 1;
-
-        if(user = 1){
-
-          //receiving green bird
-          green_bird += 1;
-
-        }
-
-      }else if(yellow_bird > 0){
-
-        //trading yellow bird
-        yellow_bird -= 1;
-
-        if(user = 1){
-
-          //receiving yellow bird
-          yellow_bird += 1;
-
-        }
-
-      }else{
-
-        window.alert("No birds available");
-
-      }
-
-    }
+//     }
 
 //     //trading with green user
 //     if(trade_green === true){
@@ -421,16 +352,10 @@ function sendBirds() {
       channel: channelName,
       message: 
     {
-      user: 0:
-        red_bird: rbird_r, 
-        blue_bird: bbird_r, 
-        green_bird: gbird_r, 
-        yellow_bird: ybird_r
-      user: 1:
-        red_bird: rbird_b, 
-        blue_bird: bbird_b, 
-        green_bird: gbird_b, 
-        yellow_bird: ybird_b
+      red_bird: red_bird, 
+      blue_bird: blue_bird, 
+      green_bird: green_bird, 
+      yellow_bird: yellow_bird, 
     }
   });
 }
@@ -446,31 +371,8 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       user = 0;
 
-      bbird_r = inMessage.message.blue_bird;
-      gbird_r = inMessage.message.green_bird;
-      ybird_r = inMessage.message.green_bird;
-      rbird_r = inMessage.message.red_bird;
-
-      r_xposition = inMessage.message.x_angle;
-      r_yposition = inMessage.message.y_angle;
-
-      if(inMessage.message.tradeY === 1){
-
-        Ytrade = 1;
-
-      }
-
-      if(inMessage.message.tradeG === 1){
-
-        Gtrade = 1;
-
-      }
-
-      if(inMessage.message.tradeB === 1){
-
-        Btrade = 1;
-
-      }
+      xposition = inMessage.message.x_angle;
+      yposition = inMessage.message.y_angle;
       
       // moveX = map(xposition, -10, 10,  0, cs/2);
       // moveY = map(yposition, -10, 10, cs/2, 0);

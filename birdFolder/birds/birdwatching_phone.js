@@ -10,10 +10,10 @@ var pubKey = 'pub-c-2aaa0bce-4824-4395-9800-dfc7dbca679d';
 var subKey = 'sub-c-ce34fffc-1de8-11e9-a469-92940241a6b5';
 
 // var colours = ['red', 'blue', 'green', 'yellow'];
-var trade_red = false;
-var trade_blue = false;
-var trade_green = false;
-var trade_yellow = false;
+var trade_red = 0;
+var trade_blue = 0;
+var trade_green = 0;
+var trade_yellow = 0;
 
 var redCount = 0;
 var blueCount = 0;
@@ -65,21 +65,21 @@ function setup()
   dataServer.addListener({ message: readIncoming});
   dataServer.subscribe({channels: [channelName]});
 
-  // redButton = createButton('TRADE RED');
-  // redButton.position(w/5, h/2);
-  // redButton.mouseClicked(trade_red = true);
+  redButton = createButton('TRADE RED');
+  redButton.position(w/5, h/2);
+  redButton.mouseClicked(trade_red = true);
 
-  // blueButton = createButton('TRADE BLUE');
-  // blueButton.position((w/4), h/4*3);
-  // blueButton.mouseClicked(tradeB);
+  blueButton = createButton('TRADE BLUE');
+  blueButton.position((w/4), h/4*3);
+  blueButton.mouseClicked(tradeB);
 
-  // greenButton = createButton('TRADE GREEN');
-  // greenButton.position((w/2), h/4*3);
-  // greenButton.mouseClicked(tradeG);
+  greenButton = createButton('TRADE GREEN');
+  greenButton.position((w/2), h/4*3);
+  greenButton.mouseClicked(tradeG);
 
-  // yellowButton = createButton('TRADE YELLOW');
-  // yellowButton.position((w/4) * 3, h/4*3);
-  // yellowButton.mouseClicked(tradeY);
+  yellowButton = createButton('TRADE YELLOW');
+  yellowButton.position((w/4) * 3, h/4*3);
+  yellowButton.mouseClicked(tradeY);
 
   setInterval(sendData, 100);
 
@@ -177,43 +177,32 @@ if(yellowCount != undefined){
 
 }
 
+function tradeB(){
 
+  trade_blue = 1;
+  // tradeReq = true;
 
-// function def(){
+  // def();
 
-//   trade_blue = false;
-//   trade_green = false;
-//   trade_yellow = false;
-//   tradeReq = false;
+}
 
-// }
+function tradeG(){
 
-// function tradeB(){
+  trade_green = 1;
+  // tradeReq = true;
 
-//   trade_blue = true;
-//   // tradeReq = true;
+  // def();
 
-//   // def();
+}
 
-// }
+function tradeY(){
 
-// function tradeG(){
+  trade_yellow = 1;
+  // tradeReq = true;
 
-//   trade_green = true;
-//   // tradeReq = true;
+  // def();
 
-//   // def();
-
-// }
-
-// function tradeY(){
-
-//   trade_yellow = true;
-//   // tradeReq = true;
-
-//   // def();
-
-// }
+}
 
 function sendData() {
  
@@ -230,16 +219,20 @@ function sendData() {
     {
       user: "red",
       x_angle: xPos, 
-      y_angle: yPos
-      // red_bird: red_bird, 
-      // blue_bird: blue_bird, 
-      // green_bird: green_bird, 
-      // yellow_bird: yellow_bird, 
-      // tradeY: trade_yellow,
-      // tradeG: trade_green,
-      // tradeB: trade_blue
+      y_angle: yPos,
+      red_bird: redCount, 
+      blue_bird: blueCount, 
+      green_bird: greenCount, 
+      yellow_bird: yellowCount, 
+      tradeY: trade_yellow,
+      tradeG: trade_green,
+      tradeB: trade_blue
     }
   });
+
+  trade_yellow = 0;
+  trade_green = 0;
+  trade_blue = 0;
 }
 
 function readIncoming(inMessage) //when new data comes in it triggers this function, 
@@ -249,15 +242,17 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
   if(inMessage.channel == channelName)
   {
 
+    if(inMessage.message.user = 0;){
     // inMessage.message.redCount = red_bird;
     // inMessage.message.blueCount = blue_bird;
     // inMessage.message.greenCount = green_bird;
     // inMessage.message.yellowCount = yellow_bird;
 
-    redCount = inMessage.message.red_bird;
-    blueCount = inMessage.message.blue_bird;
-    greenCount = inMessage.message.green_bird;
-    yellowCount = inMessage.message.yellow_bird;
+      redCount = inMessage.message.red_bird;
+      blueCount = inMessage.message.blue_bird;
+      greenCount = inMessage.message.green_bird;
+      yellowCount = inMessage.message.yellow_bird;
+    }
 
     // text("red: ", redCount, width/5, height/2);
     // text("blue: ", blueCount, (width/5) * 2, height/2);
