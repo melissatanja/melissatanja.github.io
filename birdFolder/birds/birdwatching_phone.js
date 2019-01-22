@@ -93,7 +93,7 @@ if(redCount != undefined){
     fill("red");
     // ellipse(map(width/4*r, 0, w*3/4,300, w-300),height/5-100,100,100);
     if(redCount > 0){
-      ellipse(width/5 * redCount, height/8, 50, 50);
+      ellipse((width/5) * redCount, height/8, 50, 50);
     }
     if(r+1 == redCount){
       break;}
@@ -108,7 +108,7 @@ if(blueCount != undefined){
     fill("blue");
     // ellipse(map(width/4*b,0,w*3/4,300,w-300),2*height/5-100,100,100);
     if(blueCount > 0){
-      ellipse(width/5 * redCount, height/8 * 2, 50, 50);
+      ellipse((width/5) * blueCount, height/8 * 2, 50, 50);
     }
     if(b+1 == blueCount){
       break;}
@@ -123,7 +123,7 @@ if(greenCount != undefined){
     fill("green");
     // ellipse(map(width/4*g,0,w*3/4,300,w-300),3*height/5-100,100,100);
     if(greenCount > 0){
-      ellipse(width/5 * redCount, height/8 * 3, 50, 50);
+      ellipse((width/5) * greenCount, height/8 * 3, 50, 50);
     }
     if(g+1 == greenCount){
       break;}
@@ -138,7 +138,7 @@ if(yellowCount != undefined){
     fill("yellow");
     // ellipse(map(width/4*y,0,w*3/4,300,w-300),4*height/5-100,100,100);
     if(yellowCount > 0){
-      ellipse(width/5 * r, height/8 * 4, 50, 50);
+      ellipse((width/5) * yellowCount, height/8 * 4, 50, 50);
     }
     if(y+1 == yellowCount){
       break;}
