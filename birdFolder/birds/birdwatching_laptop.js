@@ -339,7 +339,7 @@ function trade(){
 
 function tradeRequest(){
 
-  if(user = 0){
+  if(user === "red"){
 
     //trading with blue user
     if(trade_blue === 1){
@@ -448,16 +448,19 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
     if(inMessage.message.user = "red"){
 
-      user = 0;
+      user = "red";
 
+      //get red user's current bird count
       bbird_r = inMessage.message.blue_bird;
       gbird_r = inMessage.message.green_bird;
       ybird_r = inMessage.message.green_bird;
       rbird_r = inMessage.message.red_bird;
 
+      //get red user's phone angles
       r_xposition = inMessage.message.x_angle;
       r_yposition = inMessage.message.y_angle;
 
+      //get red user's button-pressing actions
       if(inMessage.message.tradeY === 1){
 
         Ytrade = 1;
@@ -475,26 +478,6 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
         Btrade = 1;
 
       }
-      
-      // moveX = map(xposition, -10, 10,  0, cs/2);
-      // moveY = map(yposition, -10, 10, cs/2, 0);
-
-      // trade_blue = inMessage.message.tradeB;
-      // trade_green = inMessage.message.tradeG;
-      // trade_yellow = inMessage.message.tradeY;
-
-      // if(trade_blue === true){
-
-      //   console.log("trade blue");
-
-      // }
-
     }
-
-  // birdCatchB();
-  // birdCatchR();
-  // birdCatchY();
-  // birdCatchG();
-
   }
 }
