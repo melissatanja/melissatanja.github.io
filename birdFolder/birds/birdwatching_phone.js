@@ -87,10 +87,10 @@ function draw() {
 // green_bird = 1;
 
 
-text("red: ", redCount, width/5, height/2);
-text("blue: ", blueCount, (width/5) * 2, height/2);
-text("green: ", greenCount, (width/5) * 3, height/2);
-text("yellow: ", yellowCount, (width/5) * 4, height/2);
+text("red: " + redCount, width/5, height/2);
+text("blue: " + blueCount, (width/5) * 2, height/2);
+text("green: " + greenCount, (width/5) * 3, height/2);
+text("yellow: " + yellowCount, (width/5) * 4, height/2);
 
 
 
