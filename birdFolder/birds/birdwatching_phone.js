@@ -39,6 +39,7 @@ function setup()
 {
   // getAudioContext().resume();
   createCanvas(w, h);
+  noStroke();
   background(111);
   
   
@@ -78,8 +79,6 @@ function setup()
 }
     
 function draw() {
-  noStroke();
-  background(111);
 
 // red_bird = 5;
 // yellow_bird = 3;

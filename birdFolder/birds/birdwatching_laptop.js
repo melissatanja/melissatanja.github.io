@@ -112,27 +112,6 @@ function setup()
 
   }
 
-  setInterval(sendBirds, 300);
-
-}
-
-function draw() 
-{
-
-  // speedX += moveX
-
-// else{
-
-//   X = constrain(prevX, 45, cs/2 - 45);
-//   Y = constrain(prevY, 45, cs/2 - 25);
-
-// }
-
- // moveX = speedX * xposition;
- // moveY = speedY * yposition;
-
- // console.log(xposition);
-
   noStroke();
   rectMode(CORNER);
   imageMode(CENTER);
@@ -162,6 +141,27 @@ function draw()
 
   //background image
   image(bg, cs/2, cs/2, cs - 50, cs - 50);
+
+  setInterval(sendBirds, 300);
+
+}
+
+function draw() 
+{
+
+  // speedX += moveX
+
+// else{
+
+//   X = constrain(prevX, 45, cs/2 - 45);
+//   Y = constrain(prevY, 45, cs/2 - 25);
+
+// }
+
+ // moveX = speedX * xposition;
+ // moveY = speedY * yposition;
+
+ // console.log(xposition);
 
   if(xposition != undefined && yposition != undefined){
 
