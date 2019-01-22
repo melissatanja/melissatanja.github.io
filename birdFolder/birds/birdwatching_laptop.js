@@ -132,12 +132,13 @@ if(xposition != undefined && yposition != undefined){
   prevX = moveX;
   prevY = moveY;
 
-}else{
-
-  X = constrain(prevX, 45, cs/2 - 45);
-  Y = constrain(prevY, 45, cs/2 - 25);
-
 }
+// else{
+
+//   X = constrain(prevX, 45, cs/2 - 45);
+//   Y = constrain(prevY, 45, cs/2 - 25);
+
+// }
 
  // moveX = speedX * xposition;
  // moveY = speedY * yposition;
