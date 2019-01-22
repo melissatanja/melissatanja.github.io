@@ -120,8 +120,10 @@ function draw()
   // moveX = map(xposition, -10, 10,  0, cs/2);
   // moveY = map(yposition, -10, 10, cs/2, 0);
 
- moveX = speedX * xposition;
- moveY = speedY * yposition;
+ // moveX = speedX * xposition;
+ // moveY = speedY * yposition;
+
+ console.log(xposition);
 
   var X = constrain(moveX, 45, cs/2 - 45);
   var Y = constrain(moveY, 45, cs/2 - 25);
@@ -315,10 +317,10 @@ function birdCatchG(){
 
 function sendBirds() {
 
-  console.log("red: " + red_bird);
-  console.log("blue: " + blue_bird);
-  console.log("green: " + green_bird);
-  console.log("yellow: " + yellow_bird);
+  // console.log("red: " + red_bird);
+  // console.log("blue: " + blue_bird);
+  // console.log("green: " + green_bird);
+  // console.log("yellow: " + yellow_bird);
 
   // Send Data to the server to draw it in all other canvases
   dataServer.publish({
