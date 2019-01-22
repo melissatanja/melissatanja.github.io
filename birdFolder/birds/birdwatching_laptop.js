@@ -44,8 +44,8 @@ var cs = window.innerHeight;
 var r = 60;
 var moveX = 0;
 var moveY = 0;
-var X;
-var Y;
+let X;
+let Y;
 var prevX;
 var prevY;
 
@@ -129,8 +129,11 @@ if(xposition != undefined && yposition != undefined){
   X = constrain(moveX, 45, cs/2 - 45);
   Y = constrain(moveY, 45, cs/2 - 25);
 
-  prevX = moveX;
-  prevY = moveY;
+  // prevX = moveX;
+  // prevY = moveY;
+
+  console.log(X);
+  console.log(Y);
 
 }
 // else{
