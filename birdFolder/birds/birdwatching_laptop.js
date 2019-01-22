@@ -44,10 +44,10 @@ var cs = window.innerHeight;
 var r = 60;
 var moveX = 0;
 var moveY = 0;
-let X;
-let Y;
-var prevX;
-var prevY;
+let X = 0;
+let Y = 0;
+var prevX = 0;
+var prevY = 0;
 
 function preload(){
 
@@ -101,7 +101,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-  console.log("update19");
+  console.log("update20");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
