@@ -179,7 +179,7 @@ if(xposition != undefined && yposition != undefined){
   image(bg, cs/2, cs/2, cs - 50, cs - 50);
 
   //red binoculars
-  // image(img_red, X, Y, r, r);
+  image(img_red, X, Y, r, r);
 
   for(let i=0;i<birdsBlue.length;i++){
     fill("blue");
