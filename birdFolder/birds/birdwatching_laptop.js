@@ -358,38 +358,40 @@ function tradeRequest(){
           tradeRed();
 
         }
+      }
 
-      }else if(green_bird > 0){
+    }else if(green_bird > 0){
 
-        //trading green bird
-        green_bird -= 1;
+      //trading green bird
+      green_bird -= 1;
 
-        if(user = 1){
+      if(user = 1){
 
-          //receiving green bird
-          green_bird += 1;
-
-        }
-
-      }else if(yellow_bird > 0){
-
-        //trading yellow bird
-        yellow_bird -= 1;
-
-        if(user = 1){
-
-          //receiving yellow bird
-          yellow_bird += 1;
-
-        }
-
-      }else{
-
-        window.alert("No birds available");
+        //receiving green bird
+        green_bird += 1;
 
       }
 
+    }else if(yellow_bird > 0){
+
+      //trading yellow bird
+      yellow_bird -= 1;
+
+      if(user = 1){
+
+        //receiving yellow bird
+        yellow_bird += 1;
+
+      }
+
+    }else{
+
+      window.alert("No birds available");
+
     }
+
+  }
+}
 
 //     //trading with green user
 //     if(trade_green === true){
