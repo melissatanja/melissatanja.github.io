@@ -76,15 +76,15 @@ function setup()
 
   blueButton = createButton('TRADE BLUE');
   blueButton.position((w/4), h/4*3);
-  blueButton.mouseClicked(tradeB());
+  blueButton.mouseClicked(tradeB);
 
   greenButton = createButton('TRADE GREEN');
   greenButton.position((w/2), h/4*3);
-  greenButton.mouseClicked(tradeG());
+  greenButton.mouseClicked(tradeG);
 
   yellowButton = createButton('TRADE YELLOW');
   yellowButton.position((w/4) * 3, h/4*3);
-  yellowButton.mouseClicked(tradeY());
+  yellowButton.mouseClicked(tradeY);
 
   setInterval(sendData, 100);
 
