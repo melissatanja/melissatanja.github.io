@@ -426,7 +426,7 @@ function sendBirds() {
         blue_bird: bbird_r, 
         green_bird: gbird_r, 
         yellow_bird: ybird_r
-      }
+      },
       user_b: {
         red_bird: rbird_b, 
         blue_bird: bbird_b, 
