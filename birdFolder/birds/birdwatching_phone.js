@@ -54,17 +54,17 @@ function setup()
   // redButton.position(w/5, h/2);
   // redButton.mouseClicked(trade_red = true);
 
-  blueButton = createButton('TRADE BLUE');
-  blueButton.position((w/4), h/4*3);
-  blueButton.mouseClicked(tradeB);
+  // blueButton = createButton('TRADE BLUE');
+  // blueButton.position((w/4), h/4*3);
+  // blueButton.mouseClicked(tradeB);
 
-  greenButton = createButton('TRADE GREEN');
-  greenButton.position((w/2), h/4*3);
-  greenButton.mouseClicked(tradeG);
+  // greenButton = createButton('TRADE GREEN');
+  // greenButton.position((w/2), h/4*3);
+  // greenButton.mouseClicked(tradeG);
 
-  yellowButton = createButton('TRADE YELLOW');
-  yellowButton.position((w/4) * 3, h/4*3);
-  yellowButton.mouseClicked(tradeY);
+  // yellowButton = createButton('TRADE YELLOW');
+  // yellowButton.position((w/4) * 3, h/4*3);
+  // yellowButton.mouseClicked(tradeY);
 
   setInterval(sendData, 100);
 
