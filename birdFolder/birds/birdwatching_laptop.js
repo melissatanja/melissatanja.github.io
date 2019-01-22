@@ -121,24 +121,6 @@ function draw()
 
   // speedX += moveX
 
-if(xposition != undefined && yposition != undefined){
-
-  X = map(xposition, -10, 10,  45, cs/2 - 45);
-  Y = map(yposition, -10, 10, cs/2 - 45, 45);
-
-  // X = constrain(moveX, 45, cs/2 - 45);
-  // Y = constrain(moveY, 45, cs/2 - 25);
-
-  // prevX = moveX;
-  // prevY = moveY;
-
-  // console.log("x: " + X);
-  // console.log("y: " + Y);
-
-  //red binoculars
-  image(img_red, X, Y, r, r);
-
-}
 // else{
 
 //   X = constrain(prevX, 45, cs/2 - 45);
@@ -180,6 +162,24 @@ if(xposition != undefined && yposition != undefined){
 
   //background image
   image(bg, cs/2, cs/2, cs - 50, cs - 50);
+
+  if(xposition != undefined && yposition != undefined){
+
+    X = map(xposition, -10, 10,  45, cs/2 - 45);
+    Y = map(yposition, -10, 10, cs/2 - 45, 45);
+
+    // X = constrain(moveX, 45, cs/2 - 45);
+    // Y = constrain(moveY, 45, cs/2 - 25);
+
+    // prevX = moveX;
+    // prevY = moveY;
+
+    // console.log("x: " + X);
+    // console.log("y: " + Y);
+
+    image(img_red, X, Y, r, r);
+
+  }
 
   for(let i=0;i<birdsBlue.length;i++){
     fill("blue");
