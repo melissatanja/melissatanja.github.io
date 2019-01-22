@@ -33,6 +33,9 @@ var user;
 var xposition;
 var yposition;
 
+var speedX = 1;
+var speedY = 1;
+
 var cs = window.innerHeight;
 
 // var w = window.innerWidth;
@@ -94,7 +97,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-  console.log("update12");
+  console.log("update13");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -114,8 +117,11 @@ function draw()
 
   // speedX += moveX
 
-  moveX = map(xposition, -10, 10,  0, cs/2);
-  moveY = map(yposition, -10, 10, cs/2, 0);
+  // moveX = map(xposition, -10, 10,  0, cs/2);
+  // moveY = map(yposition, -10, 10, cs/2, 0);
+
+ moveX = speedX * xposition;
+ moveY = speedY * yposition;
 
   var X = constrain(moveX, 45, cs/2 - 45);
   var Y = constrain(moveY, 45, cs/2 - 25);
