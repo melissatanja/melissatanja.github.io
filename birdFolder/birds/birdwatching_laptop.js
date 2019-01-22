@@ -305,10 +305,10 @@ function sendBirds() {
       user_r_green_bird: Red[2], 
       user_r_yellow_bird: Red[3],
     
-      user_b_red_bird: rbird_b, 
-      user_b_blue_bird: bbird_b, 
-      user_b_green_bird: gbird_b, 
-      user_b_yellow_bird: ybird_b
+      user_b_red_bird: Blue[0], 
+      user_b_blue_bird: Blue[1], 
+      user_b_green_bird: Blue[2], 
+      user_b_yellow_bird: Blue[3]
     }
   });
 }

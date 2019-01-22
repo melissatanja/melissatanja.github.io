@@ -34,8 +34,8 @@ var h = window.innerHeight;
 
 var tradeReq;
 
-//consider making a channel for each user?
 var channelName = "movement";
+var tradeChannel = "trade";
 
 function preload(){
 
@@ -67,7 +67,7 @@ function setup()
   
   //attach callbacks to the pubnub object to handle messages and connections
   dataServer.addListener({ message: readIncoming});
-  dataServer.subscribe({channels: [channelName]});
+  dataServer.subscribe({channels: [channelName, tradeChannel]});
 
   // redButton = createButton('TRADE RED');
   // redButton.position(w/5, h/2);
