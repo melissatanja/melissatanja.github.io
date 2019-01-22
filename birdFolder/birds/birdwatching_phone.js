@@ -33,6 +33,7 @@ var w = window.innerWidth;
 var h = window.innerHeight;
 
 var tradeReq;
+var tradeWithWho;
 
 var channelName = "movement";
 var tradeChannel = "trade";
@@ -75,15 +76,15 @@ function setup()
 
   blueButton = createButton('TRADE BLUE');
   blueButton.position((w/4), h/4*3);
-  blueButton.mouseClicked(sendTrade('b'));
+  blueButton.mouseClicked(tradeB());
 
   greenButton = createButton('TRADE GREEN');
   greenButton.position((w/2), h/4*3);
-  greenButton.mouseClicked(sendTrade("g"));
+  greenButton.mouseClicked(tradeG());
 
   yellowButton = createButton('TRADE YELLOW');
   yellowButton.position((w/4) * 3, h/4*3);
-  yellowButton.mouseClicked(sendTrade("y"));
+  yellowButton.mouseClicked(tradeY());
 
   setInterval(sendData, 100);
 
@@ -181,33 +182,35 @@ if(yellowCount != undefined){
 
 }
 
-// function tradeB(){
+function tradeB(){
 
-//   tradeReq = "b";
-//   sendTrade();
-//   // tradeReq = true;
+  tradeWithWho = "b";
+  sendTrade();
+  // tradeReq = true;
 
-//   // def();
+  // def();
 
-// }
+}
 
-// function tradeG(){
+function tradeG(){
 
-//   tradeReq = "g";
-//   // tradeReq = true;
+  tradeWithWho = "g";
+  sendTrade();
+  // tradeReq = true;
 
-//   // def();
+  // def();
 
-// }
+}
 
-// function tradeY(){
+function tradeY(){
 
-//   tradeReq = "y";
-//   // tradeReq = true;
+  tradeWithWho = "y";
+  sendTrade();
+  // tradeReq = true;
 
-//   // def();
+  // def();
 
-// }
+}
 
 function sendData() {
  
@@ -243,7 +246,7 @@ function sendData() {
 
 
 
-function sendTrade(tradeWithWho)
+function sendTrade()
 {
   dataServer.publish({
       channel: tradeChannel,
