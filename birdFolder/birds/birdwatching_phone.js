@@ -6,8 +6,8 @@ Blank pubnub sketch
 // server variables
 
 var dataServer;
-var pubKey = 'pub-c-ec3ff967-067c-4cd4-9793-79b8f7f11c56';
-var subKey = 'sub-c-f43fe396-14f2-11e9-b552-46d61eed2fbc';
+var pubKey = 'pub-c-2aaa0bce-4824-4395-9800-dfc7dbca679d';
+var subKey = 'sub-c-ce34fffc-1de8-11e9-a469-92940241a6b5';
 
 // var colours = ['red', 'blue', 'green', 'yellow'];
 var trade_red = false;
