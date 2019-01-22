@@ -82,7 +82,10 @@ function draw() {
 // green_bird = 1;
 
 
-
+text("red: ", redCount, width/5, height/2);
+text("blue: ", blueCount, (width/5) * 2, height/2);
+text("green: ", greenCount, (width/5) * 3, height/2);
+text("yellow: ", yellowCount, (width/5) * 4, height/2);
 
 
 
@@ -193,7 +196,10 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
     greenCount = inMessage.message.green_bird;
     yellowCount = inMessage.message.yellow_bird;
 
-    text("redCount", width/2, height/2);
+    // text("red: ", redCount, width/5, height/2);
+    // text("blue: ", blueCount, (width/5) * 2, height/2);
+    // text("green: ", greenCount, (width/5) * 3, height/2);
+    // text("yellow: ", yellowCount, (width/5) * 4, height/2);
 
     // this is where we get info about bird count
 
