@@ -301,6 +301,11 @@ function birdCatchG(){
 
 function sendBirds() {
 
+  console.log("red: " + red_bird);
+  console.log("blue: " + blue_bird);
+  console.log("green: " + green_bird);
+  console.log("yellow: " + yellow_bird);
+
   // Send Data to the server to draw it in all other canvases
   dataServer.publish({
       channel: channelName,
