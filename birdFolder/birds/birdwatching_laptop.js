@@ -17,11 +17,11 @@ var birdsRed = [];
 var birdsYellow = [];
 var birdsGreen = [];
 
-var img_red;
-var img_blue;
-var img_green;
-var img_yellow;
-var bg;
+let img_red;
+let img_blue;
+let img_green;
+let img_yellow;
+let bg;
 
 var blue_bird = 0;
 var red_bird = 0;
@@ -101,7 +101,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-  console.log("update14");
+  console.log("update15");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
