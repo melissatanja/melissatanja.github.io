@@ -15,10 +15,10 @@ var trade_blue = false;
 var trade_green = false;
 var trade_yellow = false;
 
-var redCount = 0;
-var blueCount = 0;
-var greenCount = 0;
-var yellowCount = 0;
+var redCount;
+var blueCount;
+var greenCount;
+var yellowCount;
 
 var red_bird;
 var blue_bird;
