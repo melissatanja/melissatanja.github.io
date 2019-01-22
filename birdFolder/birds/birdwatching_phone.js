@@ -85,6 +85,11 @@ function draw() {
 // blue_bird = 2;
 // green_bird = 1;
 
+var redCount = 4;
+var blueCount = 4;
+var greenCount = 4;
+var yellowCount = 4;
+
 if(redCount != undefined){
 
   // text("red: " + redCount, width/5, height/2);
