@@ -100,6 +100,10 @@ if(redCount != undefined){
     if(redCount > 0){
       ellipse((width/5) * redCount, height/8, 50, 50);
     }
+    if(redCount > 1){
+      ellipse((width/5) * redCount, height/8, 50, 50);
+      ellipse((width/5) * (redCount - 1), height/8, 50, 50);
+    }
   //   if(r+1 == redCount){
   //     break;}
   // }
@@ -114,6 +118,10 @@ if(blueCount != undefined){
     // ellipse(map(width/4*b,0,w*3/4,300,w-300),2*height/5-100,100,100);
     if(blueCount > 0){
       ellipse((width/5) * blueCount, height/8 * 2, 50, 50);
+    }
+    if(blueCount > 1){
+      ellipse((width/5) * blueCount, height/8 * 2, 50, 50);
+      ellipse((width/5) * (blueCount - 1), height/8 * 2, 50, 50);
     }
   //   if(b+1 == blueCount){
   //     break;}
@@ -130,6 +138,10 @@ if(greenCount != undefined){
     if(greenCount > 0){
       ellipse((width/5) * greenCount, height/8 * 3, 50, 50);
     }
+    if(greenCount > 1){
+      ellipse((width/5) * greenCount, height/8 * 3, 50, 50);
+      ellipse((width/5) * (greenCount - 1), height/8 * 3, 50, 50);
+    }
   //   if(g+1 == greenCount){
   //     break;}
   // } 
@@ -144,6 +156,9 @@ if(yellowCount != undefined){
     // ellipse(map(width/4*y,0,w*3/4,300,w-300),4*height/5-100,100,100);
     if(yellowCount > 0){
       ellipse((width/5) * yellowCount, height/8 * 4, 50, 50);
+    }
+    if(yellowCount > 1){
+      ellipse((width/5) * (yellowCount - 1), height/8 * 4, 50, 50);
     }
     // if(y+1 == yellowCount){
       // break;}
