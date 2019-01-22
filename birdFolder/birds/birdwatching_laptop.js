@@ -90,7 +90,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-  console.log("update8");
+  console.log("update9");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -101,7 +101,7 @@ function setup()
 
   }
 
-  setInterval(sendData, 100);
+  setInterval(sendBirds, 100);
 
 }
 
@@ -298,7 +298,7 @@ function birdCatchG(){
 
 // }
 
-function sendData() {
+function sendBirds() {
 
   // Send Data to the server to draw it in all other canvases
   dataServer.publish({
