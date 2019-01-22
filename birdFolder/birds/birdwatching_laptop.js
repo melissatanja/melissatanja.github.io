@@ -224,7 +224,7 @@ function draw()
   birdCatchG();
 
 
-  console.log("red: " + Red[0] + " blue: " + Red[1] + " green: " + Red[2] + " yellow: " + Red[3]);
+  //console.log("red: " + Red[0] + " blue: " + Red[1] + " green: " + Red[2] + " yellow: " + Red[3]);
 
 }
 
@@ -232,6 +232,8 @@ function birdCatchB(){
   for(let i=0;i<birdsBlue.length;i++){
     if(dist(birdsBlue[i].x,birdsBlue[i].y, rX, rY) <= bsize+15){
       birdsBlue.splice(i,1);
+
+      console.log("i caught a blue");
 
       Red[1] += 1;
     }
