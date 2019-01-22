@@ -242,7 +242,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
   if(inMessage.channel == channelName)
   {
 
-    if(inMessage.message.user = 0;){
+    if(inMessage.message.user_r){
     // inMessage.message.redCount = red_bird;
     // inMessage.message.blueCount = blue_bird;
     // inMessage.message.greenCount = green_bird;
