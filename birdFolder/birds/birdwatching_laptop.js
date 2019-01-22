@@ -101,7 +101,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-  console.log("update17");
+  console.log("update18");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -132,8 +132,8 @@ if(xposition != undefined && yposition != undefined){
   // prevX = moveX;
   // prevY = moveY;
 
-  console.log("x: " + X);
-  console.log("y: " + Y);
+  // console.log("x: " + X);
+  // console.log("y: " + Y);
 
   //red binoculars
   image(img_red, X, Y, r, r);
