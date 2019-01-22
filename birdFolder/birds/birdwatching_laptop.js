@@ -33,8 +33,8 @@ var user;
 var xposition;
 var yposition;
 
-var speedX = 1;
-var speedY = 1;
+// var speedX = 1;
+// var speedY = 1;
 
 var cs = window.innerHeight;
 
@@ -44,6 +44,8 @@ var cs = window.innerHeight;
 var r = 60;
 var moveX = 0;
 var moveY = 0;
+var X;
+var Y;
 
 function preload(){
 
@@ -97,7 +99,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-  console.log("update13");
+  console.log("update14");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -108,7 +110,7 @@ function setup()
 
   }
 
-  setInterval(sendBirds, 100);
+  setInterval(sendBirds, 300);
 
 }
 
@@ -117,16 +119,28 @@ function draw()
 
   // speedX += moveX
 
-  // moveX = map(xposition, -10, 10,  0, cs/2);
-  // moveY = map(yposition, -10, 10, cs/2, 0);
+if(xposition != undefined && yposition != undefined){
+
+  moveX = map(xposition, -10, 10,  0, cs/2);
+  moveY = map(yposition, -10, 10, cs/2, 0);
+
+  X = constrain(moveX, 45, cs/2 - 45);
+  Y = constrain(moveY, 45, cs/2 - 25);
+
+  prevX = moveX;
+  prevY = moveY;
+
+}else{
+
+  X = constrain(prevX, 45, cs/2 - 45);
+  Y = constrain(prevY, 45, cs/2 - 25);
+
+}
 
  // moveX = speedX * xposition;
  // moveY = speedY * yposition;
 
- console.log(xposition);
-
-  var X = constrain(moveX, 45, cs/2 - 45);
-  var Y = constrain(moveY, 45, cs/2 - 25);
+ // console.log(xposition);
 
   noStroke();
   rectMode(CORNER);
