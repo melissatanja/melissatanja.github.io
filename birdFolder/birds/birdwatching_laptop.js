@@ -290,10 +290,10 @@ function birdCatchG(){
 
 function sendBirds() {
 
-  // console.log("red: " + red_bird);
-  // console.log("blue: " + blue_bird);
-  // console.log("green: " + green_bird);
-  // console.log("yellow: " + yellow_bird);
+  console.log("red: " + Red[0]);
+  console.log("blue: " + Red[1]);
+  console.log("green: " + Red[2]);
+  console.log("yellow: " + Red[3]);
 
   // Send Data to the server to draw it in all other canvases
   dataServer.publish({
@@ -303,12 +303,12 @@ function sendBirds() {
       user_r_red_bird: Red[0], 
       user_r_blue_bird: Red[1], 
       user_r_green_bird: Red[2], 
-      user_r_yellow_bird: Red[3],
+      user_r_yellow_bird: Red[3]
     
-      user_b_red_bird: Blue[0], 
-      user_b_blue_bird: Blue[1], 
-      user_b_green_bird: Blue[2], 
-      user_b_yellow_bird: Blue[3]
+      // user_b_red_bird: Blue[0], 
+      // user_b_blue_bird: Blue[1], 
+      // user_b_green_bird: Blue[2], 
+      // user_b_yellow_bird: Blue[3]
     }
   });
 }
