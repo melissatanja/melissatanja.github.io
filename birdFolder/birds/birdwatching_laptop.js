@@ -303,6 +303,8 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
     if(inMessage.publisher === "red"){
 
+      console.log(inMessage);
+
       //get red user's current bird count
       Red[0] = inMessage.message.red_bird;
       Red[1] = inMessage.message.blue_bird;
