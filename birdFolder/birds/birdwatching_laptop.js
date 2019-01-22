@@ -101,7 +101,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName]});
 
-  console.log("update18");
+  console.log("update19");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -171,11 +171,16 @@ function draw()
     // X = constrain(moveX, 45, cs/2 - 45);
     // Y = constrain(moveY, 45, cs/2 - 25);
 
-    // prevX = moveX;
-    // prevY = moveY;
+    prevX = X;
+    prevY = Y;
 
     // console.log("x: " + X);
     // console.log("y: " + Y);
+
+  }else{
+
+    X = map(prevX, -10, 10,  45, cs/2 - 45);
+    Y = map(prevY, -10, 10, cs/2 - 45, 45);
 
   }
 
