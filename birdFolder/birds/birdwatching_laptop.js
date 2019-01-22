@@ -243,6 +243,12 @@ function draw()
   birdCatchY();
   birdCatchG();
 
+
+  console.log("red: " + Red[0]);
+  console.log("blue: " + Red[1]);
+  console.log("green: " + Red[2]);
+  console.log("yellow: " + Red[3]);
+
 }
 
 function birdCatchB(){
@@ -290,10 +296,10 @@ function birdCatchG(){
 
 function sendBirds() {
 
-  console.log("red: " + Red[0]);
-  console.log("blue: " + Red[1]);
-  console.log("green: " + Red[2]);
-  console.log("yellow: " + Red[3]);
+  // console.log("red: " + Red[0]);
+  // console.log("blue: " + Red[1]);
+  // console.log("green: " + Red[2]);
+  // console.log("yellow: " + Red[3]);
 
   // Send Data to the server to draw it in all other canvases
   dataServer.publish({
