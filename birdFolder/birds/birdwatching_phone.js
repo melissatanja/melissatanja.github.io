@@ -84,10 +84,10 @@ if(redCount != undefined){
     if(redCount > 0){
       image(Rbird, (width/5) * redCount, height/8, 50, 50);
     }
-    if(redCount > 1){
-      image(Rbird, (width/5) * redCount, height/8, 50, 50);
-      image(Rbird, (width/5) * (redCount - 1), height/8, 50, 50);
-    }
+    // if(redCount > 1){
+    //   image(Rbird, (width/5) * redCount, height/8, 50, 50);
+    //   image(Rbird, (width/5) * (redCount - 1), height/8, 50, 50);
+    // }
 
 }
 
@@ -97,10 +97,10 @@ if(blueCount != undefined){
     if(blueCount > 0){
       image(Bbird, (width/5) * blueCount, height/8 * 2, 50, 50);
     }
-    if(blueCount > 1){
-      image(Bbird, (width/5) * blueCount, height/8 * 2, 50, 50);
-      image(Bbird, (width/5) * (blueCount - 1), height/8 * 2, 50, 50);
-    }
+    // if(blueCount > 1){
+    //   image(Bbird, (width/5) * blueCount, height/8 * 2, 50, 50);
+    //   image(Bbird, (width/5) * (blueCount - 1), height/8 * 2, 50, 50);
+    // }
 
 }
 
@@ -110,10 +110,10 @@ if(greenCount != undefined){
     if(greenCount > 0){
       image(Gbird, (width/5) * greenCount, height/8 * 3, 50, 50);
     }
-    if(greenCount > 1){
-      image(Gbird, (width/5) * greenCount, height/8 * 3, 50, 50);
-      image(Gbird, (width/5) * (greenCount - 1), height/8 * 3, 50, 50);
-    }
+    // if(greenCount > 1){
+    //   image(Gbird, (width/5) * greenCount, height/8 * 3, 50, 50);
+    //   image(Gbird, (width/5) * (greenCount - 1), height/8 * 3, 50, 50);
+    // }
 
 }
 
@@ -123,10 +123,10 @@ if(yellowCount != undefined){
     if(yellowCount > 0){
       image(Ybird, (width/5) * yellowCount, height/8 * 4, 50, 50);
     }
-    if(yellowCount > 1){
-      image(Ybird, (width/5) * yellowCount, height/8 * 4, 50, 50);
-      image(Ybird, (width/5) * (yellowCount - 1), height/8 * 4, 50, 50);
-    }
+    // if(yellowCount > 1){
+    //   image(Ybird, (width/5) * yellowCount, height/8 * 4, 50, 50);
+    //   image(Ybird, (width/5) * (yellowCount - 1), height/8 * 4, 50, 50);
+    // }
 
 }
 
