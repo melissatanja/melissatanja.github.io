@@ -43,9 +43,9 @@ function setup() {
   background(111);
   
   textSize(20);
-  stroke("red");
+  stroke("blue");
   textAlign(CENTER);
-  text("SCARLET TANAGER", w/2, 25);
+  text("BLUEJAY", w/2, 25);
   noStroke();
 
    // initialize pubnub
@@ -54,16 +54,16 @@ function setup() {
     publish_key   : pubKey,  //get these from the pubnub account online
     subscribe_key : subKey,  
     ssl: true,  //enables a secure connection. This option has to be used if using the OCAD webspace
-    uuid: "red"
+    uuid: "blue"
   });
   
   //attach callbacks to the pubnub object to handle messages and connections
   dataServer.addListener({ message: readIncoming});
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  blueButton = createButton('TRADE BLUEJAY');
+  blueButton = createButton('TRADE SCARLET TANAGER');
   blueButton.position((w/4), h/4*3);
-  blueButton.mouseClicked(tradeB);
+  blueButton.mouseClicked(tradeR);
 
   greenButton = createButton('TRADE TREE SWALLOW');
   greenButton.position((w/2), h/4*3);
@@ -83,7 +83,7 @@ if(redCount != undefined){
 
     fill("red");
     if(redCount > 0){
-      image(Rbird, (width/5) * redCount, height/8, 50, 50);
+      image(Rbird, (width/5) * redCount, height/8 * 2, 50, 50);
     }
     // if(redCount > 1){
     //   image(Rbird, (width/5) * redCount, height/8, 50, 50);
@@ -96,7 +96,7 @@ if(blueCount != undefined){
 
     fill("blue");
     if(blueCount > 0){
-      image(Bbird, (width/5) * blueCount, height/8 * 2, 50, 50);
+      image(Bbird, (width/5) * blueCount, height/8, 50, 50);
     }
     // if(blueCount > 1){
     //   image(Bbird, (width/5) * blueCount, height/8 * 2, 50, 50);
@@ -133,9 +133,9 @@ if(yellowCount != undefined){
 
 }
 
-function tradeB(){
+function tradeR(){
 
-  tradeWithWho = "b";
+  tradeWithWho = "r";
   sendTrade();
 
 }
@@ -201,10 +201,10 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
   if(inMessage.channel == channelName)
   {
 
-      redCount = inMessage.message.user_r_red_bird;
-      blueCount = inMessage.message.user_r_blue_bird;
-      greenCount = inMessage.message.user_r_green_bird;
-      yellowCount = inMessage.message.user_r_yellow_bird;
+      redCount = inMessage.message.user_b_red_bird;
+      blueCount = inMessage.message.user_b_blue_bird;
+      greenCount = inMessage.message.user_b_green_bird;
+      yellowCount = inMessage.message.user_b_yellow_bird;
 
   }
 }

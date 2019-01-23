@@ -37,8 +37,6 @@ var Green = [0, 0, 0, 0];
 //yellow user 
 var Yellow = [0, 0, 0, 0];
 
-var r_xpos;
-var r_ypos;
 var tradeReq;
 
 var cs = window.innerHeight;
@@ -46,10 +44,27 @@ var cs = window.innerHeight;
 var r = 60;
 var moveX = 0;
 var moveY = 0;
+
+var r_xpos;
+var r_ypos;
 let rX = 0;
 let rY = 0;
 var r_prevX = 0;
 var r_prevY = 0;
+
+var b_xpos;
+var b_ypos;
+let bX = 0;
+let bY = 0;
+var b_prevX = 0;
+var b_prevY = 0;
+
+var g_xpos;
+var g_ypos;
+let gX = 0;
+let gY = 0;
+var g_prevX = 0;
+var g_prevY = 0;
 
 function preload(){
 
@@ -144,6 +159,7 @@ function draw()
   //background image
   image(bg, cs/2, cs/2, cs - 50, cs - 50);
 
+  //red binoculars
   if(r_xpos != undefined && r_ypos != undefined){
 
     rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
@@ -161,7 +177,41 @@ function draw()
 
   image(img_red, rX, rY, r, r);
 
+  //blue binoculars
+  if(b_xpos != undefined && b_ypos != undefined){
 
+    bX = map(b_xpos, -10, 10,  45, cs/2 - 45);
+    bY = map(b_ypos, -10, 10, cs/2 - 45, 45);
+
+    b_prevX = bX;
+    b_prevY = bY;
+
+  }else{
+
+    bX = map(b_prevX, -10, 10,  45, cs/2 - 45);
+    bY = map(b_prevY, -10, 10, cs/2 - 45, 45);
+
+  }
+
+  image(img_blue, bX, bY, r, r);
+
+  //green binoculars
+  if(g_xpos != undefined && g_ypos != undefined){
+
+    gX = map(g_xpos, -10, 10,  45, cs/2 - 45);
+    gY = map(g_ypos, -10, 10, cs/2 - 45, 45);
+
+    g_prevX = gX;
+    g_prevY = gY;
+
+  }else{
+
+    gX = map(g_prevX, -10, 10,  45, cs/2 - 45);
+    gY = map(g_prevY, -10, 10, cs/2 - 45, 45);
+
+  }
+
+  image(img_green, gX, gY, r, r);
 
 
   //birds moving
@@ -203,45 +253,6 @@ function draw()
 
 }
 
-function birdCatchB(){
-  for(let i=0;i<birdsBlue.length;i++){
-    if(dist(birdsBlue[i].x,birdsBlue[i].y, rX, rY) <= bsize+5){
-      birdsBlue.splice(i,1);
-
-      Red[1] += 1;
-    }
-  }
-}
-
-function birdCatchR(){
-  for(let i=0;i<birdsRed.length;i++){
-    if(dist(birdsRed[i].x,birdsRed[i].y, rX, rY) <= bsize+5){
-      birdsRed.splice(i,1);
-
-      Red[0] += 1;
-    }
-  }
-}
-function birdCatchY(){
-  for(let i=0;i<birdsYellow.length;i++){
-    if(dist(birdsYellow[i].x,birdsYellow[i].y, rX, rY) <= bsize+5){
-      birdsYellow.splice(i,1);
-
-      Red[3] += 1;
-        
-    }
-  }
-}
-function birdCatchG(){
-  for(let i=0;i<birdsGreen.length;i++){
-    if(dist(birdsGreen[i].x,birdsGreen[i].y, rX, rY) <= bsize+55){
-      birdsGreen.splice(i,1);
-
-      Red[2] += 1;
-    }
-  }
-}
-
 function sendBirds() {
 
   // Send Data to the server to draw it in all other canvases
@@ -252,12 +263,17 @@ function sendBirds() {
       user_r_red_bird: Red[0], 
       user_r_blue_bird: Red[1], 
       user_r_green_bird: Red[2], 
-      user_r_yellow_bird: Red[3]
+      user_r_yellow_bird: Red[3],
     
-      // user_b_red_bird: Blue[0], 
-      // user_b_blue_bird: Blue[1], 
-      // user_b_green_bird: Blue[2], 
-      // user_b_yellow_bird: Blue[3]
+      user_b_red_bird: Blue[0], 
+      user_b_blue_bird: Blue[1], 
+      user_b_green_bird: Blue[2], 
+      user_b_yellow_bird: Blue[3],
+
+      user_g_red_bird: Green[0], 
+      user_g_blue_bird: Green[1], 
+      user_g_green_bird: Green[2], 
+      user_g_yellow_bird: Green[3],
     }
   });
 }
@@ -273,6 +289,20 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       r_xpos = inMessage.message.x_angle;
       r_ypos = inMessage.message.y_angle;
+
+    }
+
+    if(inMessage.publisher === "blue"){
+
+      b_xpos = inMessage.message.x_angle;
+      b_ypos = inMessage.message.y_angle;
+
+    }
+
+    if(inMessage.publisher === "green"){
+
+      g_xpos = inMessage.message.x_angle;
+      g_ypos = inMessage.message.y_angle;
 
     }
   }
