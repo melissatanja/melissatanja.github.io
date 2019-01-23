@@ -66,6 +66,13 @@ let gY = 0;
 var g_prevX = 0;
 var g_prevY = 0;
 
+var y_xpos;
+var y_ypos;
+let yX = 0;
+let yY = 0;
+var y_prevX = 0;
+var y_prevY = 0;
+
 function preload(){
 
   img_red = loadImage('user_icons/user_icon_red.png');
