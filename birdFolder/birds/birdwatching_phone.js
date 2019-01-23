@@ -7,10 +7,10 @@ var trade_blue = 0;
 var trade_green = 0;
 var trade_yellow = 0;
 
-var redCount = 0;
-var blueCount = 0;
-var greenCount = 0;
-var yellowCount = 0;
+var redCount;
+var blueCount;
+var greenCount;
+var yellowCount;
 
 var red_bird;
 var blue_bird;
