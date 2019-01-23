@@ -180,16 +180,16 @@ function draw()
   //blue binoculars
   if(b_xpos != undefined && b_ypos != undefined){
 
-    bX = map(b_xpos, -10, 10,  45, cs/2 - 45);
-    bY = map(b_ypos, -10, 10, cs/2 - 45, 45);
+    bX = map(b_xpos, -10, 10,  cs/2 + 45, cs);
+    bY = map(b_ypos, -10, 10, cs, cs/2 + 45);
 
     b_prevX = bX;
     b_prevY = bY;
 
   }else{
 
-    bX = map(b_prevX, -10, 10,  45, cs/2 - 45);
-    bY = map(b_prevY, -10, 10, cs/2 - 45, 45);
+    bX = map(b_prevX, -10, 10,  cs/2 + 45, cs);
+    bY = map(b_prevY, -10, 10, cs, cs/2 + 45);
 
   }
 
@@ -198,7 +198,7 @@ function draw()
   //green binoculars
   if(g_xpos != undefined && g_ypos != undefined){
 
-    gX = map(g_xpos, -10, 10,  45, cs/2 - 45);
+    gX = map(g_xpos, -10, 10,  cs/2 + 45, cs);
     gY = map(g_ypos, -10, 10, cs/2 - 45, 45);
 
     g_prevX = gX;
@@ -206,13 +206,30 @@ function draw()
 
   }else{
 
-    gX = map(g_prevX, -10, 10,  45, cs/2 - 45);
+    gX = map(g_prevX, -10, 10,  cs/2 + 45, cs);
     gY = map(g_prevY, -10, 10, cs/2 - 45, 45);
 
   }
 
   image(img_green, gX, gY, r, r);
 
+    //yellow binoculars
+  if(y_xpos != undefined && y_ypos != undefined){
+
+    yX = map(y_xpos, -10, 10,  45, cs/2 - 45);
+    yY = map(y_ypos, -10, 10, cs, cs/2 + 45);
+
+    y_prevX = yX;
+    y_prevY = yY;
+
+  }else{
+
+    yX = map(y_prevX, -10, 10,  45, cs/2 - 45);
+    yY = map(y_prevY, -10, 10, cs, cs/2 + 45);
+
+  }
+
+  image(img_yellow, yX, yY, r, r);
 
   //birds moving
 
