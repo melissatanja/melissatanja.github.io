@@ -1,0 +1,32 @@
+.btn {
+	border: {color: black};
+	display: inline-block;
+}
+
+.red{
+
+	color: black;
+	background-color: {color: red};
+
+}
+
+.blue{
+
+	color: black;
+	background-color: {color: blue};
+
+}
+
+.green{
+
+	color: black;
+	background-color: {color: green};
+
+}
+
+.yellow{
+
+	color: black;
+	background-color: {color: yellow};
+
+}
