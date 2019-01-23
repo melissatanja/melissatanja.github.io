@@ -39,7 +39,6 @@ function birdCatchG(){
 }
 
 //blue user
-
 function birdCatchB(){
   for(let i=0;i<birdsBlue.length;i++){
     if(dist(birdsBlue[i].x,birdsBlue[i].y, bX, bY) <= bsize+10){
@@ -79,3 +78,82 @@ function birdCatchG(){
   }
 }
 
+//green user
+function birdCatchB(){
+  for(let i=0;i<birdsBlue.length;i++){
+    if(dist(birdsBlue[i].x,birdsBlue[i].y, gX, gY) <= bsize+10){
+      birdsBlue.splice(i,1);
+
+      Green[1] += 1;
+    }
+  }
+}
+
+function birdCatchR(){
+  for(let i=0;i<birdsRed.length;i++){
+    if(dist(birdsRed[i].x,birdsRed[i].y, gX, gY) <= bsize+10){
+      birdsRed.splice(i,1);
+
+      Green[0] += 1;
+    }
+  }
+}
+function birdCatchY(){
+  for(let i=0;i<birdsYellow.length;i++){
+    if(dist(birdsYellow[i].x,birdsYellow[i].y, gX, gY) <= bsize+10){
+      birdsYellow.splice(i,1);
+
+      Green[3] += 1;
+        
+    }
+  }
+}
+function birdCatchG(){
+  for(let i=0;i<birdsGreen.length;i++){
+    if(dist(birdsGreen[i].x,birdsGreen[i].y, gX, gY) <= bsize+10){
+      birdsGreen.splice(i,1);
+
+      Green[2] += 1;
+    }
+  }
+}
+
+//yellow user
+function birdCatchB(){
+  for(let i=0;i<birdsBlue.length;i++){
+    if(dist(birdsBlue[i].x,birdsBlue[i].y, yX, yY) <= bsize+10){
+      birdsBlue.splice(i,1);
+
+      Yellow[1] += 1;
+    }
+  }
+}
+
+function birdCatchR(){
+  for(let i=0;i<birdsRed.length;i++){
+    if(dist(birdsRed[i].x,birdsRed[i].y, yX, yY) <= bsize+10){
+      birdsRed.splice(i,1);
+
+      Yellow[0] += 1;
+    }
+  }
+}
+function birdCatchY(){
+  for(let i=0;i<birdsYellow.length;i++){
+    if(dist(birdsYellow[i].x,birdsYellow[i].y, yX, yY) <= bsize+10){
+      birdsYellow.splice(i,1);
+
+      Yellow[3] += 1;
+        
+    }
+  }
+}
+function birdCatchG(){
+  for(let i=0;i<birdsGreen.length;i++){
+    if(dist(birdsGreen[i].x,birdsGreen[i].y, yX, yY) <= bsize+10){
+      birdsGreen.splice(i,1);
+
+      Yellow[2] += 1;
+    }
+  }
+}
