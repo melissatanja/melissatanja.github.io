@@ -199,7 +199,7 @@ function draw()
   birdCatchG();
 
 
-  console.log("red: " + Red[0] + " blue: " + Red[1] + " green: " + Red[2] + " yellow: " + Red[3]);
+  // console.log("red: " + Red[0] + " blue: " + Red[1] + " green: " + Red[2] + " yellow: " + Red[3]);
 
 }
 
