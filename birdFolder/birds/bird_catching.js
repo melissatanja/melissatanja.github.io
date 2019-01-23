@@ -1,7 +1,7 @@
 //red user
 function birdCatchB(){
   for(let i=0;i<birdsBlue.length;i++){
-    if(dist(birdsBlue[i].x,birdsBlue[i].y, rX, rY) <= bsize+5){
+    if(dist(birdsBlue[i].x,birdsBlue[i].y, rX, rY) <= bsize+10){
       birdsBlue.splice(i,1);
 
       Red[1] += 1;
@@ -11,7 +11,7 @@ function birdCatchB(){
 
 function birdCatchR(){
   for(let i=0;i<birdsRed.length;i++){
-    if(dist(birdsRed[i].x,birdsRed[i].y, rX, rY) <= bsize+5){
+    if(dist(birdsRed[i].x,birdsRed[i].y, rX, rY) <= bsize+10){
       birdsRed.splice(i,1);
 
       Red[0] += 1;
@@ -20,7 +20,7 @@ function birdCatchR(){
 }
 function birdCatchY(){
   for(let i=0;i<birdsYellow.length;i++){
-    if(dist(birdsYellow[i].x,birdsYellow[i].y, rX, rY) <= bsize+5){
+    if(dist(birdsYellow[i].x,birdsYellow[i].y, rX, rY) <= bsize+10){
       birdsYellow.splice(i,1);
 
       Red[3] += 1;
@@ -30,7 +30,7 @@ function birdCatchY(){
 }
 function birdCatchG(){
   for(let i=0;i<birdsGreen.length;i++){
-    if(dist(birdsGreen[i].x,birdsGreen[i].y, rX, rY) <= bsize+55){
+    if(dist(birdsGreen[i].x,birdsGreen[i].y, rX, rY) <= bsize+10){
       birdsGreen.splice(i,1);
 
       Red[2] += 1;
