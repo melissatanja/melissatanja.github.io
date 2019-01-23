@@ -37,23 +37,11 @@ var Green = [0, 0, 0, 0];
 //yellow user 
 var Yellow = [0, 0, 0, 0];
 
-// var user;
-
-// var Ytrade;
-// var Gtrade;
-// var Btrade;
-
 var r_xpos;
 var r_ypos;
 var tradeReq;
 
-// var speedX = 1;
-// var speedY = 1;
-
 var cs = window.innerHeight;
-
-// var w = window.innerWidth;
-// var h = window
 
 var r = 60;
 var moveX = 0;
@@ -136,29 +124,22 @@ function draw()
   noStroke();
   rectMode(CORNER);
   imageMode(CENTER);
-  //red section
+
+  //red 
   fill('#FF3333');
   rect(0,0,cs/2,cs/2);
-
-  // image(bg, cs/4, cs/4, cs/2 - 50, cs/2 - 50);
 
   //green
   fill('#99FF00');
   rect(cs/2, 0,cs/2,cs/2);
 
-  // image(bg, cs/4 * 3, cs/4, cs/2 - 50, cs/2 - 50);
-
   //yellow
   fill('#FFFF00');
   rect(0,cs/2,cs/2,cs/2);
 
-  // image(bg, cs/4, cs/4 * 3, cs/2 - 50, cs/2 - 50);
-
   //blue
   fill('#0099FF');
   rect(cs/2,cs/2,cs/2,cs/2);
-
-  // image(bg, cs/4 * 3, cs/4 * 3, cs/2 - 50, cs/2 - 50);
 
   //background image
   image(bg, cs/2, cs/2, cs - 50, cs - 50);
@@ -168,14 +149,8 @@ function draw()
     rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
     rY = map(r_ypos, -10, 10, cs/2 - 45, 45);
 
-    // X = constrain(moveX, 45, cs/2 - 45);
-    // Y = constrain(moveY, 45, cs/2 - 25);
-
     r_prevX = rX;
     r_prevY = rY;
-
-    // console.log("x: " + X);
-    // console.log("y: " + Y);
 
   }else{
 
@@ -233,8 +208,6 @@ function birdCatchB(){
     if(dist(birdsBlue[i].x,birdsBlue[i].y, rX, rY) <= bsize+15){
       birdsBlue.splice(i,1);
 
-      //console.log("i caught a blue");
-
       Red[1] += 1;
     }
   }
@@ -271,11 +244,6 @@ function birdCatchG(){
 
 function sendBirds() {
 
-  // console.log("red: " + Red[0]);
-  // console.log("blue: " + Red[1]);
-  // console.log("green: " + Red[2]);
-  // console.log("yellow: " + Red[3]);
-
   // Send Data to the server to draw it in all other canvases
   dataServer.publish({
       channel: channelName,
@@ -303,53 +271,15 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
     if(inMessage.publisher === "red"){
 
-      //console.log(inMessage);
-
-      //get red user's current bird count
-
-
-      //get red user's phone angles
       r_xpos = inMessage.message.x_angle;
       r_ypos = inMessage.message.y_angle;
 
-      //get red user's button-pressing actions
-
-      // if(inMessage.publisher === "red"){
-
-      //   user = "red"
-
-      // }
-
-      // if(inMessage.message.tradeY === 1){
-
-      //   Ytrade = 1;
-
-      // }
-
-      // if(inMessage.message.tradeG === 1){
-
-      //   Gtrade = 1;
-
-      // }
-
-      // if(inMessage.message.tradeB === 1){
-
-      //   Btrade = 1;
-
-      // }
     }
   }
 
   if(inMessage.channel == tradeChannel){
 
     trade(inMessage.publisher, inMessage.message.tradeReq);
-
-    // if(inMessage.publisher === "red"){
-
-    //   trader: "red",
-    //   tradeReq: tradeReq // who are we trading with
-
-    // }
 
   }
 }
