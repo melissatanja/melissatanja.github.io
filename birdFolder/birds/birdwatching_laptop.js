@@ -47,31 +47,59 @@ var moveY = 0;
 
 var r_xpos;
 var r_ypos;
-let rX = 0;
-let rY = 0;
+let rX = width/4;
+let rY = width/4;
 var r_prevX = 0;
 var r_prevY = 0;
 
 var b_xpos;
 var b_ypos;
-let bX = 0;
-let bY = 0;
+let bX = 3*width/4;
+let bY = 3*width/4;
 var b_prevX = 0;
 var b_prevY = 0;
 
 var g_xpos;
 var g_ypos;
-let gX = 0;
-let gY = 0;
+let gX = 3*width/4;
+let gY = width/4;
 var g_prevX = 0;
 var g_prevY = 0;
 
+/////////I ADDED YELLOW - D
+
 var y_xpos;
 var y_ypos;
-let yX = 0;
-let yY = 0;
+let yX = width/4;
+let yY = 3*width/4;
 var y_prevX = 0;
 var y_prevY = 0;
+
+
+// var r = 60;
+// var moveX = 0;
+// var moveY = 0;
+
+// var r_xpos;
+// var r_ypos;
+// let rX = 0;
+// let rY = 0;
+// var r_prevX = 0;
+// var r_prevY = 0;
+
+// var b_xpos;
+// var b_ypos;
+// let bX = 0;
+// let bY = 0;
+// var b_prevX = 0;
+// var b_prevY = 0;
+
+// var g_xpos;
+// var g_ypos;
+// let gX = 0;
+// let gY = 0;
+// var g_prevX = 0;
+// var g_prevY = 0;
 
 function preload(){
 
@@ -166,6 +194,12 @@ function draw()
   //background image
   image(bg, cs/2, cs/2, cs - 50, cs - 50);
 
+
+
+
+
+
+
   //red binoculars
   if(r_xpos != undefined && r_ypos != undefined){
 
@@ -183,6 +217,14 @@ function draw()
   }
 
   image(img_red, rX, rY, r, r);
+
+
+
+
+
+
+
+
 
   //blue binoculars
   if(b_xpos != undefined && b_ypos != undefined){
@@ -202,23 +244,51 @@ function draw()
 
   image(img_blue, bX, bY, r, r);
 
-  //green binoculars
-  if(g_xpos != undefined && g_ypos != undefined){
 
-    gX = map(g_xpos, -10, 10,  cs/2 + 45, cs);
-    gY = map(g_ypos, -10, 10, cs/2 - 45, 45);
 
-    g_prevX = gX;
-    g_prevY = gY;
 
-  }else{
 
-    gX = map(g_prevX, -10, 10,  cs/2 + 45, cs);
-    gY = map(g_prevY, -10, 10, cs/2 - 45, 45);
 
+
+  // //green binoculars
+  // if(g_xpos != undefined && g_ypos != undefined){
+
+  //   gX = map(g_xpos, -10, 10,  cs/2 + 45, cs);
+  //   gY = map(g_ypos, -10, 10, cs/2 - 45, 45);
+
+  //   g_prevX = gX;
+  //   g_prevY = gY;
+
+  // }else{
+
+  //   gX = map(g_prevX, -10, 10,  cs/2 + 45, cs);
+  //   gY = map(g_prevY, -10, 10, cs/2 - 45, 45);
+
+  // }
+
+  if(g_xpos > 1){
+    gX = constrain(gX+3,width/2,width);
+  }else if(g_xpos < -1){
+    gX = constrain(gX+3,width/2,width);
   }
 
+
+  if(g_ypos > 1){
+    gY = constrain(gY+3,0,width/2);
+  }else if(g_ypos < -1){
+    gY = constrain(gY+3,0,width/2);
+  }
+
+
+
+
   image(img_green, gX, gY, r, r);
+
+
+
+
+
+
 
     //yellow binoculars
   if(y_xpos != undefined && y_ypos != undefined){
@@ -237,6 +307,12 @@ function draw()
   }
 
   image(img_yellow, yX, yY, r, r);
+
+
+
+
+
+
 
   //birds moving
 
