@@ -204,18 +204,15 @@ function draw()
 
 
   // red binoculars
-  // if(r_xpos != undefined && r_ypos != undefined){
-  //   rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
-  //   rY = map(r_ypos, -10, 10, cs/2 - 45, 45);
-  //   r_prevX = rX;
-  //   r_prevY = rY;
-  // }else{
-  //   rX = map(r_prevX, -10, 10,  45, cs/2 - 45);
-  //   rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
-  // }
-
-  rX = (r_xpos * 5) + 225;
-  rY = (r_ypos * 5) + 225;
+  if(r_xpos != undefined && r_ypos != undefined){
+    rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
+    rY = map(r_ypos, -10, 10, cs/2 - 45, 45);
+    r_prevX = rX;
+    r_prevY = rY;
+  }else{
+    rX = map(r_prevX, -10, 10,  45, cs/2 - 45);
+    rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
+  }
 
   // if(r_xpos != undefined && r_ypos != undefined){
 
@@ -250,7 +247,7 @@ function draw()
   //   rY = constrain(rY+2,0,width/2);
   // }
 
-  console.log(rX);
+  // console.log(rX);
 
   image(img_red, rX, rY, r, r);
 
