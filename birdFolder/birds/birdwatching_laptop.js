@@ -65,6 +65,8 @@ var r_xpos;
 var r_ypos;
 let rX = window.innerWidth/4;
 let rY = window.innerWidth/4;
+var r_X;
+var r_Y;
 var r_prevX = 0;
 var r_prevY = 0;
 
