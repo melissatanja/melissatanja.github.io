@@ -245,7 +245,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       if(inMessage.message.user_b_nope === 1){
 
-        Nope();
+        window.setTimeout(Nope(), 3000);
 
         nope = inMessage.message.user_b_nope;
         nope = 0;
