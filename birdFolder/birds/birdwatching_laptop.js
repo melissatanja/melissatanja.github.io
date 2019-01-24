@@ -188,6 +188,8 @@ function setup()
 function draw() 
 {
 
+  console.log(bX);
+
   // console.log(bX);
 
   noStroke();
