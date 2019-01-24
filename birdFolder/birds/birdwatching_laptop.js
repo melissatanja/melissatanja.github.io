@@ -267,16 +267,16 @@ function draw()
   // }
 
   if(g_xpos > 1){
-    gX = constrain(gX-,width/2,width);
+    gX = constrain(gX+2,width/2,width);
   }else if(g_xpos < -0.2){
-    gX = constrain(gX+3,width/2,width);
+    gX = constrain(gX-2,width/2,width);
   }
 
 
   if(g_ypos > 1){
-    gY = constrain(gY-3,0,width/2);
+    gY = constrain(gY-2,0,width/2);
   }else if(g_ypos < -0.2){
-    gY = constrain(gY+3,0,width/2);
+    gY = constrain(gY+2,0,width/2);
   }
 
   image(img_green, gX, gY, r, r);
