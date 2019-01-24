@@ -90,7 +90,9 @@ if(redCount != undefined){
 
     for(var r = 0; r <= redCount; r++){
 
-      image(Rbird, (width/5) * r, height/8, 50, 50);
+      if(r > 0){
+        image(Rbird, (width/5) * r, height/8, 50, 50);
+      }
 
     }
 
@@ -115,7 +117,9 @@ if(blueCount != undefined){
 
     for(var b = 0; b <= blueCount; b++){
 
-      image(Bbird, (width/5) * b, height/8, 50, 50);
+      if(b > 0){
+        image(Bbird, (width/5) * b, height/8, 50, 50);
+      }
 
     }
 
@@ -134,7 +138,9 @@ if(greenCount != undefined){
 
     for(var g = 0; g <= greenCount; g++){
 
-      image(Gbird, (width/5) * g, height/8, 50, 50);
+      if(g > 0){
+        image(Gbird, (width/5) * g, height/8, 50, 50);
+      }
 
     }
 
@@ -153,7 +159,9 @@ if(yellowCount != undefined){
 
     for(var y = 0; y <= yellowCount; y++){
 
-      image(Ybird, (width/5) * y, height/8, 50, 50);
+      if(y > 0){
+        image(Ybird, (width/5) * y, height/8, 50, 50);
+      }
 
     }
 
