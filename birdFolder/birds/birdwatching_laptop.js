@@ -214,15 +214,15 @@ function draw()
   // }
 
   if(r_xpos > 1){
-    r_X = constrain(rX+2,width/2,width);
+    rX = constrain(rX+2,width/2,width);
   }else if(r_xpos < -0.2){
-    r_X = constrain(rX-2,width/2,width);
+    rX = constrain(rX-2,width/2,width);
   }
 
   if(r_ypos > 1){
-    r_Y = constrain(rY-2,0,width/2);
+    rY = constrain(rY-2,0,width/2);
   }else if(r_ypos < -0.2){
-    r_Y = constrain(rY+2,0,width/2);
+    rY = constrain(rY+2,0,width/2);
   }
 
   // rX = constrain(r_X, 0, width/2 - 45);
