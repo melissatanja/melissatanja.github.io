@@ -76,30 +76,30 @@ var y_prevX = 0;
 var y_prevY = 0;
 
 
-// var r = 60;
-// var moveX = 0;
-// var moveY = 0;
+var r = 60;
+var moveX = 0;
+var moveY = 0;
 
-// var r_xpos;
-// var r_ypos;
-// let rX = 0;
-// let rY = 0;
-// var r_prevX = 0;
-// var r_prevY = 0;
+var r_xpos;
+var r_ypos;
+let rX = 0;
+let rY = 0;
+var r_prevX = 0;
+var r_prevY = 0;
 
-// var b_xpos;
-// var b_ypos;
-// let bX = 0;
-// let bY = 0;
-// var b_prevX = 0;
-// var b_prevY = 0;
+var b_xpos;
+var b_ypos;
+let bX = 0;
+let bY = 0;
+var b_prevX = 0;
+var b_prevY = 0;
 
-// var g_xpos;
-// var g_ypos;
-// let gX = 0;
-// let gY = 0;
-// var g_prevX = 0;
-// var g_prevY = 0;
+var g_xpos;
+var g_ypos;
+let gX = 0;
+let gY = 0;
+var g_prevX = 0;
+var g_prevY = 0;
 
 function preload(){
 
@@ -202,28 +202,28 @@ function draw()
 
 
 
-  // //red binoculars
-  // if(r_xpos != undefined && r_ypos != undefined){
-  //   rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
-  //   rY = map(r_ypos, -10, 10, cs/2 - 45, 45);
-  //   r_prevX = rX;
-  //   r_prevY = rY;
-  // }else{
-  //   rX = map(r_prevX, -10, 10,  45, cs/2 - 45);
-  //   rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
+  //red binoculars
+  if(r_xpos != undefined && r_ypos != undefined){
+    rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
+    rY = map(r_ypos, -10, 10, cs/2 - 45, 45);
+    r_prevX = rX;
+    r_prevY = rY;
+  }else{
+    rX = map(r_prevX, -10, 10,  45, cs/2 - 45);
+    rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
+  }
+
+  //   if(r_xpos > 1){
+  //   rX = constrain(rX+2,width/2,width);
+  // }else if(r_xpos < -0.2){
+  //   rX = constrain(rX-2,width/2,width);
   // }
 
-    if(r_xpos > 1){
-    rX = constrain(rX+2,width/2,width);
-  }else if(r_xpos < -0.2){
-    rX = constrain(rX-2,width/2,width);
-  }
-
-  if(r_ypos > 1){
-    rY = constrain(rY-2,0,width/2);
-  }else if(r_ypos < -0.2){
-    rY = constrain(rY+2,0,width/2);
-  }
+  // if(r_ypos > 1){
+  //   rY = constrain(rY-2,0,width/2);
+  // }else if(r_ypos < -0.2){
+  //   rY = constrain(rY+2,0,width/2);
+  // }
 
   image(img_red, rX, rY, r, r);
 
@@ -232,28 +232,28 @@ function draw()
 
 
 
-  // //blue binoculars
-  // if(b_xpos != undefined && b_ypos != undefined){
-  //   bX = map(b_xpos, -10, 10,  cs/2 + 45, cs);
-  //   bY = map(b_ypos, -10, 10, cs, cs/2 + 45);
-  //   b_prevX = bX;
-  //   b_prevY = bY;
-  // }else{
-  //   bX = map(b_prevX, -10, 10,  cs/2 + 45, cs);
-  //   bY = map(b_prevY, -10, 10, cs, cs/2 + 45);
+  //blue binoculars
+  if(b_xpos != undefined && b_ypos != undefined){
+    bX = map(b_xpos, -10, 10,  cs/2 + 45, cs);
+    bY = map(b_ypos, -10, 10, cs, cs/2 + 45);
+    b_prevX = bX;
+    b_prevY = bY;
+  }else{
+    bX = map(b_prevX, -10, 10,  cs/2 + 45, cs);
+    bY = map(b_prevY, -10, 10, cs, cs/2 + 45);
+  }
+
+  //   if(b_xpos > 1){
+  //   bX = constrain(bX+2,width/2,width);
+  // }else if(b_xpos < -0.2){
+  //   bX = constrain(bX-2,width/2,width);
   // }
 
-    if(b_xpos > 1){
-    bX = constrain(bX+2,width/2,width);
-  }else if(b_xpos < -0.2){
-    bX = constrain(bX-2,width/2,width);
-  }
-
-  if(b_ypos > 1){
-    bY = constrain(bY-2,0,width/2);
-  }else if(b_ypos < -0.2){
-    bY = constrain(bY+2,0,width/2);
-  }
+  // if(b_ypos > 1){
+  //   bY = constrain(bY-2,0,width/2);
+  // }else if(b_ypos < -0.2){
+  //   bY = constrain(bY+2,0,width/2);
+  // }
 
 
   image(img_blue, bX, bY, r, r);
@@ -264,28 +264,28 @@ function draw()
 
 
 
-  // //green binoculars
-  // if(g_xpos != undefined && g_ypos != undefined){
-  //   gX = map(g_xpos, -10, 10,  cs/2 + 45, cs);
-  //   gY = map(g_ypos, -10, 10, cs/2 - 45, 45);
-  //   g_prevX = gX;
-  //   g_prevY = gY;
-  // }else{
-  //   gX = map(g_prevX, -10, 10,  cs/2 + 45, cs);
-  //   gY = map(g_prevY, -10, 10, cs/2 - 45, 45);
+  //green binoculars
+  if(g_xpos != undefined && g_ypos != undefined){
+    gX = map(g_xpos, -10, 10,  cs/2 + 45, cs);
+    gY = map(g_ypos, -10, 10, cs/2 - 45, 45);
+    g_prevX = gX;
+    g_prevY = gY;
+  }else{
+    gX = map(g_prevX, -10, 10,  cs/2 + 45, cs);
+    gY = map(g_prevY, -10, 10, cs/2 - 45, 45);
+  }
+
+  // if(g_xpos > 1){
+  //   gX = constrain(gX+2,width/2,width);
+  // }else if(g_xpos < -0.2){
+  //   gX = constrain(gX-2,width/2,width);
   // }
 
-  if(g_xpos > 1){
-    gX = constrain(gX+2,width/2,width);
-  }else if(g_xpos < -0.2){
-    gX = constrain(gX-2,width/2,width);
-  }
-
-  if(g_ypos > 1){
-    gY = constrain(gY-2,0,width/2);
-  }else if(g_ypos < -0.2){
-    gY = constrain(gY+2,0,width/2);
-  }
+  // if(g_ypos > 1){
+  //   gY = constrain(gY-2,0,width/2);
+  // }else if(g_ypos < -0.2){
+  //   gY = constrain(gY+2,0,width/2);
+  // }
 
   image(img_green, gX, gY, r, r);
 
@@ -295,31 +295,29 @@ function draw()
 
 
 
-  //   //yellow binoculars
+  //yellow binoculars
+  if(y_xpos != undefined && y_ypos != undefined){
+    yX = map(y_xpos, -10, 10,  45, cs/2 - 45);
+    yY = map(y_ypos, -10, 10, cs, cs/2 + 45);
+    y_prevX = yX;
+    y_prevY = yY;
+  }else{
+    yX = map(y_prevX, -10, 10,  45, cs/2 - 45);
+    yY = map(y_prevY, -10, 10, cs, cs/2 + 45);
+  }
 
 
-  // if(y_xpos != undefined && y_ypos != undefined){
-  //   yX = map(y_xpos, -10, 10,  45, cs/2 - 45);
-  //   yY = map(y_ypos, -10, 10, cs, cs/2 + 45);
-  //   y_prevX = yX;
-  //   y_prevY = yY;
-  // }else{
-  //   yX = map(y_prevX, -10, 10,  45, cs/2 - 45);
-  //   yY = map(y_prevY, -10, 10, cs, cs/2 + 45);
+  // if(y_xpos > 1){
+  //   yX = constrain(yX+2,width/2,width);
+  // }else if(y_xpos < -0.2){
+  //   yX = constrain(yX-2,width/2,width);
   // }
 
-
-  if(y_xpos > 1){
-    yX = constrain(yX+2,width/2,width);
-  }else if(y_xpos < -0.2){
-    yX = constrain(yX-2,width/2,width);
-  }
-
-  if(y_ypos > 1){
-    yY = constrain(yY-2,0,width/2);
-  }else if(y_ypos < -0.2){
-    yY = constrain(yY+2,0,width/2);
-  }
+  // if(y_ypos > 1){
+  //   yY = constrain(yY-2,0,width/2);
+  // }else if(y_ypos < -0.2){
+  //   yY = constrain(yY+2,0,width/2);
+  // }
 
 
   image(img_yellow, yX, yY, r, r);
