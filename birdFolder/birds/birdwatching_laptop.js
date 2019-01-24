@@ -213,18 +213,18 @@ function draw()
 
   console.log("red: " + r_start + "blue: " + b_start + "green: " + g_start + "yellow: " + y_start);
 
-  if(r_start != 1 || b_start != 1 || g_start != 1 || y_start != 1){
+  // if(r_start != 1 || b_start != 1 || g_start != 1 || y_start != 1){
 
-    textSize(50);
-    textAlign(CENTER);
-    textStyle(BOLD);
-    fill('black');
-    stroke('white');
-    text("WAITING FOR USERS", width/2, height/2);
+  //   textSize(50);
+  //   textAlign(CENTER);
+  //   textStyle(BOLD);
+  //   fill('black');
+  //   stroke('white');
+  //   text("WAITING FOR USERS", width/2, height/2);
 
-    // noLoop();
+  //   // noLoop();
 
-  }else{
+  // }else{
 
     noStroke();
     noFill();
@@ -418,7 +418,6 @@ function draw()
 
 // image(instructions, width/2,height/2,600,600);
 // console.log("instructions loaded");
-}
 
 }
 
