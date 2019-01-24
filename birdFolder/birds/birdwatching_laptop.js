@@ -47,22 +47,22 @@ var moveY = 0;
 
 var r_xpos;
 var r_ypos;
-let rX = width/4;
-let rY = width/4;
+let rX = window.innerWidth/4;
+let rY = window.innerWidth/4;
 var r_prevX = 0;
 var r_prevY = 0;
 
 var b_xpos;
 var b_ypos;
-let bX = 3*width/4;
-let bY = 3*width/4;
+let bX = 3*window.innerWidth/4;
+let bY = 3*window.innerWidth/4;
 var b_prevX = 0;
 var b_prevY = 0;
 
 var g_xpos;
 var g_ypos;
-let gX = 3*width/4;
-let gY = width/4;
+let gX = 3*window.innerWidth/4;
+let gY = window.innerWidth/4;
 var g_prevX = 0;
 var g_prevY = 0;
 
@@ -70,8 +70,8 @@ var g_prevY = 0;
 
 var y_xpos;
 var y_ypos;
-let yX = width/4;
-let yY = 3*width/4;
+let yX = window.innerWidth/4;
+let yY = 3*window.innerWidth/4;
 var y_prevX = 0;
 var y_prevY = 0;
 
