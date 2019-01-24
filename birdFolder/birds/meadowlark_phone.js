@@ -70,7 +70,7 @@ function setup() {
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
   startButton = createButton('START');
-  startButton.position(w/2, h/2);
+  startButton.position(w - 30, 30);
   startButton.mouseClicked(start);
 
   blueButton = createButton('TRADE BLUEJAY');
@@ -91,13 +91,15 @@ function setup() {
     
 function draw() {
 
-  win();
+  whoWon();
 
   if(nope === 1){
 
     nope();
 
   }
+
+  console.log(redCount);
 
 if(redCount != undefined){
 
@@ -153,7 +155,7 @@ if(yellowCount != undefined){
 
 }
 
-function win(){
+function whoWon(){
 
   if(win === 1){
 
