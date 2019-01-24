@@ -205,8 +205,10 @@ function draw()
 
   // red binoculars
   if(r_xpos != undefined && r_ypos != undefined){
-    rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
-    rY = map(r_ypos, -10, 10, cs/2 - 45, 45);
+    r_X = map(r_xpos, -10, 10,  45, cs/2 - 45);
+    r_Y = map(r_ypos, -10, 10, cs/2 - 45, 45);
+    rX = constrain(r_X, 0, cs/2);
+    rY = constrain(r_Y, 0, cs/2);
     r_prevX = rX;
     r_prevY = rY;
   }else{
