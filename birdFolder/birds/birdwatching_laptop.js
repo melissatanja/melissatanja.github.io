@@ -166,7 +166,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  console.log("update19");
+  // console.log("update19");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -208,7 +208,7 @@ function draw()
   //background image
   image(bg, cs/2, cs/2, cs - 50, cs - 50);
 
-  console.log("red: " + r_start + "blue: " + b_start + "green: " + g_start + "yellow: " + y_start);
+  // console.log("red: " + r_start + "blue: " + b_start + "green: " + g_start + "yellow: " + y_start);
 
   if(r_start != 1 || b_start != 1 || g_start != 1 || y_start != 1){
 
