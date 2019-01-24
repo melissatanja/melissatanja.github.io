@@ -1,6 +1,6 @@
 //-------Bird Creation
 
-var bsize = 20;
+var bsize = 30;
 var bspeed = 3;
 
 var num = Math.floor(Math.random()) + 1; // this will get a number between 1 and 99;
