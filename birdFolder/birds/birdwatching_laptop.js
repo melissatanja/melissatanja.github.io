@@ -203,7 +203,7 @@ function draw()
 
 
 
-  red binoculars
+  // red binoculars
   if(r_xpos != undefined && r_ypos != undefined){
     rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
     rY = map(r_ypos, -10, 10, cs/2 - 45, 45);
