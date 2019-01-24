@@ -99,6 +99,8 @@ function draw() {
 
     Nope();
 
+    nope = 0;
+
   }
 
   // console.log("r: " + redCount + "b: " + blueCount + "g: " + greenCount + "y: " + yellowCount);
@@ -182,7 +184,7 @@ function start(){
 
 function tradeB(){
 
-  console.log("functional");
+  // console.log("functional");
 
   tradeWithWho = "b";
   sendTrade();
