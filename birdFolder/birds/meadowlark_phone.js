@@ -29,6 +29,8 @@ var h = window.innerHeight;
 var tradeReq;
 var tradeWithWho;
 
+var y_start= 0;
+
 var channelName = "movement";
 var tradeChannel = "trade";
 
@@ -65,6 +67,10 @@ function setup() {
   //attach callbacks to the pubnub object to handle messages and connections
   dataServer.addListener({ message: readIncoming});
   dataServer.subscribe({channels: [channelName, tradeChannel]});
+
+  startButton = createButton('START');
+  startButton.position(w/2, h/2);
+  startButton.mouseClicked(start);
 
   blueButton = createButton('TRADE BLUEJAY');
   blueButton.position((w/4), h/4*3);
@@ -156,6 +162,12 @@ function win(){
 
 }
 
+function start(){
+
+  y_start = 1;
+
+}
+
 function tradeB(){
 
   tradeWithWho = "b";
@@ -196,7 +208,7 @@ function sendData() {
       blue_bird: blueCount, 
       green_bird: greenCount, 
       yellow_bird: yellowCount, 
-      tradeReq: tradeReq
+      start_press: y_start
 
     }
   });

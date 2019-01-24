@@ -205,7 +205,11 @@ function draw()
 
 
 
+  while(r_start === 0 || b_start === 0 || g_start === 0 || y_start === 0){
 
+    noLoop();
+
+  }
 
 
 
