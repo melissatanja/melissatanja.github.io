@@ -219,14 +219,17 @@ function draw()
 
     textSize(50);
     textAlign(CENTER);
+    textStyle(BOLD);
     fill('black');
+    stroke('white');
     text("WAITING FOR USERS", width/2, height/2);
 
     // noLoop();
 
   }else{
 
-
+    noStroke();
+    noFill();
 
   // red binoculars
   if(r_xpos != undefined && r_ypos != undefined){
