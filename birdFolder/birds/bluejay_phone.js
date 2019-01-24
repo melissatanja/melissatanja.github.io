@@ -81,7 +81,9 @@ function draw() {
 
   if(nope === 1){
 
-    nope();
+    Nope();
+
+    nope = 0;
 
   }
 
@@ -185,7 +187,7 @@ function tradeY(){
 
 }
 
-function nope(){
+function Nope(){
 
   window.alert("nothing but goose eggs (no birds to trade)");
 
