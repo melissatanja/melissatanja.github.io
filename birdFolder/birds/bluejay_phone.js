@@ -83,8 +83,6 @@ function draw() {
 
     Nope();
 
-    nope = 0;
-
   }
 
   // console.log("r: " + redCount + "b: " + blueCount + "g: " + greenCount + "y: " + yellowCount);
@@ -190,6 +188,8 @@ function tradeY(){
 function Nope(){
 
   window.alert("nothing but goose eggs (no birds to trade)");
+
+  nope = 0;
 
 }
 

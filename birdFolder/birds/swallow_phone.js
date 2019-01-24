@@ -18,8 +18,8 @@ var green_bird;
 var yellow_bird;
 
 var win = 0;
-var bwin = 0;
 var rwin = 0;
+var bwin = 0;
 var ywin = 0;
 
 //size of the active area
@@ -29,11 +29,12 @@ var h = window.innerHeight;
 var tradeReq;
 var tradeWithWho;
 
-var g_start = 0;
 var nope = 0;
 
 var channelName = "movement";
 var tradeChannel = "trade";
+
+var g_start = 0;
 
 function preload(){
 
@@ -48,12 +49,13 @@ function preload(){
 function setup() {
 
   createCanvas(w, h);
-  background(111);
+  background(255);
   
-  textSize(20);
-  stroke("green");
+  textSize(40);
+  stroke("#32CD47");
+  fill(0);
   textAlign(CENTER);
-  text("TREE SWALLOW", w/2, 25);
+  text("TREE SWALLOW", w/2, 35);
   noStroke();
 
    // initialize pubnub
@@ -69,41 +71,27 @@ function setup() {
   dataServer.addListener({ message: readIncoming});
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  startButton = createButton('START');
-  startButton.position(w - 30, 30);
-  startButton.mouseClicked(start);
-
-  blueButton = createButton('TRADE BLUEJAY');
-  blueButton.position((w/4), h/4*3);
-  blueButton.mouseClicked(tradeB);
-
-  greenButton = createButton('TRADE SCARLET TANAGER');
-  greenButton.position((w/2), h/4*3);
-  greenButton.mouseClicked(tradeR);
-
-  yellowButton = createButton('TRADE MEADOWLARK');
-  yellowButton.position((w/4) * 3, h/4*3);
-  yellowButton.mouseClicked(tradeY);
-
-  setInterval(sendData, 100);
+  setInterval(sendData, 300);
 
 }
     
 function draw() {
 
-  win();
+  whoWon();
 
   if(nope === 1){
 
-    nope();
+    Nope();
 
   }
+
+  // console.log("r: " + redCount + "b: " + blueCount + "g: " + greenCount + "y: " + yellowCount);
 
 if(redCount != undefined){
 
     fill("red");
     if(redCount > 0){
-      image(Rbird, (width/5) * redCount, height/8 * 3, 50, 50);
+      image(Rbird, (width/5) * redCount, height/8, 50, 50);
     }
     // if(redCount > 1){
     //   image(Rbird, (width/5) * redCount, height/8, 50, 50);
@@ -129,7 +117,7 @@ if(greenCount != undefined){
 
     fill("green");
     if(greenCount > 0){
-      image(Gbird, (width/5) * greenCount, height/8, 50, 50);
+      image(Gbird, (width/5) * greenCount, height/8 * 3, 50, 50);
     }
     // if(greenCount > 1){
     //   image(Gbird, (width/5) * greenCount, height/8 * 3, 50, 50);
@@ -153,7 +141,7 @@ if(yellowCount != undefined){
 
 }
 
-function win(){
+function whoWon(){
 
   if(win === 1){
 
@@ -176,16 +164,16 @@ function start(){
 
 }
 
-function tradeB(){
+function tradeR(){
 
-  tradeWithWho = "b";
+  tradeWithWho = "r";
   sendTrade();
 
 }
 
-function tradeR(){
+function tradeB(){
 
-  tradeWithWho = "r";
+  tradeWithWho = "b";
   sendTrade();
 
 }
@@ -197,9 +185,11 @@ function tradeY(){
 
 }
 
-function nope(){
+function Nope(){
 
   window.alert("nothing but goose eggs (no birds to trade)");
+
+  nope = 0;
 
 }
 
@@ -221,8 +211,8 @@ function sendData() {
       red_bird: redCount, 
       blue_bird: blueCount, 
       green_bird: greenCount, 
-      yellow_bird: yellowCount
-      // start_press: g_start
+      yellow_bird: yellowCount 
+      // start_press: r_start
 
     }
   });
@@ -256,10 +246,10 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       greenCount = inMessage.message.user_g_green_bird;
       yellowCount = inMessage.message.user_g_yellow_bird;
       win = inMessage.message.user_g_win;
-      rwin = inMessage.message.user_r_win;
-      bwin = inMessage.message.user_b_win;
+      bwin = inMessage.message.user_r_win;
+      gwin = inMessage.message.user_b_win;
       ywin = inMessage.message.user_y_win;
-      nope = inMessage.message.user_r_nope;
+      nope = inMessage.message.user_g_nope;
 
   }
 }
