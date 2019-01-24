@@ -15,7 +15,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        rnope = 1;
 
       }
 
@@ -33,7 +33,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        rnope = 1;
 
       }
 
@@ -50,7 +50,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        rnope = 1;
 
       }
 
@@ -73,7 +73,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        bnope = 1;
 
       }
 
@@ -91,7 +91,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        bnope = 1;
 
       }
 
@@ -108,7 +108,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        bnope = 1;
 
       }
 
@@ -131,7 +131,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        gnope = 1;
 
       }
 
@@ -149,7 +149,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        gnope = 1;
 
       }
 
@@ -166,7 +166,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        gnope = 1;
 
       }
 
@@ -189,7 +189,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        ynope = 1;
 
       }
 
@@ -207,7 +207,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        ynope = 1;
 
       }
 
@@ -224,7 +224,7 @@ function trade(tradeFrom, tradeTo){
 
       }else{
 
-        window.alert("no birds available");
+        ynope = 1;
 
       }
 

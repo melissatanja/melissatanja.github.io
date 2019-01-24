@@ -29,6 +29,8 @@ var h = window.innerHeight;
 var tradeReq;
 var tradeWithWho;
 
+var nope = 0;
+
 var channelName = "movement";
 var tradeChannel = "trade";
 
@@ -91,6 +93,12 @@ function setup() {
 function draw() {
 
   win();
+
+  if(nope === 1){
+
+    nope();
+
+  }
 
 if(redCount != undefined){
 
@@ -190,6 +198,12 @@ function tradeY(){
 
 }
 
+function nope(){
+
+  window.alert("nothing but goose eggs (no birds to trade)");
+
+}
+
 function sendData() {
  
   var yNum = round(rotationY/4.5) + 10;
@@ -246,6 +260,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       bwin = inMessage.message.user_b_win;
       gwin = inMessage.message.user_g_win;
       ywin = inMessage.message.user_y_win;
+      nope = inMessage.message.user_r_nope;
 
   }
 }
