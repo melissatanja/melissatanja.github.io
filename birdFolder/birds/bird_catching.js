@@ -1,7 +1,7 @@
 //red user
 // console.log("test 2.5");
 
-function setup(){}
+function setup(){
 
   for (let i = 0; i < 4; i++) {
     birdsBlue[i] = new BirdieB(random(cs),random(cs));
@@ -10,6 +10,8 @@ function setup(){}
     birdsGreen[i] = new BirdieG(random(cs),random(cs));
 
   }
+
+}
 
 function birdCatchB(){
   for(let i=0;i<birdsBlue.length;i++){
