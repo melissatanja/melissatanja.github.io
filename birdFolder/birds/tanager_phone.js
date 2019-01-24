@@ -208,7 +208,7 @@ function sendData() {
       blue_bird: blueCount, 
       green_bird: greenCount, 
       yellow_bird: yellowCount, 
-      start_press: r_start;
+      start_press: r_start
 
     }
   });

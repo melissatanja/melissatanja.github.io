@@ -51,6 +51,11 @@ var b_win = 0;
 var g_win = 0;
 var y_win = 0;
 
+var r_start;
+var b_start;
+var g_start;
+var y_start;
+
 var r_xpos;
 var r_ypos;
 let rX = window.innerWidth/4;
@@ -483,6 +488,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       r_xpos = inMessage.message.x_angle;
       r_ypos = inMessage.message.y_angle;
+      r_start = inMessage.message.start_press;
 
     }
 
@@ -490,6 +496,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       b_xpos = inMessage.message.x_angle;
       b_ypos = inMessage.message.y_angle;
+      b_start = inMessage.message.start_press;
 
     }
 
@@ -497,6 +504,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       g_xpos = inMessage.message.x_angle;
       g_ypos = inMessage.message.y_angle;
+      g_start = inMessage.message.start_press;
 
     }
   }
@@ -505,6 +513,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       y_xpos = inMessage.message.x_angle;
       y_ypos = inMessage.message.y_angle;
+      y_start = inMessage.message.start_press;
 
     }
 
