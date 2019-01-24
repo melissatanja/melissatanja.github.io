@@ -74,17 +74,17 @@ function setup() {
   startButton.position(w/2, h/2);
   startButton.mouseClicked(start);
 
-  blueButton = createButton('TRADE BLUEJAY');
-  blueButton.position((w/4), h/4*3);
-  blueButton.mouseClicked(tradeB);
+  // blueButton = createButton('TRADE BLUEJAY');
+  // blueButton.position((w/4), h/4*3);
+  // blueButton.mouseClicked(tradeB);
 
-  greenButton = createButton('TRADE TREE SWALLOW');
-  greenButton.position((w/2), h/4*3);
-  greenButton.mouseClicked(tradeG);
+  // greenButton = createButton('TRADE TREE SWALLOW');
+  // greenButton.position((w/2), h/4*3);
+  // greenButton.mouseClicked(tradeG);
 
-  yellowButton = createButton('TRADE MEADOWLARK');
-  yellowButton.position((w/4) * 3, h/4*3);
-  yellowButton.mouseClicked(tradeY);
+  // yellowButton = createButton('TRADE MEADOWLARK');
+  // yellowButton.position((w/4) * 3, h/4*3);
+  // yellowButton.mouseClicked(tradeY);
 
   setInterval(sendData, 300);
 
