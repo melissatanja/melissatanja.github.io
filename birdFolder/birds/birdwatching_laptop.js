@@ -156,16 +156,16 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  console.log("update10");
+  console.log("update11");
 
   //setup birds
-  for (let i = 0; i < 4; i++) {
-    birdsBlue[i] = new BirdieB(random(cs),random(cs));
-    birdsRed[i] = new BirdieR(random(cs),random(cs));
-    birdsYellow[i] = new BirdieY(random(cs),random(cs));
-    birdsGreen[i] = new BirdieG(random(cs),random(cs));
+  // for (let i = 0; i < 4; i++) {
+  //   birdsBlue[i] = new BirdieB(random(cs),random(cs));
+  //   birdsRed[i] = new BirdieR(random(cs),random(cs));
+  //   birdsYellow[i] = new BirdieY(random(cs),random(cs));
+  //   birdsGreen[i] = new BirdieG(random(cs),random(cs));
 
-  }
+  // }
 
   setInterval(sendBirds, 150);
 
