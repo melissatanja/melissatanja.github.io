@@ -166,7 +166,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  console.log("update15");
+  console.log("update16");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -210,7 +210,7 @@ function draw()
 
 
 
-  while(r_start === 0 || b_start === 0 || g_start === 0 || y_start === 0){
+  while(r_start != 1 || b_start != 1 || g_start != 1 || y_start != 1){
 
     textSize(50);
     textAlign(CENTER);
