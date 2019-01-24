@@ -156,7 +156,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  console.log("update28");
+  console.log("update0");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -219,13 +219,13 @@ function draw()
     r_X += speed * r_xpos;
     r_Y += speed * r_ypos;
 
-    prevX = r_xpos;
-    prevY = r_ypos;
+    r_prevX = r_xpos;
+    r_prevY = r_ypos;
 
   }else{
 
-    r_X += speed * prevX;
-    r_Y += speed * prevY;
+    r_X += speed * r_prevX;
+    r_Y += speed * r_prevY;
 
   }
 
