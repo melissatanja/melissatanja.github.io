@@ -153,7 +153,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  console.log("update22");
+  console.log("update23");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
