@@ -83,10 +83,17 @@ function draw() {
 
 if(redCount != undefined){
 
-    fill("red");
-    if(redCount > 0){
-      image(Rbird, (width/5) * redCount, height/8, 50, 50);
+    // fill("red");
+    // if(redCount > 0){
+    //   image(Rbird, (width/5) * redCount, height/8, 50, 50);
+    // }
+
+    for(var r = 0; r <= redCount; r++){
+
+      image(Rbird, (width/5) * r, height/8, 50, 50);
+
     }
+
     // if(redCount > 1){
     //   image(Rbird, (width/5) * redCount, height/8, 50, 50);
     //   image(Rbird, (width/5) * (redCount - 1), height/8, 50, 50);
@@ -96,40 +103,59 @@ if(redCount != undefined){
 
 if(blueCount != undefined){
 
-    fill("blue");
-    if(blueCount > 0){
-      image(Bbird, (width/5) * blueCount, height/8 * 2, 50, 50);
-    }
+    // fill("blue");
+    // if(blueCount > 0){
+    //   image(Bbird, (width/5) * blueCount, height/8 * 2, 50, 50);
+    // }
     // if(blueCount > 1){
     //   image(Bbird, (width/5) * blueCount, height/8 * 2, 50, 50);
     //   image(Bbird, (width/5) * (blueCount - 1), height/8 * 2, 50, 50);
     // }
 
+
+    for(var b = 0; b <= blueCount; b++){
+
+      image(Bbird, (width/5) * b, height/8, 50, 50);
+
+    }
+
 }
 
 if(greenCount != undefined){
 
-    fill("green");
-    if(greenCount > 0){
-      image(Gbird, (width/5) * greenCount, height/8 * 3, 50, 50);
-    }
+    // fill("green");
+    // if(greenCount > 0){
+    //   image(Gbird, (width/5) * greenCount, height/8 * 3, 50, 50);
+    // }
     // if(greenCount > 1){
     //   image(Gbird, (width/5) * greenCount, height/8 * 3, 50, 50);
     //   image(Gbird, (width/5) * (greenCount - 1), height/8 * 3, 50, 50);
     // }
 
+    for(var g = 0; g <= greenCount; g++){
+
+      image(Gbird, (width/5) * g, height/8, 50, 50);
+
+    }
+
 }
 
 if(yellowCount != undefined){
 
-    fill("yellow");
-    if(yellowCount > 0){
-      image(Ybird, (width/5) * yellowCount, height/8 * 4, 50, 50);
-    }
+    // fill("yellow");
+    // if(yellowCount > 0){
+    //   image(Ybird, (width/5) * yellowCount, height/8 * 4, 50, 50);
+    // }
     // if(yellowCount > 1){
     //   image(Ybird, (width/5) * yellowCount, height/8 * 4, 50, 50);
     //   image(Ybird, (width/5) * (yellowCount - 1), height/8 * 4, 50, 50);
     // }
+
+    for(var y = 0; y <= yellowCount; y++){
+
+      image(Ybird, (width/5) * y, height/8, 50, 50);
+
+    }
 
 }
 
