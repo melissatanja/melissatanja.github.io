@@ -148,7 +148,7 @@ if(greenCount != undefined){
     //   image(Gbird, (width/5) * (greenCount - 1), height/8 * 3, 50, 50);
     // }
 
-    for(var g = 0; g <= greenCount; r++){
+    for(var g = 0; g <= greenCount; g++){
 
       image(Gbird, (width/5) * g, height/8, 50, 50);
 
@@ -167,7 +167,7 @@ if(yellowCount != undefined){
     //   image(Ybird, (width/5) * (yellowCount - 1), height/8 * 4, 50, 50);
     // }
 
-    for(var y = 0; y <= yellowCount; r++){
+    for(var y = 0; y <= yellowCount; y++){
 
       image(Ybird, (width/5) * y, height/8, 50, 50);
 
