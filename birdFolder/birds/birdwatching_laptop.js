@@ -240,6 +240,8 @@ function draw()
   //   rY = constrain(rY+2,0,width/2);
   // }
 
+  console.log(rX);
+
   image(img_red, rX, rY, r, r);
 
 
