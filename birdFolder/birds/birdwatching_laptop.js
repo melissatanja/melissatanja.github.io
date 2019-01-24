@@ -39,7 +39,7 @@ var Yellow = [0, 0, 0, 0];
 
 var tradeReq;
 
-var cs = window.innerHeight;
+var cs = 900;
 
 var r = 60;
 var speed = 0.2;
@@ -205,13 +205,13 @@ function draw()
 
   // red binoculars
   if(r_xpos != undefined && r_ypos != undefined){
-    r_X = map(r_xpos, -10, 10,  45, width/2 - 45);
-    r_Y = map(r_ypos, -10, 10, height/2 - 45, 45);
+    r_X = map(r_xpos, -10, 10,  45, cs/2 - 45);
+    r_Y = map(r_ypos, -10, 10, cs/2 - 45, 45);
     r_prevX = rX;
     r_prevY = rY;
   }else{
-    rX = map(r_prevX, -10, 10,  45, width/2 - 45);
-    rY = map(r_prevY, -10, 10, height/2 - 45, 45);
+    rX = map(r_prevX, -10, 10,  45, cs/2 - 45);
+    rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
   }
 
   // if(r_xpos != undefined && r_ypos != undefined){
