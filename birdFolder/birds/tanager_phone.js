@@ -156,11 +156,11 @@ function tradeY(){
 
 function sendData() {
  
-  var yNum = round(rotationY/4.5) + 10;
-  var xNum = round(rotationX/4.5);
+  var yNum = round(rotationY) + 45;
+  var xNum = round(rotationX);
 
-  var xPos = constrain(xNum, -10, 10);
-  var yPos = constrain(yNum, -10, 10);
+  var xPos = constrain(xNum, -45, 45);
+  var yPos = constrain(yNum, -45, 45);
 
   // Send Data to the server to draw it in all other canvases
   dataServer.publish({
