@@ -155,7 +155,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  console.log("update24");
+  console.log("update25");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -225,8 +225,8 @@ function draw()
     r_Y = constrain(rY+2,0,width/2);
   }
 
-  rX = constrain(round(r_X), 0, width/2 - 45);
-  rY = constrain(round(r_Y), 0, height/2 - 45);
+  rX = constrain(r_X, 0, width/2 - 45);
+  rY = constrain(r_Y, 0, height/2 - 45);
 
   //   if(r_xpos > 1){
   //   rX = constrain(rX+2,width/2,width);
