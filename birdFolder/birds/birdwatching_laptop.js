@@ -210,7 +210,7 @@ function draw()
 
 
 
-  while(r_start != 1 || b_start != 1 || g_start != 1 || y_start != 1){
+  if(r_start != 1 || b_start != 1 || g_start != 1 || y_start != 1){
 
     textSize(50);
     textAlign(CENTER);
