@@ -76,30 +76,30 @@ var y_prevX = 0;
 var y_prevY = 0;
 
 
-var r = 60;
-var moveX = 0;
-var moveY = 0;
+// var r = 60;
+// var moveX = 0;
+// var moveY = 0;
 
-var r_xpos;
-var r_ypos;
-let rX = 0;
-let rY = 0;
-var r_prevX = 0;
-var r_prevY = 0;
+// var r_xpos;
+// var r_ypos;
+// let rX = 0;
+// let rY = 0;
+// var r_prevX = 0;
+// var r_prevY = 0;
 
-var b_xpos;
-var b_ypos;
-let bX = 0;
-let bY = 0;
-var b_prevX = 0;
-var b_prevY = 0;
+// var b_xpos;
+// var b_ypos;
+// let bX = 0;
+// let bY = 0;
+// var b_prevX = 0;
+// var b_prevY = 0;
 
-var g_xpos;
-var g_ypos;
-let gX = 0;
-let gY = 0;
-var g_prevX = 0;
-var g_prevY = 0;
+// var g_xpos;
+// var g_ypos;
+// let gX = 0;
+// let gY = 0;
+// var g_prevX = 0;
+// var g_prevY = 0;
 
 function preload(){
 
