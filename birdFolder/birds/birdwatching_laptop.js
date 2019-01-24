@@ -365,7 +365,7 @@ function draw()
 
   // console.log("red: " + Red[0] + " blue: " + Red[1] + " green: " + Red[2] + " yellow: " + Red[3]);
 
-image(instructions, width/2,height/2,200,200);
+image(instructions, width/2,height/2,600,600);
 console.log("instructions loaded");
 
 }
