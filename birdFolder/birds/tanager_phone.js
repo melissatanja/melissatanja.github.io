@@ -73,7 +73,7 @@ function setup() {
   yellowButton.position((w/4) * 3, h/4*3);
   yellowButton.mouseClicked(tradeY);
 
-  setInterval(sendData, 100);
+  setInterval(sendData, 300);
 
 }
     
