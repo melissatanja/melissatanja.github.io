@@ -156,7 +156,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  console.log("update7");
+  console.log("update8");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -348,7 +348,7 @@ function draw()
 
 
 
-console.log("test1");
+// console.log("test1");
 
 
 
@@ -375,7 +375,7 @@ console.log("test1");
       birdsYellow[i].show();
   }
 
-console.log("test2");
+// console.log("test2");
 
   //bird catching 
 
