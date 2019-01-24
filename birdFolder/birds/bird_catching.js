@@ -148,7 +148,7 @@ function birdCatchG(){
 //       Blue[2] += 1;
 //     }
 //   }
-}
+// }
 
 //green user
 // function birdCatchB(){
