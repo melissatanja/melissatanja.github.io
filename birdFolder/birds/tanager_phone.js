@@ -49,7 +49,7 @@ function preload(){
 function setup() {
 
   createCanvas(w, h);
-  background(0);
+  background(255);
   
   textSize(20);
   stroke("red");
