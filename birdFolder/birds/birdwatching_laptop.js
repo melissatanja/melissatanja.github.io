@@ -42,13 +42,15 @@ var tradeReq;
 var cs = window.innerHeight;
 
 var r = 60;
-var moveX = 0;
-var moveY = 0;
+// var moveX = 0;
+// var moveY = 0;
 
 var r_xpos;
 var r_ypos;
 let rX = window.innerWidth/4;
 let rY = window.innerWidth/4;
+var r_X;
+var r_Y;
 var r_prevX = 0;
 var r_prevY = 0;
 
@@ -211,8 +213,20 @@ function draw()
   //   rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
   // }
 
-    rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
-    rY = map(r_ypos, -10, 10, cs/2 - 45, 45);
+  if(r_xpos > 1){
+    r_X = constrain(rX+2,width/2,width);
+  }else if(r_xpos < -0.2){
+    r_X = constrain(rX-2,width/2,width);
+  }
+
+  if(r_ypos > 1){
+    r_Y = constrain(rY-2,0,width/2);
+  }else if(r_ypos < -0.2){
+    r_Y = constrain(rY+2,0,width/2);
+  }
+
+  rX = constrain(r_X, 0, width/2 - 45);
+  rY = constrain(r_Y, 0, height/2 - 45);
 
   //   if(r_xpos > 1){
   //   rX = constrain(rX+2,width/2,width);
@@ -575,6 +589,14 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       g_xpos = inMessage.message.x_angle;
       g_ypos = inMessage.message.y_angle;
+
+    }
+  }
+
+    if(inMessage.publisher === "yellow"){
+
+      y_xpos = inMessage.message.x_angle;
+      y_ypos = inMessage.message.y_angle;
 
     }
   }
