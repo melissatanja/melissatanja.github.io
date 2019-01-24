@@ -214,11 +214,23 @@ function draw()
   //   rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
   // }
 
-  r_X += speed * r_xpos;
-  r_Y += speed * r_ypos;
+  if(r_xpos != undefined){
 
-  // rX = constrain(r_X, 0, width/2);
-  // rY = constrain(r_Y, 0, height/2);
+    r_X += speed * r_xpos;
+    r_Y += speed * r_ypos;
+
+    prevX = r_xpos;
+    prevY = r_ypos;
+
+  }else{
+
+    r_X += speed * prevX;
+    r_Y += speed * prevY;
+
+  }
+
+  rX = constrain(r_X, 0, width/2);
+  rY = constrain(r_Y, 0, height/2);
 
   // rX = constrain(r_X, 0, width/2 - 45);
   // rY = constrain(r_Y, 0, height/2 - 45);
@@ -235,7 +247,7 @@ function draw()
   //   rY = constrain(rY+2,0,width/2);
   // }
 
-  console.log(r_xpos);
+  console.log(rX);
 
   image(img_red, rX, rY, r, r);
 
