@@ -167,6 +167,8 @@ function setup()
 
   }
 
+  console.log(birdsBlue[0]);
+
   setInterval(sendBirds, 150);
 
 }

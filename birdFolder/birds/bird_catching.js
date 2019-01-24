@@ -1,6 +1,5 @@
 function birdCatchB(){
   for(let i=0;i<birdsBlue.length;i++){
-
     if(dist(birdsBlue[i].x,birdsBlue[i].y, rX, rY) <= bsize+15){
       birdsBlue.splice(i,1);
 
