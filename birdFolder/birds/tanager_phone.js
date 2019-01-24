@@ -182,6 +182,8 @@ function start(){
 
 function tradeB(){
 
+  console.log("functional");
+
   tradeWithWho = "b";
   sendTrade();
 
