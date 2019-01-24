@@ -23,8 +23,7 @@ function birdCatchY(){
     if(dist(birdsYellow[i].x,birdsYellow[i].y, rX, rY) <= bsize+15){
       birdsYellow.splice(i,1);
 
-      Red[3] += 1;
-        
+      Red[3] += 1;   
     }
   }
 }
@@ -63,8 +62,7 @@ function birdCatchY(){
     if(dist(birdsYellow[i].x,birdsYellow[i].y, bX, bY) <= bsize+15){
       birdsYellow.splice(i,1);
 
-      Blue[3] += 1;
-        
+      Blue[3] += 1; 
     }
   }
 }
@@ -103,8 +101,7 @@ function birdCatchY(){
     if(dist(birdsYellow[i].x,birdsYellow[i].y, gX, gY) <= bsize+15){
       birdsYellow.splice(i,1);
 
-      Green[3] += 1;
-        
+      Green[3] += 1;  
     }
   }
 }
@@ -143,8 +140,7 @@ function birdCatchY(){
     if(dist(birdsYellow[i].x,birdsYellow[i].y, yX, yY) <= bsize+15){
       birdsYellow.splice(i,1);
 
-      Yellow[3] += 1;
-        
+      Yellow[3] += 1;  
     }
   }
 }
