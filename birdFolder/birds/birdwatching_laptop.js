@@ -115,6 +115,8 @@ function preload(){
 
   bg = loadImage('other/bg3.png');
 
+  instructions = loadImage('bird_icons/instructions.png');
+
 }
 
 function setup() 
@@ -362,6 +364,9 @@ function draw()
 
 
   // console.log("red: " + Red[0] + " blue: " + Red[1] + " green: " + Red[2] + " yellow: " + Red[3]);
+
+image(instructions, width/2,height/2,200,200);
+
 
 }
 
