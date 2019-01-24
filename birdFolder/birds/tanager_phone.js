@@ -92,7 +92,7 @@ function setup() {
     
 function draw() {
 
-  win();
+  whoWon();
 
   if(nope === 1){
 
@@ -156,7 +156,7 @@ if(yellowCount != undefined){
 
 }
 
-function win(){
+function whoWon(){
 
   if(win === 1){
 
