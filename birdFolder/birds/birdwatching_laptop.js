@@ -214,7 +214,7 @@ function draw()
   //   rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
   // }
 
-  if(r_xpos != undefined){
+  if(r_xpos != undefined && r_ypos != undefined){
 
     r_X += speed * r_xpos;
     r_Y += speed * r_ypos;
