@@ -51,10 +51,10 @@ function setup() {
   createCanvas(w, h);
   background(255);
   
-  textSize(50);
+  textSize(40);
   stroke("red");
   fill(0);
-  textAlign(CENTER);
+  textAlign(CENTE, TOP);
   text("SCARLET TANAGER", w/2, 25);
   noStroke();
 
