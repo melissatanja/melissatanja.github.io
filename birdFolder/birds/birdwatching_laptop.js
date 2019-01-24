@@ -166,7 +166,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  console.log("update16");
+  console.log("update17");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -214,11 +214,12 @@ function draw()
 
     textSize(50);
     textAlign(CENTER);
+    fill('black');
     text("WAITING FOR USERS", width/2, height/2);
 
-    noLoop();
+    // noLoop();
 
-  }
+  }else{
 
 
 
@@ -411,6 +412,7 @@ function draw()
 
 // image(instructions, width/2,height/2,600,600);
 // console.log("instructions loaded");
+}
 
 }
 
