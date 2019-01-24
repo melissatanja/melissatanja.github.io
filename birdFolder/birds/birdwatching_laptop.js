@@ -228,7 +228,7 @@ function draw()
 
   }
 
-  // else{
+  else{
 
     noStroke();
     noFill();
@@ -422,6 +422,7 @@ function draw()
 
 // image(instructions, width/2,height/2,600,600);
 // console.log("instructions loaded");
+}
 
 }
 
