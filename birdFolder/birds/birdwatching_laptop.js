@@ -348,7 +348,7 @@ function draw()
 
 
 
-
+console.log("test1");
 
 
 
@@ -375,7 +375,7 @@ function draw()
       birdsYellow[i].show();
   }
 
-
+console.log("test2");
 
   //bird catching 
 
