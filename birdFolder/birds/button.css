@@ -1,32 +1,41 @@
 .btn {
-	border: {color: black};
-	display: inline-block;
+	border: none;
+	font-size: 16px;
+	display: block;
+	position: absolute;
+	left: 75%;
+	width: 20%;
+    height: 10%;
 }
 
 .red{
 
-	color: black;
-	background-color: {color: red};
+color: #000000;
+background-color: #CD3232; /* red */
+top: 25%;
 
 }
 
 .blue{
 
-	color: black;
-	background-color: {color: blue};
+color: #000000;
+background-color: #3285CD; /* blue */
+top: 35%;
 
 }
 
 .green{
 
-	color: black;
-	background-color: {color: green};
+color: #000000;
+background-color: #32CD47; /* green */
+top: 45%;
 
 }
 
 .yellow{
 
-	color: black;
-	background-color: {color: yellow};
+color: #000000;
+background-color: #F0E91B; /* yellow */
+top: 55%;
 
 }
