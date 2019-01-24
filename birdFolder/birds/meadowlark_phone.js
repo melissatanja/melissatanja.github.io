@@ -29,7 +29,7 @@ var h = window.innerHeight;
 var tradeReq;
 var tradeWithWho;
 
-var nope = 0;
+// var nope = 0;
 
 var channelName = "movement";
 var tradeChannel = "trade";
@@ -179,11 +179,11 @@ function tradeG(){
 
 }
 
-function Nope(){
+// function Nope(){
 
-  window.alert("nothing but goose eggs (no birds to trade)");
+//   window.alert("nothing but goose eggs (no birds to trade)");
 
-}
+// }
 
 function sendData() {
  
@@ -220,8 +220,8 @@ function sendTrade()
       message: 
     {
       tradeReq: tradeWithWho,
-      start_press: y_start,
-      birds_unavail: nope
+      start_press: y_start
+      // birds_unavail: nope
     }
   });
 
@@ -243,14 +243,14 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       gwin = inMessage.message.user_b_win;
       ywin = inMessage.message.user_g_win;
 
-      if(inMessage.message.user_y_nope === 1){
+      // if(inMessage.message.user_y_nope === 1){
 
-        window.setTimeout(Nope(), 3000);
+      //   window.setTimeout(Nope(), 3000);
 
-        nope = inMessage.message.user_y_nope;
-        nope = 0;
+      //   nope = inMessage.message.user_y_nope;
+      //   nope = 0;
 
-      }
+      // }
 
   }
 }
