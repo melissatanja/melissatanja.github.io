@@ -61,15 +61,15 @@ function setup() {
   dataServer.addListener({ message: readIncoming});
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  blueButton = createButton('TRADE BLUEJAY', "blue");
+  blueButton = createButton('TRADE BLUEJAY');
   blueButton.position((w/4), h/4*3);
   blueButton.mouseClicked(tradeB);
 
-  greenButton = createButton('TRADE TREE SWALLOW', "green");
+  greenButton = createButton('TRADE TREE SWALLOW');
   greenButton.position((w/2), h/4*3);
   greenButton.mouseClicked(tradeG);
 
-  yellowButton = createButton('TRADE MEADOWLARK', "yellow");
+  yellowButton = createButton('TRADE MEADOWLARK');
   yellowButton.position((w/4) * 3, h/4*3);
   yellowButton.mouseClicked(tradeY);
 
