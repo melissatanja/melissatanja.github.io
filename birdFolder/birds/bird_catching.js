@@ -6,11 +6,11 @@ function birdCatchB(){
       Red[1] += 1;
     }
 
-    if(dist(birdsBlue[i].x,birdsBlue[i].y, yX, yY) <= bsize+15){
-      birdsBlue.splice(i,1);
+    // if(dist(birdsBlue[i].x,birdsBlue[i].y, yX, yY) <= bsize+15){
+    //   birdsBlue.splice(i,1);
 
-      Yellow[1] += 1;
-    }
+    //   Yellow[1] += 1;
+    // }
 
     if(dist(birdsBlue[i].x,birdsBlue[i].y, bX, bY) <= bsize+15){
       birdsBlue.splice(i,1);
