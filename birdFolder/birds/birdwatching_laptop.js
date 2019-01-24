@@ -42,6 +42,7 @@ var tradeReq;
 var cs = window.innerHeight;
 
 var r = 60;
+var speed = 0.2;
 // var moveX = 0;
 // var moveY = 0;
 
@@ -49,8 +50,8 @@ var r_xpos;
 var r_ypos;
 let rX = window.innerWidth/4;
 let rY = window.innerWidth/4;
-var r_X;
-var r_Y;
+var r_X = 1;
+var r_Y = 1;
 var r_prevX = 0;
 var r_prevY = 0;
 
@@ -213,17 +214,11 @@ function draw()
   //   rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
   // }
 
-  if(r_xpos > 1){
-    rX = constrain(rX+2,width/2,width);
-  }else if(r_xpos < -0.2){
-    rX = constrain(rX-2,width/2,width);
-  }
+  r_X += speed * r_xpos;
+  r_Y += speed * r_ypos;
 
-  if(r_ypos > 1){
-    rY = constrain(rY-2,0,width/2);
-  }else if(r_ypos < -0.2){
-    rY = constrain(rY+2,0,width/2);
-  }
+  rX = constrain(r_X, 0, width/2);
+  rY = constrain(r_Y, 0, height/2);
 
   // rX = constrain(r_X, 0, width/2 - 45);
   // rY = constrain(r_Y, 0, height/2 - 45);
