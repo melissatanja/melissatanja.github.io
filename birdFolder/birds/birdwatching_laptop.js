@@ -156,7 +156,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  console.log("update13");
+  console.log("update14");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -164,7 +164,6 @@ function setup()
     birdsRed[i] = new BirdieR(random(cs),random(cs));
     birdsYellow[i] = new BirdieY(random(cs),random(cs));
     birdsGreen[i] = new BirdieG(random(cs),random(cs));
-
   }
 
   console.log(birdsBlue[0]);
@@ -381,10 +380,10 @@ function draw()
 
   //bird catching 
 
-  birdCatchB();
-  birdCatchR();
-  birdCatchY();
-  birdCatchG();
+  // birdCatchB();
+  // birdCatchR();
+  // birdCatchY();
+  // birdCatchG();
 
 
   // console.log("red: " + Red[0] + " blue: " + Red[1] + " green: " + Red[2] + " yellow: " + Red[3]);
@@ -395,6 +394,11 @@ function draw()
 }
 
 function sendBirds() {
+
+  birdCatchB();
+  birdCatchR();
+  birdCatchY();
+  birdCatchG();
 
   // Send Data to the server to draw it in all other canvases
   dataServer.publish({
