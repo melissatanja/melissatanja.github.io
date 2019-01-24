@@ -54,8 +54,8 @@ function setup() {
   textSize(40);
   stroke("red");
   fill(0);
-  textAlign(CENTE, TOP);
-  text("SCARLET TANAGER", w/2, 25);
+  textAlign(CENTER);
+  text("SCARLET TANAGER", w/2, 35);
   noStroke();
 
    // initialize pubnub
