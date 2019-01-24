@@ -599,7 +599,6 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       y_ypos = inMessage.message.y_angle;
 
     }
-  }
 
   if(inMessage.channel == tradeChannel){
 
