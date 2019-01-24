@@ -53,6 +53,7 @@ function setup() {
   
   textSize(50);
   stroke("red");
+  fill(0);
   textAlign(CENTER);
   text("SCARLET TANAGER", w/2, 25);
   noStroke();
