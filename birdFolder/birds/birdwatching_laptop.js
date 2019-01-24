@@ -253,11 +253,11 @@ function draw()
 
   // console.log(rX);
 
-  rX = constrain(r_X, 0, width/2);
-  rY = constrain(r_Y, 0, height/2);
+  // rX = constrain(r_X, 0, width/2);
+  // rY = constrain(r_Y, 0, height/2);
 
-  rX = constrain(r_X, 0, width/2 - 45);
-  rY = constrain(r_Y, 0, height/2 - 45);
+  // rX = constrain(r_X, 0, width/2 - 45);
+  // rY = constrain(r_Y, 0, height/2 - 45);
 
     if(r_xpos > 1){
     rX = constrain(rX+2,width/2,width);
