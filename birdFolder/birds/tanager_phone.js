@@ -100,6 +100,8 @@ function draw() {
 
   }
 
+  console.log("r: " + redCount + "b: " + blueCount + "g: " + greenCount + "y: " + yellowCount);
+
 if(redCount != undefined){
 
     fill("red");
