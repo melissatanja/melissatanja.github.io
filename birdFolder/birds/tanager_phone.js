@@ -95,12 +95,6 @@ function draw() {
 
   whoWon();
 
-  if(nope === 1){
-
-    Nope();
-
-  }
-
   // console.log("r: " + redCount + "b: " + blueCount + "g: " + greenCount + "y: " + yellowCount);
 
 if(redCount != undefined){
@@ -207,8 +201,6 @@ function Nope(){
 
   window.alert("nothing but goose eggs (no birds to trade)");
 
-  nope = 0;
-
 }
 
 function sendData() {
@@ -230,6 +222,7 @@ function sendData() {
       blue_bird: blueCount, 
       green_bird: greenCount, 
       yellow_bird: yellowCount 
+
       // start_press: r_start
 
     }
@@ -246,7 +239,8 @@ function sendTrade()
       message: 
     {
       tradeReq: tradeWithWho,
-      start_press: r_start
+      start_press: r_start,
+      birds_unavail: nope
     }
   });
 
@@ -267,7 +261,15 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       bwin = inMessage.message.user_b_win;
       gwin = inMessage.message.user_g_win;
       ywin = inMessage.message.user_y_win;
-      nope = inMessage.message.user_r_nope;
+      
+      if(inMessage.message.user_r_nope === 1){
+
+        Nope();
+
+        nope = inMessage.message.user_r_nope;
+        nope = 0;
+
+      }
 
   }
 }

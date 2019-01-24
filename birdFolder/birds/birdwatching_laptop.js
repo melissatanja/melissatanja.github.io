@@ -215,18 +215,18 @@ function draw()
 
   // console.log("red: " + r_start + "blue: " + b_start + "green: " + g_start + "yellow: " + y_start);
 
-  // if(r_start != 1 || b_start != 1 || g_start != 1 || y_start != 1){
+  if(r_start != 1 || b_start != 1 || g_start != 1 || y_start != 1){
 
-  //   textSize(50);
-  //   textAlign(CENTER);
-  //   textStyle(BOLD);
-  //   fill('black');
-  //   stroke('white');
-  //   text("WAITING FOR USERS", width/2, height/2);
+    textSize(50);
+    textAlign(CENTER);
+    textStyle(BOLD);
+    fill('black');
+    stroke('white');
+    text("WAITING FOR USERS", width/2, height/2);
 
-  //   // noLoop();
+  }
 
-  // }else{
+  // else{
 
     noStroke();
     noFill();
@@ -505,6 +505,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       r_xpos = inMessage.message.x_angle;
       r_ypos = inMessage.message.y_angle;
+      r_nope = inMessage.message.birds_unavail;
       // r_start = inMessage.message.start_press;
 
     }
@@ -513,6 +514,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       b_xpos = inMessage.message.x_angle;
       b_ypos = inMessage.message.y_angle;
+      b_nope = inMessage.message.birds_unavail;
       // b_start = inMessage.message.start_press;
 
     }
@@ -521,6 +523,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       g_xpos = inMessage.message.x_angle;
       g_ypos = inMessage.message.y_angle;
+      g_nope = inMessage.message.birds_unavail;
       // g_start = inMessage.message.start_press;
 
     }
@@ -530,6 +533,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       y_xpos = inMessage.message.x_angle;
       y_ypos = inMessage.message.y_angle;
+      y_nope = inMessage.message.birds_unavail;
       // y_start = inMessage.message.start_press;
 
     }
