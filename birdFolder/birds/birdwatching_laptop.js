@@ -166,7 +166,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  console.log("update17");
+  console.log("update18");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -208,7 +208,7 @@ function draw()
   //background image
   image(bg, cs/2, cs/2, cs - 50, cs - 50);
 
-
+  console.log("red: " + r_start + "blue: " + b_start + "green: " + g_start + "yellow: " + y_start);
 
   if(r_start != 1 || b_start != 1 || g_start != 1 || y_start != 1){
 
@@ -494,7 +494,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       r_xpos = inMessage.message.x_angle;
       r_ypos = inMessage.message.y_angle;
-      r_start = inMessage.message.start_press;
+      // r_start = inMessage.message.start_press;
 
     }
 
@@ -502,7 +502,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       b_xpos = inMessage.message.x_angle;
       b_ypos = inMessage.message.y_angle;
-      b_start = inMessage.message.start_press;
+      // b_start = inMessage.message.start_press;
 
     }
 
@@ -510,7 +510,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       g_xpos = inMessage.message.x_angle;
       g_ypos = inMessage.message.y_angle;
-      g_start = inMessage.message.start_press;
+      // g_start = inMessage.message.start_press;
 
     }
   }
@@ -519,13 +519,17 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 
       y_xpos = inMessage.message.x_angle;
       y_ypos = inMessage.message.y_angle;
-      y_start = inMessage.message.start_press;
+      // y_start = inMessage.message.start_press;
 
     }
 
   if(inMessage.channel == tradeChannel){
 
     trade(inMessage.publisher, inMessage.message.tradeReq);
+    y_start = inMessage.message.start_press;
+    g_start = inMessage.message.start_press;
+    b_start = inMessage.message.start_press;
+    r_start = inMessage.message.start_press;
 
   }
 }

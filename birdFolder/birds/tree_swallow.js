@@ -165,6 +165,7 @@ function win(){
 function start(){
 
   g_start = 1;
+  sendTrade();
 
 }
 
@@ -207,8 +208,8 @@ function sendData() {
       red_bird: redCount, 
       blue_bird: blueCount, 
       green_bird: greenCount, 
-      yellow_bird: yellowCount, 
-      start_press: g_start
+      yellow_bird: yellowCount
+      // start_press: g_start
 
     }
   });
@@ -223,7 +224,8 @@ function sendTrade()
       channel: tradeChannel,
       message: 
     {
-      tradeReq: tradeWithWho
+      tradeReq: tradeWithWho,
+      start_press: g_start
     }
   });
 
