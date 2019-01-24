@@ -156,7 +156,7 @@ function setup()
   dataServer.addListener({ message: readIncoming });
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  console.log("update1");
+  console.log("update2");
 
   //setup birds
   for (let i = 0; i < 4; i++) {
@@ -203,34 +203,34 @@ function draw()
 
 
 
-  //red binoculars
-  // if(r_xpos != undefined && r_ypos != undefined){
-  //   rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
-  //   rY = map(r_ypos, -10, 10, cs/2 - 45, 45);
-  //   r_prevX = rX;
-  //   r_prevY = rY;
-  // }else{
-  //   rX = map(r_prevX, -10, 10,  45, cs/2 - 45);
-  //   rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
-  // }
-
+  red binoculars
   if(r_xpos != undefined && r_ypos != undefined){
-
-    r_X += speed * r_xpos;
-    r_Y += speed * r_ypos;
-
-    r_prevX = r_xpos;
-    r_prevY = r_ypos;
-
+    rX = map(r_xpos, -10, 10,  45, cs/2 - 45);
+    rY = map(r_ypos, -10, 10, cs/2 - 45, 45);
+    r_prevX = rX;
+    r_prevY = rY;
   }else{
-
-    r_X += speed * r_prevX;
-    r_Y += speed * r_prevY;
-
+    rX = map(r_prevX, -10, 10,  45, cs/2 - 45);
+    rY = map(r_prevY, -10, 10, cs/2 - 45, 45);
   }
 
-  rX = constrain(r_X, 0, width/2);
-  rY = constrain(r_Y, 0, height/2);
+  // if(r_xpos != undefined && r_ypos != undefined){
+
+  //   r_X += speed * r_xpos;
+  //   r_Y += speed * r_ypos;
+
+  //   r_prevX = r_xpos;
+  //   r_prevY = r_ypos;
+
+  // }else{
+
+  //   r_X += speed * r_prevX;
+  //   r_Y += speed * r_prevY;
+
+  // }
+
+  // rX = constrain(r_X, 0, width/2);
+  // rY = constrain(r_Y, 0, height/2);
 
   // rX = constrain(r_X, 0, width/2 - 45);
   // rY = constrain(r_Y, 0, height/2 - 45);
