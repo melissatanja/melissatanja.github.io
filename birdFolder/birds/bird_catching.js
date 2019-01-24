@@ -1,4 +1,5 @@
 //red user
+console.log("test 2.5");
 function birdCatchB(){
 
   console.log("test3");
@@ -45,7 +46,7 @@ function birdCatchG(){
     if(dist(birdsGreen[i].x,birdsGreen[i].y, rX, rY) <= bsize+15){
 
       console.log("test5");
-      
+
       birdsGreen.splice(i,1);
 
       Red[2] += 1;
