@@ -51,7 +51,7 @@ function setup() {
   createCanvas(w, h);
   background(255);
   
-  textSize(20);
+  textSize(50);
   stroke("red");
   textAlign(CENTER);
   text("SCARLET TANAGER", w/2, 25);
@@ -70,9 +70,9 @@ function setup() {
   dataServer.addListener({ message: readIncoming});
   dataServer.subscribe({channels: [channelName, tradeChannel]});
 
-  startButton = createButton('START');
-  startButton.position(w - 30, 30);
-  startButton.mouseClicked(start);
+  // startButton = createButton('START');
+  // startButton.position(w - 30, 30);
+  // startButton.mouseClicked(start);
 
   // blueButton = createButton('TRADE BLUEJAY');
   // blueButton.position((w/4), h/4*3);

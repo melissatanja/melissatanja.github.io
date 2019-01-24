@@ -3,14 +3,14 @@
 	font-size: 16px;
 	display: block;
 	position: absolute;
-	left: 75%;
+	left: 80%;
 	width: 20%;
     height: 10%;
 }
 
 .red{
 
-color: #000000;
+color: #FFFFFF;
 background-color: #CD3232; /* red */
 top: 25%;
 
@@ -18,7 +18,7 @@ top: 25%;
 
 .blue{
 
-color: #000000;
+color: #FFFFFF;
 background-color: #3285CD; /* blue */
 top: 35%;
 
@@ -26,7 +26,7 @@ top: 35%;
 
 .green{
 
-color: #000000;
+color: #FFFFFF;
 background-color: #32CD47; /* green */
 top: 45%;
 
@@ -34,7 +34,7 @@ top: 45%;
 
 .yellow{
 
-color: #000000;
+color: #FFFFFF;
 background-color: #F0E91B; /* yellow */
 top: 55%;
 
