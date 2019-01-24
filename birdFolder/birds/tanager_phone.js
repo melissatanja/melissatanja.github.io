@@ -17,6 +17,11 @@ var blue_bird;
 var green_bird;
 var yellow_bird;
 
+var win = 0;
+var bwin = 0;
+var gwin = 0;
+var ywin = 0;
+
 //size of the active area
 var w = window.innerWidth;
 var h = window.innerHeight;
@@ -79,6 +84,8 @@ function setup() {
     
 function draw() {
 
+  win();
+
 if(redCount != undefined){
 
     fill("red");
@@ -130,6 +137,22 @@ if(yellowCount != undefined){
     // }
 
 }
+
+}
+
+function win(){
+
+  if(win === 1){
+
+    window.alert("a little birdie told me you won!!!");
+
+  }
+
+  if(bwin === 1 || gwin === 1 || ywin === 1){
+
+    window.alert("better luck next time, silly goose");
+
+  }
 
 }
 
@@ -205,6 +228,10 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
       blueCount = inMessage.message.user_r_blue_bird;
       greenCount = inMessage.message.user_r_green_bird;
       yellowCount = inMessage.message.user_r_yellow_bird;
+      win = inMessage.message.user_r_win;
+      bwin = inMessage.message.user_b_win;
+      gwin = inMessage.message.user_g_win;
+      ywin = inMessage.message.user_y_win;
 
   }
 }

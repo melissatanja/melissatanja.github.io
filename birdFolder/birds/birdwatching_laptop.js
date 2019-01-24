@@ -46,6 +46,11 @@ var speed = 0.2;
 // var moveX = 0;
 // var moveY = 0;
 
+var r_win = 0;
+var b_win = 0;
+var g_win = 0;
+var y_win = 0;
+
 var r_xpos;
 var r_ypos;
 let rX = window.innerWidth/4;
@@ -376,6 +381,9 @@ function draw()
       birdsYellow[i].show();
   }
 
+
+  win();
+
 // console.log("test2");
 
   //bird catching 
@@ -390,6 +398,34 @@ function draw()
 
 // image(instructions, width/2,height/2,600,600);
 // console.log("instructions loaded");
+
+}
+
+function win(){
+
+  if(Red[0] === 4){
+
+    r_win = 1;
+
+  }
+
+  if(Blue[1] === 4){
+
+    b_win = 1;
+
+  }
+
+  if(Green[2] === 4){
+
+    g_win = 1;
+
+  }
+
+  if(Yellow[3] === 4){
+
+    y_win = 1;
+
+  }
 
 }
 
@@ -409,16 +445,25 @@ function sendBirds() {
       user_r_blue_bird: Red[1], 
       user_r_green_bird: Red[2], 
       user_r_yellow_bird: Red[3],
+      user_r_win: r_win,
     
       user_b_red_bird: Blue[0], 
       user_b_blue_bird: Blue[1], 
       user_b_green_bird: Blue[2], 
       user_b_yellow_bird: Blue[3],
+      user_b_win: b_win,
 
       user_g_red_bird: Green[0], 
       user_g_blue_bird: Green[1], 
       user_g_green_bird: Green[2], 
       user_g_yellow_bird: Green[3],
+      user_g_win: g_win,
+
+      user_y_red_bird: Yellow[0], 
+      user_y_blue_bird: Yellow[1], 
+      user_y_green_bird: Yellow[2], 
+      user_y_yellow_bird: Yellow[3],
+      user_y_win: y_win
     }
   });
 }
