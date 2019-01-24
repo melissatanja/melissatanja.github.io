@@ -188,9 +188,9 @@ function setup()
 function draw() 
 {
 
-  // console.log(bX);
+  console.log(bX);
 
-  // console.log(bX);
+  console.log(bY);
 
   noStroke();
   rectMode(CORNER);
