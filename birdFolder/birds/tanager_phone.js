@@ -52,7 +52,7 @@ function setup() {
   background(255);
   
   textSize(40);
-  stroke("red");
+  stroke("#CD3232");
   fill(0);
   textAlign(CENTER);
   text("SCARLET TANAGER", w/2, 35);
