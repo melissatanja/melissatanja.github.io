@@ -166,7 +166,7 @@ function setup()
     birdsGreen[i] = new BirdieG(random(cs),random(cs));
   }
 
-  console.log(birdsBlue[0]);
+  // console.log(birdsBlue[0]);
 
   setInterval(sendBirds, 150);
 

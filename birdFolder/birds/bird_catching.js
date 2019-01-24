@@ -5,7 +5,7 @@ function birdCatchB(){
 
       Red[1] += 1;
     }
-    console.log(birdsBlue[i].x);
+    // console.log(birdsBlue[i].x);
     if(dist(birdsBlue[i].x,birdsBlue[i].y, yX, yY) <= bsize+15){
       birdsBlue.splice(i,1);
 
